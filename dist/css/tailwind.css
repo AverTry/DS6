@@ -31629,11 +31629,6 @@ input:focus-within ~ label, input:not(:placeholder-shown) ~ label {
   --tw-translate-y: -1.5rem;
 }
 
-textarea:focus-within ~ label, select:focus-within ~ label, input:focus-within ~ label {
-  --tw-text-opacity: 1;
-  color: rgba(59, 130, 246, var(--tw-text-opacity));
-}
-
 .outline input:not(:-moz-placeholder-shown) ~ label, .outline select:not(:-moz-placeholder-shown) ~ label, .outline textarea:not(:-moz-placeholder-shown) ~ label {
   margin: 0px;
   margin-left: 0.75rem;
@@ -31691,10 +31686,9 @@ textarea:focus-within ~ label, select:focus-within ~ label, input:focus-within ~
   --tw-translate-y: -1rem;
 }
 
-.outline select option {
-  --tw-bg-opacity: 1;
-  background-color: rgba(55, 65, 81, var(--tw-bg-opacity))
-}
+/* .outline select option {
+  @apply bg-gray-100
+} */
 
 @media (min-width: 640px) {
   .sm\:container {
