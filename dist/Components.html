@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/tailwind.css">
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
+  <title>Document</title>
+</head>
+
+<body>
+
+  <!-- Dropdown -->
+  <div class="bg-gray-500 flex justify-center h-40 p-8">
+    <div x-data="{ open: false }" class="relative">
+      <button x-on:click="open = true" class="flex items-center bg-white focus:bg-gray-400 text-gray-700 focus:text-gray-900 font-semibold rounded focus:outline-none focus:shadow-inner py-2 px-4" type="button">
+        <span class="mr-1">Dropdown</span>
+        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" style="margin-top:3px">
+          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+        </svg>
+      </button>
+      <ul x-show="open" x-on:click.away="open = false" class="bg-white text-gray-700 rounded shadow-lg absolute py-2 mt-1" style="min-width:15rem">
+        <li>
+          <a href="#" class="block hover:bg-gray-200 whitespace-no-wrap py-2 px-4">
+            Mont Blanc
+          </a>
+        </li>
+        <li>
+          <a href="#" class="block hover:bg-gray-200 whitespace-no-wrap py-2 px-4">
+            Monte Rosa
+          </a>
+        </li>
+        <li>
+          <a href="#" class="block hover:bg-gray-200 whitespace-no-wrap py-2 px-4">
+            Dom <span class="text-gray-400">(no good)</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="bg-gray-400 flex justify-center items-center p-8">
+    <div x-data="{ tab: 'foo' }" style="max-width:550px">
+      <div class="flex -mx-px">
+        <button x-on:click="tab = 'foo'" x-bind:class="{ 'bg-white border-white': tab === 'foo' }" class="bg-transparent hover:bg-gray-200 text-gray-700 text-sm md:text-base font-semibold rounded-t focus:outline-none mx-px py-px md:py-2 px-3 md:px-4" type="button">
+          Foo
+        </button>
+        <button x-on:click="tab = 'bar'" x-bind:class="{ 'bg-white border-white': tab === 'bar' }" class="bg-transparent hover:bg-gray-200 text-gray-700 font-semibold rounded-t focus:outline-none mx-px py-2 px-4" type="button">
+          Bar
+        </button>
+        <button x-on:click="tab = 'baz'" x-bind:class="{ 'bg-white border-white': tab === 'baz' }" class="bg-transparent hover:bg-gray-200 text-gray-700 text-sm md:text-base font-semibold rounded-t focus:outline-none mx-px py-px md:py-2 px-3 md:px-4" type="button">
+          Baz
+        </button>
+        <button class="bg-transparent text-gray-500 text-sm md:text-base font-semibold rounded-t cursor-not-allowed mx-px py-px md:py-2 px-3 md:px-4" type="button" disabled>
+          Disabled
+        </button>
+      </div>
+      <ul class="bg-white text-sm text-green-700 rounded-b p-4">
+        <li x-show="tab === 'foo'">
+          Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. <span class="hidden md:block">Velit non irure adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat. Amet duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis occaecat ex.<span>
+        </li>
+        <li x-show="tab === 'bar'">
+          Nulla est ullamco ut irure incididunt nulla Lorem Lorem minim irure officia enim reprehenderit. Magna duis labore cillum sint adipisicing exercitation ipsum. <span class="hidden md:block">Nostrud ut anim non exercitation velit laboris fugiat cupidatat. Commodo esse dolore fugiat sint velit ullamco magna consequat voluptate minim amet aliquip ipsum aute laboris nisi. Labore labore veniam irure irure ipsum pariatur mollit magna in cupidatat dolore magna irure esse tempor ad mollit. Dolore commodo nulla minim amet ipsum officia consectetur amet ullamco voluptate nisi commodo ea sit eu.</span>
+        </li>
+        <li x-show="tab === 'baz'">
+          Sint sit mollit irure quis est nostrud cillum consequat Lorem esse do quis dolor esse fugiat sunt do. Eu ex commodo veniam Lorem aliquip laborum occaecat qui Lorem esse mollit dolore anim cupidatat. <span class="hidden md:block">Deserunt officia id Lorem nostrud aute id commodo elit eiusmod enim irure amet eiusmod qui reprehenderit nostrud tempor. Fugiat ipsum excepteur in aliqua non et quis aliquip ad irure in labore cillum elit enim. Consequat aliquip incididunt ipsum et minim laborum laborum laborum et cillum labore. Deserunt adipisicing cillum id nulla minim nostrud labore eiusmod et amet. Laboris consequat consequat commodo non ut non aliquip reprehenderit nulla anim occaecat. Sunt sit ullamco reprehenderit irure ea ullamco Lorem aute nostrud magna.</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- Text to input -->
+  <main class="mx-auto max-w-4xl bg-gray-400">
+    <nav class="p-4 bg-indigo-700 text-indigo-100">
+      <div>Edit in place</div>
+      <div class="text-xs text-indigo-300 font-thin">Alpine.js + TailwindCSS</div>
+    </nav>
+
+    <section class="flex flex-wrap p-4">
+      <div x-data="
+            {
+                 origText: 'click the text to edit it',
+                 newText: null,
+                 isEditing: false,
+                 edit: function() {
+                    this.isEditing = true;
+                 },
+                 focus: function() {
+                    const textInput = this.$refs.textInput;
+                    textInput.focus();
+                    textInput.select();                 
+                 },
+                 save: function() {
+                    this.origText = this.newText;
+                    this.isEditing = false;
+                 },
+                 cancel: function() {
+                    this.newText = this.origText;
+                    this.isEditing = false;
+                 },
+            }
+         " x-init="newText = origText">
+        <div class="p-2 border border-gray-200" x-show=!isEditing>
+          <span class="border-b border-dotted border-blue-600" x-text="newText" @click="edit(); $nextTick(() => focus())"></span>
+        </div>
+        <label x-show=isEditing class="flex flex-col">
+          <div class="flex mb-4">
+            <input type="text" x-ref="textInput" class="bg-gray-400 p-2 border" x-model="newText" @keydown.enter="save" @keydown.escape="cancel">
+            <button type="button" class="p-2 ml-2" title="Cancel" @click="cancel">ⓧ</button>
+            <button type="button" class="p-2 ml-2" title="Save" @click="save">✅</button>
+          </div>
+          <small class="text-xs">→ hit Enter to save</small>
+          <small class="text-xs">→ hit Esc to cancel</small>
+        </label>
+      </div>
+    </section>
+  </main>
+  <!-- input -->
+  <div
+    x-data
+    x-init="
+        new Litepicker({
+            element: $refs.input,
+            singleMode: true,
+            format: 'DD/MM/YYYY',
+            onSelect: function(date){
+                console.log(date)
+            },
+            minDate: new Date(Date.now() + 1*24*60*60*1000)
+        });
+    "
+    class="bg-gray-500 flex rounded max-w-sm p-8"
+>
+    <span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 text-gray-500 sm:text-sm">
+        <svg class="h-5 w-5 text-gray-800" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M6 2C5.44772 2 5 2.44772 5 3V4H4C2.89543 4 2 4.89543 2 6V16C2 17.1046 2.89543 18 4 18H16C17.1046 18 18 17.1046 18 16V6C18 4.89543 17.1046 4 16 4H15V3C15 2.44772 14.5523 2 14 2C13.4477 2 13 2.44772 13 3V4H7V3C7 2.44772 6.55228 2 6 2ZM6 7C5.44772 7 5 7.44772 5 8C5 8.55228 5.44772 9 6 9H14C14.5523 9 15 8.55228 15 8C15 7.44772 14.5523 7 14 7H6Z"/>
+        </svg>
+    </span>
+
+    <input
+        value="22/12/2020"
+        x-ref="input"
+        name="date"
+        class="rounded-r border border-gray-300 px-3 py-2 text-gray-700 w-full focus:outline-none focus:shadow-outline"
+    />
+</div>
+</body>
+
+</html>

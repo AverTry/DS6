@@ -1,0 +1,17 @@
+{
+  "name": "tailwind-floating-labels",
+  "version": "1.0.0",
+  "description": "Debug & Beautified from a Tailwind Example",
+  "main": "",
+  "scripts": {
+    "build:css": "tailwind build src/css/tailwind.css -o dist/css/tailwind.css --watch"
+  },
+  "author": "AverTry",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^2.1.2"
+  },
+  "dependencies": {
+    "@tailwindcss/forms": "^0.3.2"
+  }
+}

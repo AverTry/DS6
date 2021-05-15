@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/tailwind.css">
+    <title>DataSafe ver.6.0</title>
+</head>
+<body class="antialiased text-gray-500 bg-white p-10">
+
+  <container class="sm:flex justify-evenly mt-5">
+    <div class="my-5">
+      <form autocomplete="off" class="bg-gray-100 -z-1 max-w-sm mx-auto rounded-lg shadow-xl overflow-hidden p-6 space-y-4">
+        <h2 class="text-2xl font-bold text-center">Floating Labels</h2>
+        <div class="z-0 outline relative border-2 focus-within:border-blue-500 rounded-lg shadow-lg">
+          <select type="text" name="selectbox" placeholder="986-98265-9865-918346-9" class="block p-4 w-full text-lg border-0 focus:ring-0 bg-transparent">
+            <option value="One">One</option>
+            <option value="Two">Two</option>
+            <option value="Three">Three</option>
+          </select>
+          <label for="selectbox" class="absolute top-0 text-lg bg-gray-100 m-4 -z-1 duration-300 origin-0">Select Box</label>
+        </div>
+        <div class="z-0 outline relative border-2 focus-within:border-blue-500 rounded-lg shadow-lg">
+          <input type="text" name="textbox" placeholder=" " class="block p-4 w-full pr-7 text-lg border-0 focus:ring-0 bg-transparent" />
+          <label for="textbox" class="absolute top-0 text-lg bg-gray-100 m-4 -z-1 duration-300 origin-0">Text Box</label>
+        </div>
+        <div class="z-0 outline relative border-2 focus-within:border-blue-500 rounded-lg shadow-lg">
+          <textarea type="password" name="textarea" placeholder=" " class="block p-2 w-full pr-7 pl-4 text-lg border-0 focus:ring-0 bg-transparent"></textarea>
+          <label for="textarea" class="absolute top-0 text-lg bg-gray-100 m-2 ml-4 -z-1 duration-300 origin-0 rounded-full">Text Area</label>
+        </div>
+      </form>
+    </div>
+
+    <div class="my-5">
+      <form autocomplete="off" class="bg-gray-100 -z-1 max-w-sm mx-auto rounded-lg shadow-xl overflow-hidden p-6 space-y-4">
+        <h2 class="text-2xl font-bold text-center">Pre-Floated Labels</h2>
+        <div class="z-0 outline relative border-2 focus-within:border-blue-500 rounded-lg shadow-lg">
+          <select type="text" name="selectbox" placeholder="986-98265-9865-918346-9" class="block p-4 w-full text-lg border-0 focus:ring-0 bg-transparent">
+            <option value="One">One</option>
+            <option value="Two">Two</option>
+            <option value="Three">Three</option>
+          </select>
+          <label for="selectbox" class="absolute top-0 text-lg bg-gray-100 m-4 -z-1 duration-300 origin-0">Select Box</label>
+        </div>
+        <div class="z-0 outline relative border-2 focus-within:border-blue-500 rounded-lg shadow-lg">
+          <input type="date" name="date" placeholder=" " class="block p-4 w-full pr-7 text-lg border-0 focus:ring-0 bg-transparent" />
+          <label for="date" class="absolute top-0 text-lg bg-gray-100 m-4 -z-1 duration-300 origin-0 rounded-full">Date</label>
+        </div>
+      </form>
+    </div>
+  </container>
+</body>
+</html>
