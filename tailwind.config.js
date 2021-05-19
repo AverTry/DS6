@@ -1,13 +1,13 @@
 const tailwindcss = require("tailwindcss");
 
 module.exports = {
-  // mode: 'jit',
+  mode: 'jit',
   purge: {
     enabled: false, // or true to purge unused css
     preserveHtmlElements: false,
     content: ['dist/*.html'], // files checked for purging
   },
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'media', // or 'media' or 'class'
   theme: {
     extend: {
       fontFamily: {
@@ -27,7 +27,7 @@ module.exports = {
   },
   plugins: [
     require("tailwindcss"),
-    require('@tailwindcss/forms'),
+    require('@tailwindcss/forms')
   ],
   corePlugins: {
     appearance: false,

@@ -1,13 +1,25 @@
 {
-  "name": "tailwind-floating-labels",
-  "version": "1.0.0",
-  "description": "Debug & Beautified from a Tailwind Example",
-  "main": "",
+  "name": "datasafe-6",
+  "version": "6.0.0",
+  "description": "Client Database Application",
+  "main": "index.js",
   "scripts": {
-    "build:css": "tailwind build src/css/tailwind.css -o dist/css/tailwind.css --watch"
+    "jit": "tailwind build ./src/css/tailwind.css -o ./dist/css/tailwind.css",
+    "build": "nodemon -e .html --exec npm run jit"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AverTry/DS6.git"
+  },
+  "keywords": [
+    "database"
+  ],
   "author": "AverTry",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AverTry/DS6/issues"
+  },
+  "homepage": "https://github.com/AverTry/DS6#readme",
   "devDependencies": {
     "tailwindcss": "^2.1.2"
   },
