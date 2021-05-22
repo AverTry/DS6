@@ -57,7 +57,12 @@
 
   /* Show Hide Placeholder text */
   ::-webkit-input-placeholder {
-    @apply opacity-0 !important;
+    @apply 
+      text-gray-300
+      dark:text-gray-500
+      opacity-0 
+      !important
+    ;
   }
 
   /* OUTLINE Custom Inputs */
@@ -130,8 +135,6 @@
 
   .outline:focus-within ::-webkit-input-placeholder {
     @apply 
-      text-gray-300
-      dark:text-gray-500
       transition duration-500 ease-in opacity-100
       !important
     ;
