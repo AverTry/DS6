@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Remove scrollbars from page and inputs */
+::-webkit-scrollbar {
+  width: 0 !important;
+  scrollbar-width: none;
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  margin-left: -30px;
+  filter: invert(60%);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(60%);
+}
+
+input[type="week"],
+input[type="month"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="number"],
+input[type="time"] {
+  padding-right: 8px;
+  padding-left: 11px;
+}
+
+/* Show Hide Placeholder text */
+::-webkit-input-placeholder {
+  opacity: 0 !important;
+}
+
+/* OUTLINE Custom Inputs */
+
+.outline {
+  @apply z-0;
+  @apply relative;
+  @apply border-2;
+  @apply focus-within:border-blue-300;
+  @apply rounded-lg;
+  @apply shadow-md;
+}
+
+.outline input ~ label,
+.outline select ~ label,
+.outline textarea ~ label {
+  @apply absolute ;
+  @apply top-0 ;
+  @apply text-lg ;
+  @apply bg-white ;
+  @apply m-4 ;
+  @apply -z-1 ;
+  @apply duration-300 ;
+  @apply origin-0;
+}
+
+.outline input:focus-within ~ label,
+.outline select:focus-within ~ label,
+.outline textarea:focus-within ~ label,
+.outline input:not(:placeholder-shown) ~ label,
+.outline select:not(:placeholder-shown) ~ label,
+.outline textarea:not(:placeholder-shown) ~ label {
+  @apply transform scale-75 -translate-y-4 z-0 m-0 ml-3 px-1;
+}
+
+.outline input,
+.outline select,
+.outline textarea {
+  @apply focus-within:border-blue-300;
+  @apply rounded-lg;
+  @apply w-full;
+  @apply text-lg;
+  @apply p-4;
+  @apply border-0;
+  @apply focus:ring-0;
+  @apply bg-transparent;
+  @apply block;
+}
+
+.outline select option {
+  @apply bg-white;
+  @apply  min-w-max;
+}
+
+.outline:focus-within ::-webkit-input-placeholder {
+  opacity: 1 !important;
+}
+
+/* Force Prefix Postfix Border Change on Focus */
+.outline:focus-within span {
+  border-color: blue;
+}

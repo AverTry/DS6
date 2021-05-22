@@ -6,43 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="./css/tailwind.css">
   <title>DataSafe ver.6.0</title>
-
-<script>
-  // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.documentElement.classList.add('dark')
-  } else {
-    document.documentElement.classList.remove('dark')
-  }
-</script>
+  <style>
+  </style>
 </head>
 
-<body class="antialiased text-gray-500 dark:text-yellow-500 bg-gray-100 dark:bg-gray-900">
+<body class="antialiased text-gray-500 dark:text-gray-100 bg-gray-100 dark:bg-gray-800">
   <!-- To Put into Tabbed Layout -->
   <container class="flex flex-wrap content-center justify-center h-full lg:h-screen">
-
-    <div class="flex flex-col sm:flex-row md:flex-col lg:flex-row gap-x-5 gap-y-4 p-4 w-full sm:w-max max-w-screen-lg bg-white dark:bg-gray-800 shadow-xl rounded-xl">
-      <i 
-        class="
-          fa fa-arrows-h fa-2x 
-          py-0 px-2 my-2 
-          text-gray-800 hover:text-white         
-          border rounded-md dark:border-yellow-600 border-gray-400 
-          bg-gradient-to-tl from-gray-900 via-white to-gray-900 hover:from-white hover:via-gray-900 hover:to-white
-          transition delay-1000 duration-500 ease-in-out opacity-20 hover:opacity-100
-        "
-      >
-      </i>
-
+    <div class="flex flex-col sm:flex-row md:flex-col lg:flex-row gap-x-5 gap-y-4 p-4 w-full sm:w-max max-w-screen-lg bg-white dark:bg-black shadow-xl rounded-xl">
       <!-- Section One -->      
-      <fieldset class="outlineFieldSet">
-        <legend class="outlineLedgend">Client Address & Details:</legend>
+      <fieldset class="bg-white dark:bg-black rounded-lg shadow-md p-4 space-y-4 border border-gray-300 dark:border-gray-600">
+        <legend class="text-lg font-bold">Client Address & Details:</legend>
         <div class="flex flex-col md:flex-row gap-4">
           <div class="outline flex-grow">
-            <select name="Prefix" placeholder=" ">
+            <select name="Prefix" placeholder=" " class="lg:flex-shrink-0 pr-10 min-w-max">
               <option value="Mr">Mr</option>
               <option value="Mrs">Mrs</option>
               <option value="Miss">Miss</option>
@@ -65,7 +44,7 @@
         </div>
         <div class="flex flex-col md:flex-row gap-4">
           <div class="outline">
-           <input type="text" name="HouseNo" placeholder="Number or Name" />
+            <input type="text" name="HouseNo" placeholder=" " />
             <label for="HouseNo">HouseNo</label>
           </div>
           <div class="outline">
@@ -73,17 +52,17 @@
             <label for="Street">Street</label>
           </div>
           <div class="outline">
-            <input type="text" name="City" placeholder="City or Village" />
+            <input type="text" name="City" placeholder=" " />
             <label for="City">City</label>
           </div>
         </div>
         <div class="flex flex-col md:flex-row gap-4">
           <div class="outline">
-            <input type="text" name="County" placeholder="County or District" />
+            <input type="text" name="County" placeholder=" " />
             <label for="County">County</label>
           </div>
           <div class="outline">
-            <input type="text" name="PostCode" placeholder="PostCode or Zip" />
+            <input type="text" name="PostCode" placeholder=" " />
             <label for="PostCode">Post Code</label>
           </div>
           <div class="outline">
@@ -94,7 +73,7 @@
         <div class="flex flex-col md:flex-row gap-4">
           <div class="flex flex-grow">
             <div class="outline flex-grow">
-              <textarea name="Comments" placeholder="Important Details To Remember"></textarea>
+              <textarea name="Comments" placeholder=" " class="resize-none"></textarea>
               <label for="Comments">Comments</label>
             </div>
           </div>
@@ -115,8 +94,8 @@
         </div>
       </fieldset>
       <!-- Section Two -->
-      <fieldset class="outlineFieldSet">
-        <legend class="outlineLedgend">Contact Info:</legend>
+      <fieldset class="bg-white rounded-lg shadow-md p-4 space-y-4 border border-gray-300">
+        <legend class="text-lg font-bold">Contact Info:</legend>
         <div class="flex flex-col gap-4">
           <div class="flex flex-col md:flex-row lg:flex-col gap-4">
             <div class="outline">
@@ -151,19 +130,7 @@
     </div>
 
   </container>
-  <script>
-    document.querySelector('.fa-arrows-h').addEventListener('click', () => {
-      console.log('Clicked')
-      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.remove('dark')
-        localStorage.theme = 'light'
-      } else {
-        document.documentElement.classList.add('dark')
-        localStorage.theme = 'dark'
-      } 
-    })
-  // localStorage.removeItem('theme')
-  </script>
+
 </body>
 
 </html>

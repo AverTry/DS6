@@ -7,7 +7,7 @@ module.exports = {
     preserveHtmlElements: false,
     content: ['dist/*.html'], // files checked for purging
   },
-  darkMode: 'media', // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
       fontFamily: {

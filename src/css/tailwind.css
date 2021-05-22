@@ -2,15 +2,215 @@
 @tailwind components;
 @tailwind utilities;
 
-.outline input:focus-within ~ label,
-.outline select:focus-within ~ label,
-.outline textarea:focus-within ~ label,
-.outline input:not(:placeholder-shown) ~ label,
-.outline select:not(:placeholder-shown) ~ label,
-.outline textarea:not(:placeholder-shown) ~ label {
-  @apply transform scale-75 -translate-y-4 z-0 m-0 ml-3 px-1;
+/* Remove scrollbars from page and inputs */
+::-webkit-scrollbar {
+  width: 0 !important;
+  scrollbar-width: none;
 }
 
-/* .outline select option {
-  @apply bg-gray-100
-} */
+@layer utilities {
+    .labelGrad-Light {
+      background: linear-gradient(transparent 50%, white 0, white, transparent) ;
+    }
+  
+  @variants dark {
+    .labelGrad-Dark {
+      background: linear-gradient(transparent 50%, #111827 0, transparent) ;
+    }
+  }
+}
+
+@layer components {
+
+  input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    margin-left: -30px;
+  }
+
+  ::-webkit-calendar-picker-indicator {
+    color: transparent;
+    background: none;
+    z-index: 1;
+  }
+
+  input[type="date"]:before,
+  input[type="datetime-local"]:before {
+    font-family: 'FontAwesome';
+    content: '\f073';
+    width: 15px;
+    height: 20px;
+    position: absolute;
+    top: 9px;
+    right: 15px;
+    @apply text-gray-400;
+  }
+
+  input[type="week"],
+  input[type="month"],
+  input[type="date"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="number"],
+  input[type="time"] {
+    padding-right: 8px;
+    padding-left: 11px;
+  }
+
+  /* Show Hide Placeholder text */
+  ::-webkit-input-placeholder {
+    opacity: 0 !important;
+  }
+
+  /* OUTLINE Custom Inputs */
+
+  .outlineFieldSet {
+    @apply
+      rounded-lg 
+      shadow-md 
+      p-4 
+      space-y-4 
+      border 
+      bg-white 
+      dark:bg-gray-900 
+      border-gray-300
+      dark:border-gray-600
+    ;
+  }
+
+  .outlineLedgend {
+    @apply
+      text-lg 
+      font-bold
+      dark:text-gray-200
+    ;
+  }
+
+  .outline span {
+    @apply
+      -z-1 
+      absolute 
+      -right-0.5 
+      -top-0.5 
+      -bottom-0.5 
+      inline-flex 
+      items-center 
+      px-3 
+      rounded-r-md 
+      border-2 
+      dark:border-gray-600 
+    ;
+  }
+
+  .outline span svg {
+    @apply 
+      h-5 
+      w-5 
+      text-gray-400
+    ;
+  }
+
+  .outline span ~ input {
+    @apply pr-16;
+  }
+
+  .outline {
+    @apply 
+      z-0
+      relative
+      border-2
+      rounded-lg
+      shadow-lg
+      dark:border-gray-600
+    ;
+  }
+
+  .outline:focus-within,
+  .outline:focus-within span  {
+    @apply border-blue-300;
+  }
+
+  .outline:focus-within ::-webkit-input-placeholder {
+    @apply 
+      text-gray-300
+      dark:text-gray-500
+    ;
+    opacity: 1 !important;
+  }
+
+  .outline input ~ label,
+  .outline select ~ label,
+  .outline textarea ~ label {
+    @apply 
+      absolute 
+      top-0 
+      text-lg 
+      m-2 
+      pl-2 
+      -z-1 
+      duration-500 
+      origin-0
+      text-gray-400
+    ;
+  }
+
+  .outline input:focus-within ~ label,
+  .outline select:focus-within ~ label,
+  .outline textarea:focus-within ~ label,
+  .outline input:not(:placeholder-shown) ~ label,
+  .outline select:not(:placeholder-shown) ~ label,
+  .outline textarea:not(:placeholder-shown) ~ label {
+    @apply 
+      transform 
+      scale-75 
+      -translate-y-4 
+      z-0 
+      m-0 ml-2 px-1
+      rounded-md
+      labelGrad-Light
+      dark:labelGrad-Dark
+      /* bg-gradient-to-b from-transparent via-white dark:via-gray-900  */
+    ;
+  }
+
+  .outline input,
+  .outline select,
+  .outline textarea {
+    @apply 
+      rounded-lg
+      w-full
+      pl-4
+      text-lg
+      border-0
+      focus:ring-0
+      block
+      bg-transparent
+    ;
+  }
+
+  .outline input,
+  .outline textarea {
+    @apply pr-4;
+  }
+
+  .outline select {
+    @apply 
+      min-w-max
+      lg:flex-shrink-0 
+    ;
+  }
+
+  .outline textarea {
+    @apply 
+      h-full 
+      resize-none
+    ;
+  }
+
+  .outline select option {
+    @apply 
+      bg-white
+      dark:bg-gray-900
+    ;
+  }
+
+}
+

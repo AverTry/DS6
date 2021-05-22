@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "jit": "tailwind build ./src/css/tailwind.css -o ./dist/css/tailwind.css",
-    "build": "nodemon -e .html --exec npm run jit"
+    "watch": "nodemon -e html,css,js --ignore dist/css/ --exec npm run jit"
   },
   "repository": {
     "type": "git",
