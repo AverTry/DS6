@@ -57,7 +57,7 @@
 
   /* Show Hide Placeholder text */
   ::-webkit-input-placeholder {
-    opacity: 0 !important;
+    @apply opacity-0 !important;
   }
 
   /* OUTLINE Custom Inputs */
@@ -132,8 +132,9 @@
     @apply 
       text-gray-300
       dark:text-gray-500
+      transition duration-500 ease-in opacity-100
+      !important
     ;
-    opacity: 1 !important;
   }
 
   .outline input ~ label,
