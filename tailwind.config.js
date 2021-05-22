@@ -13,9 +13,6 @@ module.exports = {
       fontFamily: {
         sans: ["Inter"],
       },
-      transformOrigin: {
-        "0": "0%",
-      },
       zIndex: {
         "-1": "-1",
       },

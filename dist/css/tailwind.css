@@ -755,37 +755,25 @@ select {
 	}
 }
 input[type="datetime-local"]::-webkit-calendar-picker-indicator {
-    margin-left: -30px;
-  }
+	margin-left: -8rem;
+}
 ::-webkit-calendar-picker-indicator {
-    color: transparent;
-    background: none;
-    z-index: 1;
-  }
+	z-index: 0;
+	background-image: none;
+	color: transparent;
+}
 input[type="date"]:before,
   input[type="datetime-local"]:before {
     font-family: 'FontAwesome';
     content: '\f073';
-    width: 15px;
-    height: 20px;
-    position: absolute;
-    top: 9px;
-    right: 15px;
   }
 input[type="date"]:before, input[type="datetime-local"]:before {
+	position: absolute;
+	top: 0.5rem;
+	right: 0.875rem;
 	--tw-text-opacity: 1;
 	color: rgba(156, 163, 175, var(--tw-text-opacity));
 }
-input[type="week"],
-  input[type="month"],
-  input[type="date"],
-  input[type="datetime"],
-  input[type="datetime-local"],
-  input[type="number"],
-  input[type="time"] {
-    padding-right: 8px;
-    padding-left: 11px;
-  }
 /* Show Hide Placeholder text */
 ::-webkit-input-placeholder {
 	--tw-text-opacity: 1 !important;
@@ -794,7 +782,7 @@ input[type="week"],
 }
 .dark ::-webkit-input-placeholder {
 	--tw-text-opacity: 1 !important;
-	color: rgba(107, 114, 128, var(--tw-text-opacity)) !important;
+	color: rgba(75, 85, 99, var(--tw-text-opacity)) !important;
 }
 /* OUTLINE Custom Inputs */
 .outlineFieldSet > :not([hidden]) ~ :not([hidden]) {
@@ -887,7 +875,7 @@ input[type="week"],
 	top: 0px;
 	z-index: -1;
 	margin: 0.5rem;
-	transform-origin: 0%;
+	transform-origin: left;
 	padding-left: 0.5rem;
 	font-size: 1.125rem;
 	line-height: 1.75rem;
@@ -1149,8 +1137,8 @@ input[type="week"],
 	--tw-text-opacity: 1;
 	color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
-.hover\:opacity-100:hover {
-	opacity: 1;
+.hover\:opacity-80:hover {
+	opacity: 0.8;
 }
 .dark .dark\:border-yellow-600 {
 	--tw-border-opacity: 1;

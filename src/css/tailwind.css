@@ -9,12 +9,12 @@
 }
 
 @layer utilities {
-    .labelGrad-Light {
+    .outlineLabelGradient-Light {
       background: linear-gradient(transparent 50%, white 0, white, transparent) ;
     }
   
   @variants dark {
-    .labelGrad-Dark {
+    .outlineLabelGradient-Dark {
       background: linear-gradient(transparent 50%, #111827 0, transparent) ;
     }
   }
@@ -23,45 +23,31 @@
 @layer components {
 
   input[type="datetime-local"]::-webkit-calendar-picker-indicator {
-    margin-left: -30px;
+    @apply -ml-32 ;
   }
 
   ::-webkit-calendar-picker-indicator {
-    color: transparent;
-    background: none;
-    z-index: 1;
+    @apply
+      z-0
+      text-transparent
+      bg-none
+    ;
   }
 
   input[type="date"]:before,
   input[type="datetime-local"]:before {
     font-family: 'FontAwesome';
     content: '\f073';
-    width: 15px;
-    height: 20px;
-    position: absolute;
-    top: 9px;
-    right: 15px;
-    @apply text-gray-400;
-  }
-
-  input[type="week"],
-  input[type="month"],
-  input[type="date"],
-  input[type="datetime"],
-  input[type="datetime-local"],
-  input[type="number"],
-  input[type="time"] {
-    padding-right: 8px;
-    padding-left: 11px;
+    @apply 
+      absolute top-2 right-3.5
+      text-gray-400
+    ;
   }
 
   /* Show Hide Placeholder text */
   ::-webkit-input-placeholder {
     @apply 
-      text-gray-300
-      dark:text-gray-500
-      opacity-0 
-      !important
+      text-gray-300 dark:text-gray-600 opacity-0 !important
     ;
   }
 
@@ -69,46 +55,31 @@
 
   .outlineFieldSet {
     @apply
-      rounded-lg 
-      shadow-md 
-      p-4 
-      space-y-4 
-      border 
-      bg-white 
-      dark:bg-gray-900 
-      border-gray-300
-      dark:border-gray-600
+      p-4 space-y-4 
+      bg-white dark:bg-gray-900 
+      border rounded-lg shadow-md border-gray-300 dark:border-gray-600
     ;
   }
 
   .outlineLedgend {
     @apply
-      text-lg 
-      font-bold
-      dark:text-gray-200
+      text-lg font-bold dark:text-gray-200
     ;
   }
 
   .outline span {
     @apply
       -z-1 
-      absolute 
-      -right-0.5 
-      -top-0.5 
-      -bottom-0.5 
-      inline-flex 
-      items-center 
       px-3 
-      rounded-r-md 
-      border-2 
-      dark:border-gray-600 
+      absolute -right-0.5 -top-0.5 -bottom-0.5 
+      inline-flex items-center 
+      border-2 rounded-r-md dark:border-gray-600 
     ;
   }
 
   .outline span svg {
     @apply 
-      h-5 
-      w-5 
+      h-5 w-5 
       text-gray-400
     ;
   }
@@ -121,10 +92,7 @@
     @apply 
       z-0
       relative
-      border-2
-      rounded-lg
-      shadow-lg
-      dark:border-gray-600
+      border-2 rounded-lg shadow-lg dark:border-gray-600
     ;
   }
 
@@ -135,8 +103,7 @@
 
   .outline:focus-within ::-webkit-input-placeholder {
     @apply 
-      transition duration-500 ease-in opacity-100
-      !important
+      transition duration-500 ease-in opacity-100 !important
     ;
   }
 
@@ -144,15 +111,11 @@
   .outline select ~ label,
   .outline textarea ~ label {
     @apply 
-      absolute 
-      top-0 
-      text-lg 
-      m-2 
-      pl-2 
+      absolute top-0 
+      m-2 pl-2 
       -z-1 
-      duration-500 
-      origin-0
-      text-gray-400
+      duration-500 origin-left
+      text-lg text-gray-400
     ;
   }
 
@@ -163,14 +126,11 @@
   .outline select:not(:placeholder-shown) ~ label,
   .outline textarea:not(:placeholder-shown) ~ label {
     @apply 
-      transform 
-      scale-75 
-      -translate-y-4 
+      transform scale-75 -translate-y-4 
       z-0 
       m-0 ml-2 px-1
       rounded-md
-      labelGrad-Light
-      dark:labelGrad-Dark
+      outlineLabelGradient-Light dark:outlineLabelGradient-Dark
       /* bg-gradient-to-b from-transparent via-white dark:via-gray-900  */
     ;
   }
@@ -179,13 +139,9 @@
   .outline select,
   .outline textarea {
     @apply 
-      rounded-lg
-      w-full
-      pl-4
+      block w-full pl-4
+      rounded-lg border-0 focus:ring-0
       text-lg
-      border-0
-      focus:ring-0
-      block
       bg-transparent
     ;
   }
