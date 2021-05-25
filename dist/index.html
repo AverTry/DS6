@@ -8,8 +8,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="./css/tailwind.css">
+  <script src="./js/DS-Initialise.js" defer></script>
   <title>DataSafe ver.6.0</title>
-
 <script>
   // On page load or when changing themes, best to add inline in `head` to avoid FOUC
   if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -20,150 +20,21 @@
 </script>
 </head>
 
-<body class="antialiased text-gray-500 dark:text-yellow-500 bg-gray-100 dark:bg-gray-900">
+<body class="antialiased text-gray-400 dark:text-yellow-500 bg-gray-50 dark:bg-gray-900">
   <!-- To Put into Tabbed Layout -->
-  <container class="flex flex-wrap content-center justify-center h-full lg:h-screen">
+		<!-- <div class="flexBack" style="display: flex; height: 100vh;"> -->
+			<contents>
+				<!-- <include DS-Template="./html/DS-NavBar1st.html"></include> -->
+				<main-db>
+					<!-- <include DS-Template="./html/DS-SideBarLeft.html"></include> -->
+					<include DS-Template="./html/DS-Form.html"></include>
+					<!-- <include DS-Template="./html/DS-SideBarRight.html"></include> -->
+				</main-db>	
+				<!-- <include DS-Template="./html/DS-NavBar2nd.html"></include> -->
+			</contents>	
+			<!-- <include DS-Template="./html/DS-TableList.html"></include> -->
+		<!-- </div> -->
 
-    <div class="flex flex-col sm:flex-row md:flex-col lg:flex-row gap-x-5 gap-y-4 p-4 w-full sm:w-max max-w-screen-lg bg-white dark:bg-gray-800 shadow-xl rounded-xl">
-      <i 
-        class="
-          fa fa-arrows-h fa-2x 
-          py-0 px-2 my-2 
-          text-gray-800 hover:text-white         
-          border rounded-md dark:border-yellow-600 border-gray-400 
-          bg-gradient-to-tl from-gray-900 via-white to-gray-900 hover:from-white hover:via-gray-900 hover:to-white
-          transition delay-1000 duration-500 ease-in-out opacity-20 hover:opacity-80
-        "
-      >
-      </i>
-
-      <!-- Section One -->      
-      <fieldset class="outlineFieldSet">
-        <legend class="outlineLedgend">Client Address & Details:</legend>
-        <div class="flex flex-col md:flex-row gap-4">
-          <div class="outline flex-grow">
-            <select name="Prefix" placeholder=" ">
-              <option value="Mr">Mr</option>
-              <option value="Mrs">Mrs</option>
-              <option value="Miss">Miss</option>
-              <option value="Ms">Ms</option>
-              <option value="Sir">Sir</option>
-              <option value="Lady">Lady</option>
-              <option value="Prof">Prof</option>
-              <option value="Pastor">Pastor</option>
-            </select>
-            <label for="Prefix">Prefix</label>
-          </div>
-          <div class="outline">
-            <input type="text" name="FirstName" placeholder="Only The First" />
-            <label for="FirstName">First Name</label>
-          </div>
-          <div class="outline">
-            <input type="text" name="LastName" placeholder=" " />
-            <label for="LastName">Last Name</label>
-          </div>
-        </div>
-        <div class="flex flex-col md:flex-row gap-4">
-          <div class="outline">
-           <input type="text" name="HouseNo" placeholder="Number or Name" />
-            <label for="HouseNo">HouseNo</label>
-          </div>
-          <div class="outline">
-            <input type="text" name="Street" placeholder=" " />
-            <label for="Street">Street</label>
-          </div>
-          <div class="outline">
-            <input type="text" name="City" placeholder="City or Village" />
-            <label for="City">City</label>
-          </div>
-        </div>
-        <div class="flex flex-col md:flex-row gap-4">
-          <div class="outline">
-            <input type="text" name="County" placeholder="County or District" />
-            <label for="County">County</label>
-          </div>
-          <div class="outline">
-            <input type="text" name="PostCode" placeholder="PostCode or Zip" />
-            <label for="PostCode">Post Code</label>
-          </div>
-          <div class="outline">
-            <input type="text" name="Country" placeholder=" " />
-            <label for="Country">Country</label>
-          </div>
-        </div>
-        <div class="flex flex-col md:flex-row gap-4">
-          <div class="flex flex-grow">
-            <div class="outline flex-grow">
-              <textarea name="Comments" placeholder="Important Details To Remember"></textarea>
-              <label for="Comments">Comments</label>
-            </div>
-          </div>
-          <div class="flex flex-col gap-4">
-            <div class="outline">
-              <input type="date" name="AccountCreated" placeholder=" " />
-              <label for="AccountCreated">Account Created</label>
-            </div>
-            <div class="outline">
-              <input type="datetime-local" name="LastMeeting" placeholder=" " />
-              <label for="LastMeeting">Last Meeting
-            </div>
-            <div class="outline">
-              <input type="datetime-local" name="NextMeeting" placeholder=" " />
-              <label for="NextMeeting">Next Meeting</label>
-            </div>
-          </div>
-        </div>
-      </fieldset>
-      <!-- Section Two -->
-      <fieldset class="outlineFieldSet">
-        <legend class="outlineLedgend">Contact Info:</legend>
-        <div class="flex flex-col gap-4">
-          <div class="flex flex-col md:flex-row lg:flex-col gap-4">
-            <div class="outline">
-              <input type="tel" name="BusinessLine" placeholder=" " />
-              <label for="BusinessLine">Business Line</label>
-            </div>
-            <div class="outline">
-              <input type="tel" name="HomePhone" placeholder=" " />
-              <label for="HomePhone">Home Phone</label>
-            </div>
-            <div class="outline">
-              <input type="tel" name="MobilePhone" placeholder=" " />
-              <label for="MobilePhone">Mobile Phone</label>
-            </div>
-          </div>
-          <div class="flex flex-col md:flex-row lg:flex-col gap-4">
-            <div class="outline">
-              <input type="email" name="Email" placeholder=" " />
-              <label for="Email">Email</label>
-            </div>
-            <div class="outline">
-              <input type="url" name="WebSite" placeholder=" " />
-              <label for="WebSite">Web Site</label>
-            </div>
-            <div class="outline">
-              <input type="url" name="FaceBook" placeholder=" " />
-              <label for="FaceBook">FaceBook</label>
-            </div>
-          </div>
-        </div>
-      </fieldset>
-    </div>
-
-  </container>
-  <script>
-    document.querySelector('.fa-arrows-h').addEventListener('click', () => {
-      console.log('Clicked')
-      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.remove('dark')
-        localStorage.theme = 'light'
-      } else {
-        document.documentElement.classList.add('dark')
-        localStorage.theme = 'dark'
-      } 
-    })
-  // localStorage.removeItem('theme')
-  </script>
 </body>
 
 </html>

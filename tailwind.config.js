@@ -2,11 +2,9 @@ const tailwindcss = require("tailwindcss");
 
 module.exports = {
   mode: 'jit',
-  purge: {
-    enabled: false, // or true to purge unused css
-    preserveHtmlElements: false,
-    content: ['dist/*.html'], // files checked for purging
-  },
+  purge: [
+     './dist/**/*.html',
+   ],
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {

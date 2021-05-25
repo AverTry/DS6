@@ -11,3 +11,7 @@ Made with Tailwind CSS
 Outline Floating Labels with working Placeholder text
 
 [Take a look here...](https://avertry.github.io/DS6/dist/)
+
+Update: Added Tabs...
+
+![](image/README/1621972791559.png)

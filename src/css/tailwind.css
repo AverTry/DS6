@@ -44,13 +44,6 @@
     ;
   }
 
-  /* Show Hide Placeholder text */
-  ::-webkit-input-placeholder {
-    @apply 
-      text-gray-300 dark:text-gray-600 opacity-0 !important
-    ;
-  }
-
   /* OUTLINE Custom Inputs */
 
   .outlineFieldSet {
@@ -92,7 +85,7 @@
     @apply 
       z-0
       relative
-      border-2 rounded-lg shadow-lg dark:border-gray-600
+      border-2 rounded-lg dark:border-gray-600
     ;
   }
 
@@ -101,6 +94,11 @@
     @apply border-blue-300;
   }
 
+  ::-webkit-input-placeholder {
+    @apply 
+      text-gray-300 dark:text-gray-600 opacity-0 !important
+    ;
+  }
   .outline:focus-within ::-webkit-input-placeholder {
     @apply 
       transition duration-500 ease-in opacity-100 !important
@@ -140,6 +138,7 @@
   .outline textarea {
     @apply 
       block w-full pl-4
+      /* shadow-lg */
       rounded-lg border-0 focus:ring-0
       text-lg
       bg-transparent
@@ -172,5 +171,39 @@
     ;
   }
 
+
+  /* Tabs */
+
+  .tab-pane.active {
+    display: block;
+  }
+
+  li a{
+    @apply 
+      transition-colors ease-in-out duration-300 
+      border-b-4
+      border-transparent 
+      text-gray-300
+      pb-1
+    ; 
+  }
+
+  li.active a {
+    @apply 
+      text-gray-400
+      dark:text-yellow-500
+    ; 
+  }
+
+  li:hover a {
+    @apply 
+      text-gray-500
+      dark:text-yellow-600
+      sm:border-gray-200
+      sm:dark:border-yellow-600
+      dark:border-opacity-50
+      transform ease-in-out duration-700
+    ; 
+  }
 }
 

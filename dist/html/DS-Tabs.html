@@ -1,0 +1,40 @@
+<div class="container bg-gray-100 dark:bg-gray-800 p-4 ">
+  <!-- Tabs -->
+  <div class="tabs2 relative bg-white dark:bg-gray-900 rounded-t-lg">
+    <ul id="nav-tab" class="nav text-center mb-3 py-3 border-b-2 border-gray-200 dark:border-gray-700 flex flex-col sm:flex-row gap-4">
+      <li class="Tab active"><a class="py-3 px-8" href="#home"  onclick="return false;">Home</a></li>
+      <li class="Tab"><a class="py-3 px-8" href="#profile">Profile</a></li>
+      <li class="Tab"><a class="py-3 px-8" href="#messages">Messages</a></li>
+      <li class="Tab"><a class="py-3 px-8" href="#settings">Settings</a></li>
+    </ul>
+    <div class="line opacity-0 sm:opacity-100 bg-gray-300 dark:bg-yellow-600 absolute -bottom-1 h-1 pointer-events-none transform ease-in-out duration-700"></div>
+  </div>
+
+  <!-- Tab panes -->
+  <div class="tab-content lg:h-[445px] overflow-y-visible">
+    <div class="tab-pane p-0 hidden active lg:h-full lg:w-full" id="home">
+      <include DS-Template="./html/DS-Tab-Details.html"></include>
+    </div>
+    <div class="tab-pane p-0 hidden" id="profile">
+      <fieldset class="outlineFieldSet">
+        <legend class="outlineLedgend">Profile Panel:</legend>
+        <h4>Profile Panel</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem iure quos cum, saepe reprehenderit minima quasi architecto numquam nesciunt dicta. Qui excepturi recusandae vitae maiores, inventore sequi? Rerum, odio omnis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias distinctio, tempora incidunt aliquid adipisci, minus rerum optio libero quae provident sed at dignissimos, quia nostrum! Fuga dolorum quia hic magni.</p>
+      </fieldset>
+    </div>
+    <div class="tab-pane p-0 hidden" id="messages">
+      <fieldset class="outlineFieldSet">
+        <legend class="outlineLedgend">Messages Panel:</legend>
+        <h4>Messages Panel</h4>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat quos, at qui aspernatur minus animi hic sunt necessitatibus incidunt molestiae reprehenderit ratione neque odit ipsa. Nemo laborum consequatur adipisci beatae!</p>
+      </fieldset>
+    </div>
+    <div class="tab-pane p-0 hidden" id="settings">
+      <fieldset class="outlineFieldSet">
+        <legend class="outlineLedgend">Settings Panel:</legend>
+        <h4>Settings Panel</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima possimus sed odit iste vitae, magnam amet illum laudantium ea! Fugiat consectetur consequuntur qui eos obcaecati sequi ipsam repellat vero voluptate.</p>
+      </fieldset>
+    </div>
+  </div>
+</div>
