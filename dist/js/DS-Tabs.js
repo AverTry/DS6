@@ -42,15 +42,3 @@ const setActiveClass = (event) => {
 tabsP.forEach((tab) => {
   if (tab.matches('.Tab')) tab.addEventListener('click', setActiveClass)
 })
-
-// Theme Switcher - Temp placement...
-document.querySelector('.fa-arrows-h').addEventListener('click', () => {
-  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.documentElement.classList.remove('dark')
-    localStorage.theme = 'light'
-  } else {
-    document.documentElement.classList.add('dark')
-    localStorage.theme = 'dark'
-  }
-})
-// localStorage.removeItem('theme')

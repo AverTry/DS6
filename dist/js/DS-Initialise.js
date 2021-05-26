@@ -24,11 +24,12 @@ const finishedLoadingDom = new Promise((resolve, reject) => {
 
 finishedLoadingDom.then(() => {
   [ 
+    './js/DS-Theme.js',
     './js/DS-Tabs.js',
     './js/DS-Paginate.js',
-    // './js/DS-Settings.js',
-    // './js/DS-SideBar.js',
     './js/DS-Populate.js',
+    // './js/T-DS-SideBar.js',
+    // './js/DS-Settings.js',
     // './js/DS-Charts.js'
   ].forEach((src) => {
     const script = document.createElement('script')

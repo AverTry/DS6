@@ -1,5 +1,5 @@
 // Make the console less boring...
-console.log('%c DataSafe 6 TailwindCSS ', 'padding-bottom: 10px; font-weight: bold; font-size: 38px;color: red; text-shadow: 3px 3px 0 rgb(217,31,38) , 6px 6px 0 rgb(226,91,14) , 9px 9px 0 rgb(245,221,8) , 12px 12px 0 rgb(5,148,68) , 15px 15px 0 rgb(2,135,206) , 18px 18px 0 rgb(4,77,145) , 21px 21px 0 rgb(42,21,113)');
+console.log('%c DataSafe 6 TailwindCSS ', 'padding-bottom: 10px; font-weight: bold; font-size: 38px;color: rgb(217, 119, 6); text-shadow: 3px 3px 0 rgb(17 24 39) , 6px 6px 0 rgb(4,77,145) , 9px 9px 0 rgb(42,21,113) ');
 const log = (l, m = ' Null', c1 = 'DeepSkyBlue', c2 = 'Orange') => console.log('%c'+l+'%c'+m,'color:'+c1,'color:'+c2)
 log(new Date().toISOString().split('T')[0], ' ' +  new Date().toISOString().split('T')[1].slice(0, 8))
 

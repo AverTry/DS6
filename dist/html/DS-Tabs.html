@@ -1,14 +1,19 @@
-<div class="container bg-gray-100 dark:bg-gray-800 p-4 ">
+<div class="container bg-gray-100 dark:bg-gray-800">
   <!-- Tabs -->
-  <div class="tabs2 relative bg-white dark:bg-gray-900 rounded-t-lg">
-    <ul id="nav-tab" class="nav text-center mb-3 py-3 border-b-2 border-gray-200 dark:border-gray-700 flex flex-col sm:flex-row gap-4">
-      <li class="Tab active"><a class="py-3 px-8" href="#home"  onclick="return false;">Home</a></li>
+  <div class="tabs2 relative bg-white dark:bg-gray-900 rounded-t-lg mt-4">
+    <ul id="nav-tab" class="nav text-center mb-3 py-3 w-full border-b-2 border-gray-200 dark:border-gray-700 flex flex-col sm:flex-row gap-4">
+      <li class="Tab active"><a class="py-3 px-8" href="#home" onclick="return false;">Home</a></li>
       <li class="Tab"><a class="py-3 px-8" href="#profile">Profile</a></li>
       <li class="Tab"><a class="py-3 px-8" href="#messages">Messages</a></li>
-      <li class="Tab"><a class="py-3 px-8" href="#settings">Settings</a></li>
+      <li class="Tab ml-auto"><a class="py-3 px-8" href="#settings">Settings</a></li>
+      <li class="bulb cursor-pointer mr-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+        </svg>
+      </li>
     </ul>
-    <div class="line2 opacity-0 sm:opacity-100 bg-gray-300 dark:bg-yellow-600 left-0 w-0 absolute -bottom-0 h-1 pointer-events-none transform ease-in-out duration-700"></div>
-    <div class="line opacity-0 sm:opacity-100 bg-gray-300 dark:bg-yellow-600 absolute -bottom-1 h-1 pointer-events-none transform ease-in-out duration-700"></div>
+    <div class="line2 opacity-0 invisible sm:visible bg-gray-300 dark:bg-yellow-600 left-0 w-0 absolute -bottom-0 h-1 pointer-events-none transform ease-in-out duration-700"></div>
+    <div class="line invisible sm:visible bg-gray-300 dark:bg-yellow-600 absolute -bottom-1 h-1 pointer-events-none transform ease-in-out duration-700"></div>
   </div>
 
   <!-- Tab panes -->
