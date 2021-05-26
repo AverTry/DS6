@@ -199,9 +199,9 @@
     @apply 
       text-gray-500
       dark:text-yellow-600
-      sm:border-gray-200
-      sm:dark:border-yellow-600
-      dark:border-opacity-50
+      /* sm:border-gray-200 */
+      /* sm:dark:border-yellow-600 */
+      /* dark:border-opacity-50 */
       transform ease-in-out duration-700
     ; 
   }
