@@ -1,41 +1,42 @@
+<!--Start FORM Container-->
+<container class="sm:flex flex-wrap content-center justify-center h-full lg:h-[99vh]">
 
-              <!--Start FORM Container-->
-              <container class="flex flex-wrap content-center justify-center h-full lg:h-[80vh]">
+  <div class="sm:w-max max-w-screen-lg lg:min-w-[1024px] bg-gray-100 dark:bg-gray-800 shadow-xl rounded-xl p-4 mt-4 md:mt-20 mb-16  ">
+    <form id="my-form" autocomplete="off" >
+      <p class="text-gray-500 text-1xl sm:text-2xl text-center font-semibold bg-white dark:bg-gray-900 py-2 rounded-t-lg" id="MainTitle">Client Database System
+        <div class="h-0.5 dark:bg-yellow-600 dark:bg-opacity-40 dark:w-11/12 dark:mx-auto "></div>
+      </p>
+      <div class="flex flex-col sm:flex-row justify-around bg-white dark:bg-gray-900 p-4 gap-4 rounded-b-lg">
+        <div class="flex-grow-0 flex-shrink order-3 sm:order-1">
+          <div class="outline Bordered">
+            <input class="sm:!w-40" type="text" name="DocumentID" placeholder=" " title="Goto a Specific Document Number, If it Exists, and is within the current Tag Selection and/or Query!" />
+            <label for="DocumentID">Document ID</label>
+          </div>
+        </div>
+        <div class="flex self-center items-center order-1 sm:order-2">
+          <input class="rounded-full text-2xl bg-gray-100 text-gray-400 dark:bg-yellow-600 dark:text-yellow-600 dark:bg-opacity-50 dark:checked:bg-opacity-80 dark:border-yellow-600 focus:ring-blue-300 dark:focus:ring-offset-gray-800 " type="checkbox" id="Tag" name="Tag" placeholder=" " />
+          <label class="align-text-top dark:text-gray-100" for="Tag">&nbsp;: Tag &nbsp;</label>
+          [<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mx-0.5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+          </svg>]
+        </div>
+        <div class="flex-grow-0 order-2 sm:order-3">
+          <div class="outline Bordered flex-grow">
+            <select class="w-40" name="Status" placeholder=" ">
+              <option selected>Choose...</option>
+              <option value="Active">Active</option>
+              <option value="Inactive">Inactive</option>
+              <option value="Pending">Pending</option>
+              <option value="Archived">Archived</option>
+              <option value="For Deletion">For Deletion</option>
+            </select>
+            <label for="Status">Status</label>
+          </div>
+        </div>
+      </div>
+      <include DS-Template="./html/DS-Tabs.html"></include>
+    </form>
+  </div>
 
-                <div class="sm:w-max max-w-screen-lg bg-gray-100 dark:bg-gray-800 shadow-xl rounded-xl p-4 ">
-                  <form id="my-form">
-                    <p class="text-gray-500 text-1xl sm:text-2xl text-center bg-white dark:bg-gray-900 py-2 rounded-t-lg" id="MainTitle">DATASAFE ver.6 Client Database System
-                      <div class="h-0.5 dark:bg-yellow-600 dark:bg-opacity-40 dark:w-11/12 dark:mx-auto "></div>
-                    </p>
-                    <div class="flex flex-col sm:flex-row justify-around bg-white dark:bg-gray-900 p-4 gap-4 rounded-b-lg">
-                      <div class="flex-grow-0 flex-shrink order-3 sm:order-1">
-                        <div class="outline">
-                          <input class="!w-40" type="text" name="DocumentID" placeholder=" " title="Goto a Specific Document Number, If it Exists, and is within the current Tag Selection and/or Query!" />
-                          <label for="DocumentID">Document ID</label>
-                        </div>
-                      </div>
-                      <div class="flex-grow-0 self-center order-1 sm:order-2">
-                        <input class="rounded-full text-2xl bg-gray-100 text-gray-400 dark:bg-yellow-600 dark:text-yellow-600 dark:bg-opacity-50 dark:checked:bg-opacity-80 dark:border-yellow-600 focus:border-blue-300 " type="checkbox" id="Tag" name="Tag" placeholder=" " />
-                        <label class="align-text-top dark:text-gray-100" for="Tag">&nbsp; Tag</label>
-                      </div>
-                      <div class="flex-grow-0 order-2 sm:order-3">
-                        <div class="outline flex-grow">
-                          <select class="w-40" name="Status" placeholder=" ">
-                            <option selected>Choose...</option>
-                            <option value="Active">Active</option>
-                            <option value="Inactive">Inactive</option>
-                            <option value="Pending">Pending</option>
-                            <option value="Archived">Archived</option>
-                            <option value="For Deletion">For Deletion</option>
-                          </select>
-                          <label for="Status">Prefix</label>
-                        </div>
-                      </div>
-                    </div>
-
-                    <include DS-Template="./html/DS-Tabs.html"></include>
-                  </form>
-                </div>
-
-              </container>
-              <!--End FORM Container-->
+</container>
+<!--End FORM Container-->

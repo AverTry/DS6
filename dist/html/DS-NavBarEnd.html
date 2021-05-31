@@ -1,0 +1,30 @@
+<nav class=" fixed bottom-0 w-screen bg-gray-200 dark:bg-gray-800">
+  <div class="relative flex z-50 justify-center h-12 w-full">
+    <h2 class="title absolute bottom-0 left-4 invisible md:visible mb-3 ml-4 text-1xl">PAGINATION Controls</h2>
+    <ul class="flex w-full mx-2 sm:mx-4 gap-2 sm:gap-4 items-center justify-center">
+      <li class="page-first btn" id="first">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
+        </svg>
+      </li>
+      <li class="page-prev btn" id="prev">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </li>
+      <li class="page-number">
+        <input id="pageInfoBox" class="tots border-transparent focus:border-transparent focus:ring-transparent rounded-md dark:bg-gray-700 max-h-8 max-w-[150px] text-center" value="1000 / 1000" type="text" name=""id="pageInfoBox" title="Goto Page Number" >
+      </li>
+      <li class="page-next btn" id="next">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </li>
+      <li class="page-last btn" id="last">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+        </svg>
+      </li>
+    </ul>
+  </div>
+</nav>

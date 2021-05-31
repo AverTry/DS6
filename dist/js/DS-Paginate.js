@@ -223,11 +223,11 @@ log(new Date().toISOString().split('T')[0], ' ' +  new Date().toISOString().spli
 
 // // Main ServerSide Pagination
 const formElement = document.getElementById('my-form')
-// const pageInfoBox = document.getElementById('pageInfoBox')
-// const first = document.getElementById('first')
-// const prev = document.getElementById('prev')
-// const next = document.getElementById('next')
-// const last = document.getElementById('last')
+const pageInfoBox = document.getElementById('pageInfoBox')
+const first = document.getElementById('first')
+const prev = document.getElementById('prev')
+const next = document.getElementById('next')
+const last = document.getElementById('last')
 
 // // Search For
 // let Seek = false
@@ -283,13 +283,13 @@ runQuery = (pageNo = 1) => {
   // return log('Params',Params())
   // sortValue = getSortOrder()  
   // let find = `alltxt=${firstQuery}&params=${Params()}&sort=${sortValue}&page=${pageNo}`
-  // let query = `http://localhost:3000/clients?${find}`
   // let query = `https://ds5-1.avertry.repl.co/clients?${find}`
-  let query = `https://ds5-1.avertry.repl.co/clients`
+  let query = `https://ds5-1.avertry.repl.co/clients?page=${pageNo}`
+  // let query = `http://localhost:3000/clients?${find}`
   fetch(query)
   .then(response => {
     if ( response.status === 204) {
-      // pageInfoBox.value = 'No Documents'
+      pageInfoBox.value = 'No Documents'
       throw ('No Documents Found..?')
     }
     return response.json()
@@ -300,14 +300,15 @@ runQuery = (pageNo = 1) => {
     nextPage = data.next.page
     currentPage = data.currentPage.page
     totalPages = data.docs[0].totalDocs[0].count
+    pageInfoBox.value = `${currentPage} / ${totalPages}`
     // pageInfoBox.value = `Page ${currentPage} of ${totalPages}`
   })
   .catch(err => console.warn(err))
 };runQuery()
-// first.addEventListener('click', () => runQuery())
-// next.addEventListener('click', () => runQuery(nextPage))
-// prev.addEventListener('click', () => runQuery(prevPage))
-// last.addEventListener('click', () => runQuery(totalPages))
+first.addEventListener('click', () => runQuery())
+next.addEventListener('click', () => runQuery(nextPage))
+prev.addEventListener('click', () => runQuery(prevPage))
+last.addEventListener('click', () => runQuery(totalPages))
 
 // For List Module-------------------------------------------------------------------------------------
 

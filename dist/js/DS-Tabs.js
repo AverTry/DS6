@@ -22,13 +22,11 @@ function setLineStyleC(tab) {
 function setLineStyleH(tab) {
   line2.style.left = tab.offsetLeft + "px"
   line2.style.width = tab.offsetWidth + "px"
-  line2.style.opacity = 1
 }
 
 function resetLineStyleH() {
-  line2.style.left = -1 + "px"
-  line2.style.width = 0 + "px"
-  line2.style.opacity = 0
+  line2.style.left = 0
+  line2.style.width = 0
 }
 
 // Change Tabs

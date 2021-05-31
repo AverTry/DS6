@@ -6,12 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="./css/tailwind.css">
   <script src="./js/DS-Initialise.js" defer></script>
+  <script src="./offline/js/chart.min.js"></script>
   <title>DataSafe ver.6.0</title>
 <script>
-  // On page load or when changing themes, best to add inline in `head` to avoid FOUC
   if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     document.documentElement.classList.add('dark')
   } else {
@@ -21,20 +20,16 @@
 </head>
 
 <body class="antialiased text-gray-400 dark:text-yellow-500 bg-gray-50 dark:bg-gray-900">
-  <!-- To Put into Tabbed Layout -->
-		<!-- <div class="flexBack" style="display: flex; height: 100vh;"> -->
-			<contents>
-				<!-- <include DS-Template="./html/DS-NavBar1st.html"></include> -->
-				<main-db>
-					<!-- <include DS-Template="./html/DS-SideBarLeft.html"></include> -->
-					<include DS-Template="./html/DS-Form.html"></include>
-					<!-- <include DS-Template="./html/T-DS-SideBarRight.html"></include> -->
-				</main-db>	
-				<!-- <include DS-Template="./html/DS-NavBar2nd.html"></include> -->
-			</contents>	
-			<!-- <include DS-Template="./html/DS-TableList.html"></include> -->
-		<!-- </div> -->
-
+  <contents>
+    <include DS-Template="./html/DS-NavBarTop.html"></include>
+    <main-db>
+      <include DS-Template="./html/DS-SideBarLeft.html"></include>
+      <include DS-Template="./html/DS-Form.html"></include>
+      <include DS-Template="./html/DS-SideBarRight.html"></include>
+    </main-db>	
+    <include DS-Template="./html/DS-NavBarEnd.html"></include>
+  </contents>	
+  <!-- <include DS-Template="./html/DS-TableList.html"></include> -->
 </body>
 
 </html>

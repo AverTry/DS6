@@ -2,47 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Remove scrollbars from page and inputs */
-::-webkit-scrollbar {
-  width: 0 !important;
-  scrollbar-width: none;
+@layer base {
+  /* Define Theme Dynamics by Variables */
+
+  :root {
+    --color-light: #ffffff;
+    --color-dark: #111827;
+    --percentOne: 50%;
+    --percentTwo: 60%;
+  }
 }
 
+    /* 
+    bg-gray-300 = #f3f4f6 
+    bg-gray-800 = #374151 
+    bg-gray-900 = #111827 
+  */
+
 @layer utilities {
-    .outlineLabelGradient-Light {
-      background: linear-gradient(transparent 50%, white 0, white, transparent) ;
-    }
-  
+
+  /* Blocking the input Border behind the Outline label */
+    .outlineLabelCutout-Light {
+      background: linear-gradient(transparent var(--percentOne), var(--color-light) var(--percentOne), var(--color-light) var(--percentTwo), transparent var(--percentTwo)) ;
+    }  
   @variants dark {
-    .outlineLabelGradient-Dark {
-      background: linear-gradient(transparent 50%, #111827 0, transparent) ;
+    .outlineLabelCutout-Dark {
+      background: linear-gradient(transparent var(--percentOne), var(--color-dark) var(--percentOne), var(--color-dark) var(--percentTwo), transparent var(--percentTwo)) ;
     }
   }
 }
 
 @layer components {
-
-  input[type="datetime-local"]::-webkit-calendar-picker-indicator {
-    @apply -ml-32 ;
-  }
-
-  ::-webkit-calendar-picker-indicator {
-    @apply
-      z-0
-      text-transparent
-      bg-none
-    ;
-  }
-
-  input[type="date"]:before,
-  input[type="datetime-local"]:before {
-    font-family: 'FontAwesome';
-    content: '\f073';
-    @apply 
-      absolute top-2 right-3.5
-      text-gray-400
-    ;
-  }
 
   /* OUTLINE Custom Inputs */
 
@@ -56,7 +46,7 @@
 
   .outlineLedgend {
     @apply
-      text-lg font-bold dark:text-gray-200
+      text-lg font-bold dark:text-gray-500
     ;
   }
 
@@ -66,7 +56,8 @@
       px-3 
       absolute -right-0.5 -top-0.5 -bottom-0.5 
       inline-flex items-center 
-      border-2 rounded-r-md dark:border-gray-600 
+      border-2 rounded-r-md
+      border-gray-200 dark:border-gray-600
     ;
   }
 
@@ -83,18 +74,21 @@
 
   .outline {
     @apply 
-      z-0
       relative
-      border-2 rounded-lg dark:border-gray-600
+      border-2 
+      rounded-lg
+      border-gray-200 dark:border-gray-600
     ;
   }
 
   .outline:focus-within,
   .outline:focus-within span  {
-    @apply border-blue-300;
+    @apply 
+      border-blue-300
+    ;
   }
 
-  ::-webkit-input-placeholder {
+  .outline ::-webkit-input-placeholder {
     @apply 
       text-gray-300 dark:text-gray-600 opacity-0 !important
     ;
@@ -111,9 +105,9 @@
     @apply 
       absolute top-0 
       m-2 pl-2 
-      -z-1 
+      pointer-events-none
       duration-500 origin-left
-      text-lg text-gray-400
+      text-lg dark:text-gray-400 text-gray-500
     ;
   }
 
@@ -124,12 +118,10 @@
   .outline select:not(:placeholder-shown) ~ label,
   .outline textarea:not(:placeholder-shown) ~ label {
     @apply 
-      transform scale-75 -translate-y-4 
-      z-0 
+      transform-gpu ease-in-out scale-75      
+      -translate-y-3.5
       m-0 ml-2 px-1
       rounded-md
-      outlineLabelGradient-Light dark:outlineLabelGradient-Dark
-      /* bg-gradient-to-b from-transparent via-white dark:via-gray-900  */
     ;
   }
 
@@ -139,9 +131,9 @@
     @apply 
       block w-full pl-4
       /* shadow-lg */
-      rounded-lg border-0 focus:ring-0
+      rounded-md border-0 focus:ring-0
       text-lg
-      bg-transparent
+      bg-light dark:bg-dark
     ;
   }
 
@@ -175,7 +167,7 @@
   /* Tabs */
 
   .tab-pane.active {
-    display: block;
+    @apply block ;
   }
 
   li a{
@@ -184,6 +176,7 @@
       border-b-4
       border-transparent 
       text-gray-300
+      dark:text-gray-500
       pb-1
     ; 
   }
@@ -199,11 +192,86 @@
     @apply 
       text-gray-500
       dark:text-yellow-600
-      /* sm:border-gray-200 */
-      /* sm:dark:border-yellow-600 */
-      /* dark:border-opacity-50 */
-      transform ease-in-out duration-700
     ; 
   }
+
+  .btn:focus-within,
+  .btn:hover
+  {
+    @apply
+      rounded-sm 
+      cursor-pointer 
+      ring ring-offset-4
+      ring-opacity-80 dark:ring-opacity-80
+      ring-gray-300 dark:ring-gray-700 ring-offset-gray-200 dark:ring-offset-gray-800
+    ;
+  }
+
+  /* Fine-Tune the Date Fields */
+  input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    @apply -ml-5 ;
+  }
+
+  ::-webkit-calendar-picker-indicator {
+    @apply
+      bg-none
+      cursor-pointer
+    ;
+  }
+
+  input[type="date"]:before,
+  input[type="datetime-local"]:before {
+    content: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoKCQoJCQoJCQk8cGF0aCBmaWxsPSIjOWNhM2FmIiBkPSJtMjc5IDM2NGMwIDIyLjA1NiAxNy45NDQgNDAgNDAgNDBoNDdjMjIuMDU2IDAgNDAtMTcuOTQ0IDQwLTQwdi00N2MwLTIyLjA1Ni0xNy45NDQtNDAtNDAtNDBoLTQ3Yy0yMi4wNTYgMC00MCAxNy45NDQtNDAgNDB2NDd6bTQwLTQ3aDQ3bDAuMDI1IDQ2Ljk5OXMtN2UtMyAxZS0zIC0wLjAyNSAxZS0zaC00N3YtNDd6Ii8+CgkJCTxjaXJjbGUgY3g9IjM4NiIgY3k9IjIxMCIgcj0iMjAiLz4KCQkJPGNpcmNsZSBjeD0iMjk5IiBjeT0iMjEwIiByPSIyMCIvPgoJCQk8cGF0aCBmaWxsPSIjOWNhM2FmIiBkPSJtNDkyIDM1MmMxMS4wNDYgMCAyMC04Ljk1NCAyMC0yMHYtMjEyYzAtNDQuMTEyLTM1Ljg4OC04MC04MC04MGgtMjZ2LTIwYzAtMTEuMDQ2LTguOTU0LTIwLTIwLTIwcy0yMCA4Ljk1NC0yMCAyMHYyMGgtOTF2LTIwYzAtMTEuMDQ2LTguOTU0LTIwLTIwLTIwcy0yMCA4Ljk1NC0yMCAyMHYyMGgtOTB2LTIwYzAtMTEuMDQ2LTguOTU0LTIwLTIwLTIwcy0yMCA4Ljk1NC0yMCAyMHYyMGgtMjVjLTQ0LjExMiAwLTgwIDM1Ljg4OC04MCA4MHYzMTJjMCA0NC4xMTIgMzUuODg4IDgwIDgwIDgwaDM1MmM0NC4xMTIgMCA4MC0zNS44ODggODAtODAgMC0xMS4wNDYtOC45NTQtMjAtMjAtMjBzLTIwIDguOTU0LTIwIDIwYzAgMjIuMDU2LTE3Ljk0NCA0MC00MCA0MGgtMzUyYy0yMi4wNTYgMC00MC0xNy45NDQtNDAtNDB2LTMxMmMwLTIyLjA1NiAxNy45NDQtNDAgNDAtNDBoMjV2MjBjMCAxMS4wNDYgOC45NTQgMjAgMjAgMjBzMjAtOC45NTQgMjAtMjB2LTIwaDkwdjIwYzAgMTEuMDQ2IDguOTU0IDIwIDIwIDIwczIwLTguOTU0IDIwLTIwdi0yMGg5MXYyMGMwIDExLjA0NiA4Ljk1NCAyMCAyMCAyMHMyMC04Ljk1NCAyMC0yMHYtMjBoMjZjMjIuMDU2IDAgNDAgMTcuOTQ0IDQwIDQwdjIxMmMwIDExLjA0NiA4Ljk1NCAyMCAyMCAyMHoiLz4KCQkJPGNpcmNsZSBjeD0iMTI1IiBjeT0iMzg0IiByPSIyMCIvPgoJCQk8Y2lyY2xlIGN4PSIxMjUiIGN5PSIyMTAiIHI9IjIwIi8+CgkJCTxjaXJjbGUgY3g9IjEyNSIgY3k9IjI5NyIgcj0iMjAiLz4KCQkJPGNpcmNsZSBjeD0iMjEyIiBjeT0iMjk3IiByPSIyMCIvPgoJCQk8Y2lyY2xlIGN4PSIyMTIiIGN5PSIyMTAiIHI9IjIwIi8+CgkJCTxjaXJjbGUgY3g9IjIxMiIgY3k9IjM4NCIgcj0iMjAiLz4KCQkKCQoKCgoKCgoKCgoKCgoKCgoKPC9zdmc+Cg==);
+    @apply 
+      absolute top-3 right-4
+      w-5 h-5
+      pointer-events-none
+    ;
+  }
+
+  input[type="date"],
+  input[type="datetime-local"] {
+    @apply 
+      pr-3
+    ;
+  }
+
+
+/* ADD for Borderless */
+  .borderLess.outline,
+  .borderLess.outline span,
+  .borderLess.outlineFieldSet,
+  .borderLess.outline:focus-within,
+  .borderLess.outline:focus-within span {
+    @apply border-transparent dark:border-transparent;
+  }
+
+/* REMOVE for Borderless */
+  .Bordered.outline input:focus-within ~ label,
+  .Bordered.outline select:focus-within ~ label,
+  .Bordered.outline textarea:focus-within ~ label,
+  .Bordered.outline input:not(:placeholder-shown) ~ label,
+  .Bordered.outline select:not(:placeholder-shown) ~ label,
+  .Bordered.outline textarea:not(:placeholder-shown) ~ label {
+    @apply
+      -translate-y-4
+      outlineLabelCutout-Light dark:outlineLabelCutout-Dark
+    ;
+  }
+
+}
+
+/* Plain CSS */
+
+/* Remove scrollbars from page and inputs */
+::-webkit-scrollbar {
+  width: 0 !important;
+  scrollbar-width: none;
+}
+/* Shift button left to add another button */
+::-webkit-search-cancel-button {
+  margin: 0 20px !important;
+  margin-bottom: 1px !important;
+  cursor: pointer;
 }
 

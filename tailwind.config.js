@@ -14,6 +14,10 @@ module.exports = {
       zIndex: {
         "-1": "-1",
       },
+      colors: {
+        light: 'var(--color-light)',
+        dark: 'var(--color-dark)',
+      },
     },
   },
   variants: {

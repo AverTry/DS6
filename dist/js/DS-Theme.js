@@ -10,3 +10,32 @@ document.querySelector('.bulb').addEventListener('click', () => {
   }
 })
 // localStorage.removeItem('theme') // to clear local storage
+
+
+//  Toggle Borderless Form Elements and Fieldset's
+  let bool = false
+  const borderLess = () => {
+    bool = !bool
+    const varStyle = document.documentElement.style
+    const elementOL = document.querySelectorAll('.outline')
+    const elementFS = document.querySelectorAll('.outlineFieldSet')
+    if (bool) {
+      varStyle.setProperty('--color-light', '#f3f4f6')
+      varStyle.setProperty('--color-dark', '#374151')
+
+      elementOL.forEach((element) => element.classList.remove('Bordered'))
+      elementOL.forEach((element) => element.classList.add('borderLess'))
+      elementFS.forEach((element) => element.classList.add('borderLess'))
+    } else {
+      varStyle.setProperty('--color-light', '#ffffff')
+      varStyle.setProperty('--color-dark', '#111827')
+
+      elementOL.forEach((element) => element.classList.add('Bordered'))
+      elementOL.forEach((element) => element.classList.remove('borderLess'))
+      elementFS.forEach((element) => element.classList.remove('borderLess'))
+    }
+  }; 
+  document.querySelector('.borderIt').addEventListener('click', () => borderLess())
+  //   bg-gray-300 = #f3f4f6 
+  //   bg-gray-800 = #374151 
+  //   bg-gray-900 = #111827 
