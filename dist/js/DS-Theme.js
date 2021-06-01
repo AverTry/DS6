@@ -21,7 +21,7 @@ document.querySelector('.bulb').addEventListener('click', () => {
     const elementFS = document.querySelectorAll('.outlineFieldSet')
     if (bool) {
       varStyle.setProperty('--color-light', '#f3f4f6')
-      varStyle.setProperty('--color-dark', '#374151')
+      varStyle.setProperty('--color-dark', '#1f2937')
 
       elementOL.forEach((element) => element.classList.remove('Bordered'))
       elementOL.forEach((element) => element.classList.add('borderLess'))

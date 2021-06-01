@@ -1,11 +1,13 @@
-<nav class="relative flex sm:w-screen z-50 md:fixed top-0 pb-4 sm:pb-0 sm:h-16 bg-gray-200 dark:bg-gray-800">
-  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" class="sm:invisible absolute top-4 right-4 z-10 w-5  cursor-pointer transform-gpu ease-linear hover:scale-110 text-gray-300 hover:text-gray-500 dark:text-yellow-500 dark:hover:text-yellow-400 svg-inline--fa fa-plus fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+<nav class="relative flex w-screen z-50 md:fixed top-0 h-12 md:h-16 overflow-hidden bg-gray-200 dark:bg-gray-800">
+  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" onclick="this.parentElement.classList.toggle('h-12')" class="md:invisible absolute top-5 right-7 z-10 w-5 cursor-pointer transform-gpu ease-linear hover:scale-110 text-gray-400 hover:text-gray-500 dark:text-yellow-500 dark:hover:text-yellow-400 svg-inline--fa fa-plus fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
     <path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path>
   </svg>
-  <div class="absolute top-5 left-4 invisible md:visible btn px-4">DATASAFE-6.008</div>
-  <ul class="flex flex-col sm:flex-row md:ml-60 w-full p-4 md:mx-4 gap-4 items-center">
-    <li class="menu-item btn px-4">Home</li>
-    <li class="menu-item btn px-4">Data</li>
+  <div class="absolute top-4 left-3 px-4">
+    <span class="text-blue-300 text-2xl font-semibold">DATA</span><span class="text-yellow-400 text-2xl">SAFE</span><span class="text-sm dark:text-gray-200">Tailwind</span>
+  </div>
+  <ul class="flex flex-col md:flex-row md:ml-60 w-full p-4 md:mx-4 gap-4 items-center mt-12 md:mt-0 ">
+    <li class="menu-item btn w-full md:w-min text-center py-1 md:px-4 bg-white dark:bg-gray-700 rounded-md">Home</li>
+    <li class="menu-item btn w-full md:w-min text-center py-1 md:px-4 bg-white dark:bg-gray-700 rounded-md">Data</li>
     <li class="menu-item btn px-1 relative min-w-[250px] w-full md:max-w-screen-sm sm:ml-auto flex flex-nowrap items-center gap-2">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
