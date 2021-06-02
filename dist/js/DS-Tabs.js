@@ -32,7 +32,10 @@ function resetLineStyleH() {
 // re-Set Tab underline on screen change
 window.addEventListener("resize", () => {
   tabs.forEach((tab) => {
-    if (tab.matches('.active')) setLineStyleC(tab)    
+    if (tab.matches('.active')) {
+      setLineStyleC(tab)
+      resetLineStyleH()
+    } 
   })  
 })
 
