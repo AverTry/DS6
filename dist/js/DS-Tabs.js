@@ -29,6 +29,18 @@ function resetLineStyleH() {
   line2.style.width = 0
 }
 
+function toLandscape(x) {
+  if (x.matches) { 
+    tabs.forEach((tab) => {
+      if (tab.matches('.active')) setLineStyleC(tab)    
+    })
+  }
+}
+
+var x = window.matchMedia("(min-width: 640px)")
+toLandscape(x) // Call listener function at run time
+x.addListener(toLandscape) // Attach listener function on state changes
+
 // Change Tabs
 const tabsP = document.querySelectorAll('.Tab, .tab-pane')
 const setActiveClass = (event) => {

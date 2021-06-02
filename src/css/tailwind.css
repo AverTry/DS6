@@ -35,7 +35,6 @@
   .tabNavResponsive {
     @apply
       h-auto
-      overflow-auto
       rounded-b-none
     ;
   }
