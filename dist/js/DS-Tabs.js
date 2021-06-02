@@ -29,26 +29,20 @@ function resetLineStyleH() {
   line2.style.width = 0
 }
 
-function toLandscape(x) {
-  if (x.matches) { 
-    tabs.forEach((tab) => {
-      if (tab.matches('.active')) setLineStyleC(tab)    
-    })
-  }
-}
-
-var x = window.matchMedia("(min-width: 640px)")
-toLandscape(x) // Call listener function at run time
-x.addListener(toLandscape) // Attach listener function on state changes
+// re-Set Tab underline on screen change
+window.addEventListener("resize", () => {
+  tabs.forEach((tab) => {
+    if (tab.matches('.active')) setLineStyleC(tab)    
+  })  
+})
 
 // Change Tabs
-const tabsP = document.querySelectorAll('.Tab, .tab-pane')
 const setActiveClass = (event) => {
+  const tabsP = document.querySelectorAll('.Tab, .tab-pane')
   tabsP.forEach((tab) => tab.classList.remove('active'))
   event.currentTarget.classList.add('active')
   document.querySelector(event.target.getAttribute("href")).classList.add('active')
 }
 
-tabsP.forEach((tab) => {
-  if (tab.matches('.Tab')) tab.addEventListener('click', setActiveClass)
-})
+// Initialise Tab's Click Event
+tabs.forEach((tab) => tab.addEventListener('click', setActiveClass))
