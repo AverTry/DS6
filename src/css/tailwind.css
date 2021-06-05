@@ -30,17 +30,46 @@
     .outlineLabelCutout-Dark {
       background: linear-gradient(transparent var(--percentOne), var(--color-dark) var(--percentOne), var(--color-dark) var(--percentTwo), transparent var(--percentTwo)) ;
     }
+  } 
+
+  .navResponsive {
+    @apply
+      max-h-60
+    ;
   }
+ .navResponsive svg {
+    @apply
+      rotate-45
+      duration-700
+    ;
+  }
+
 
   .tabNavResponsive {
     @apply
-      h-auto
       rounded-b-none
+      duration-700 max-h-[200px]
+    ;
+  }
+ .tabNavResponsive svg {
+    @apply
+      rotate-45
+      duration-300
     ;
   }
   /* Make Theme controls visible when tabNav class is toggled */
   .tabNavResponsive .show {
-    @apply visible;
+    @apply 
+      visible
+      delay-700
+    ;
+  }
+
+  ::selection {
+    @apply
+      bg-yellow-400
+      text-blue-700
+    ;
   }
 
 }
@@ -198,17 +227,11 @@
     ; 
   }
 
+  li:hover a,
   li.active a {
     @apply 
       text-gray-400
       dark:text-yellow-500
-    ; 
-  }
-
-  li:hover a {
-    @apply 
-      text-gray-500
-      dark:text-yellow-600
     ; 
   }
 
@@ -224,15 +247,22 @@
     ;
   }
 
+  .srcContainer:focus-within {
+    @apply
+       text-gray-600 dark:text-yellow-500
+    ;
+  }
+
   /* Fine-Tune the Date Fields */
   input[type="datetime-local"]::-webkit-calendar-picker-indicator {
     @apply -ml-5 ;
   }
 
-  ::-webkit-calendar-picker-indicator {
+  input::-webkit-calendar-picker-indicator {
     @apply
       bg-none
       cursor-pointer
+      btn
     ;
   }
 
@@ -260,7 +290,19 @@
   .borderLess.outlineFieldSet,
   .borderLess.outline:focus-within,
   .borderLess.outline:focus-within span {
-    @apply border-transparent dark:border-transparent;
+    @apply 
+      border-transparent 
+      dark:border-transparent
+    ;
+  }
+
+  .borderlessInputs:focus,
+  .borderLess.outline input:focus-within,
+  .borderLess.outline select:focus-within,
+  .borderLess.outline textarea:focus-within {
+    @apply 
+      bg-blue-300 bg-opacity-20 !important
+    ;
   }
 
 /* REMOVE for Borderless */
@@ -290,3 +332,10 @@
     ;
   }
 }
+
+
+/* .res {
+  max-height: 15rem !important;
+  transition: max-height 4s !important;
+  -webkit-transition: max-height 4s !important;
+} */

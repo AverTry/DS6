@@ -19,6 +19,7 @@ document.querySelector('.bulb').addEventListener('click', () => {
     const varStyle = document.documentElement.style
     const elementOL = document.querySelectorAll('.outline')
     const elementFS = document.querySelectorAll('.outlineFieldSet')
+    const elementsX = document.querySelectorAll('#searchBox, #pageInfoBox')
     if (bool) {
       varStyle.setProperty('--color-light', '#f3f4f6')
       varStyle.setProperty('--color-dark', '#1f2937')
@@ -26,6 +27,7 @@ document.querySelector('.bulb').addEventListener('click', () => {
       elementOL.forEach((element) => element.classList.remove('Bordered'))
       elementOL.forEach((element) => element.classList.add('borderLess'))
       elementFS.forEach((element) => element.classList.add('borderLess'))
+      elementsX.forEach((element) => element.classList.add('borderlessInputs'))
     } else {
       varStyle.setProperty('--color-light', '#ffffff')
       varStyle.setProperty('--color-dark', '#111827')
@@ -33,6 +35,7 @@ document.querySelector('.bulb').addEventListener('click', () => {
       elementOL.forEach((element) => element.classList.add('Bordered'))
       elementOL.forEach((element) => element.classList.remove('borderLess'))
       elementFS.forEach((element) => element.classList.remove('borderLess'))
+      elementsX.forEach((element) => element.classList.remove('borderlessInputs'))
     }
   }; 
   document.querySelector('.borderIt').addEventListener('click', () => borderLess())

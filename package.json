@@ -1,6 +1,6 @@
 {
   "name": "datasafe-6",
-  "version": "6.0.10",
+  "version": "6.0.12",
   "description": "Client Database Application",
   "main": "index.js",
   "scripts": {

@@ -1,13 +1,13 @@
 <div class="lg:bg-gray-100 bg-gray-200 dark:bg-gray-800">
   <!-- Tabs -->
-  <div class="tabs2 relative bg-white dark:bg-gray-900 rounded-t-lg mt-4 h-12 overflow-hidden rounded-b-md sm:h-auto sm:overflow-visible sm:rounded-b-none mb-2">
-    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" onclick="this.parentElement.classList.toggle('tabNavResponsive')" class="sm:invisible absolute top-3 right-4 z-10 w-5  cursor-pointer transform-gpu ease-linear hover:scale-110 text-gray-300 hover:text-gray-500 dark:text-yellow-500 dark:hover:text-yellow-400 svg-inline--fa fa-plus fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+  <div class="tabs2 relative bg-white dark:bg-gray-900 rounded-t-lg mt-4 transform-gpu ease-in-out duration-1000 max-h-12 overflow-hidden rounded-b-md sm:max-h-14 sm:h-auto sm:overflow-visible sm:rounded-b-none mb-2">
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" onclick="this.parentElement.classList.toggle('tabNavResponsive')" class="sm:invisible absolute top-3 right-4 z-10 w-5 cursor-pointer transform-gpu ease-linear hover:scale-110 rotate-0 duration-700 text-gray-300 hover:text-gray-500 dark:text-yellow-500 dark:hover:text-yellow-400 svg-inline--fa fa-plus fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
       <path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path>
     </svg>
     <ul id="nav-tab" class="nav text-center py-2 sm:py-3 sm:w-full border-b-2 border-gray-300 dark:border-gray-700 flex flex-col sm:flex-row gap-4">
       <li class="Tab mr-[30%] sm:mr-0 active">
         <a class="pt-1 pb-0 px-3 md:px-6 gap-1 flex" onclick="this.parentElement.parentElement.parentElement.classList.remove('tabNavResponsive'); return false;" href="#Details">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
           </svg>      
           Details
@@ -15,7 +15,7 @@
       </li>
       <li class="Tab mr-[30%] sm:mr-0">
         <a class="pt-1 pb-0 px-3 md:px-6 gap-1 flex" onclick="this.parentElement.parentElement.parentElement.classList.remove('tabNavResponsive'); return false;" href="#Charts">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
           </svg>          
@@ -24,7 +24,7 @@
       </li>
       <li class="Tab mr-[30%] sm:mr-0">
         <a class="pt-1 pb-0 px-3 md:px-6 gap-1 flex" onclick="this.parentElement.parentElement.parentElement.classList.remove('tabNavResponsive'); return false;" href="#Documents">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
           </svg>        
           Documents
@@ -32,7 +32,7 @@
       </li>
       <li class="Tab md:ml-auto mr-[30%] sm:mr-[10%]">
         <a class="pt-1 pb-0 px-3 md:px-6 gap-1 flex" onclick="this.parentElement.parentElement.parentElement.classList.remove('tabNavResponsive'); return false;" href="#Settings">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
           </svg>        
           Settings
@@ -41,14 +41,14 @@
     </ul>
     <div class="line2 invisible sm:visible bg-gray-400 dark:bg-yellow-600 left-0 w-0 absolute -bottom-0 h-1 pointer-events-none transform-gpu ease-in-out duration-700"></div>
     <div class="line invisible sm:visible w-[104px] bg-gray-400 dark:bg-yellow-600 absolute -bottom-1 h-1 pointer-events-none transform-gpu ease-in-out duration-700"></div>
-      <div class="show invisible sm:visible absolute flex gap-4 bottom-4 right-4 items-center">
+      <div class="show invisible sm:visible absolute flex gap-4 bottom-4 md:bottom-1/3 right-4 items-center">
         <div class="bulb cursor-pointer transform-gpu ease-linear hover:scale-110 text-gray-300 hover:text-gray-500 dark:text-gray-500 dark:hover:text-yellow-500">
-          <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="delicious" class="w-5 svg-inline--fa fa-delicious fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="delicious" class="h-5 svg-inline--fa fa-delicious fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
             <path fill="currentColor" d="M446.5 68c-.4-1.5-.9-3-1.4-4.5-.9-2.5-2-4.8-3.3-7.1-1.4-2.4-3-4.8-4.7-6.9-2.1-2.5-4.4-4.8-6.9-6.8-1.1-.9-2.2-1.7-3.3-2.5-1.3-.9-2.6-1.7-4-2.4-1.8-1-3.6-1.8-5.5-2.5-1.7-.7-3.5-1.3-5.4-1.7-3.8-1-7.9-1.5-12-1.5H48C21.5 32 0 53.5 0 80v352c0 4.1.5 8.2 1.5 12 2 7.7 5.8 14.6 11 20.3 1 1.1 2.1 2.2 3.3 3.3 5.7 5.2 12.6 9 20.3 11 3.8 1 7.9 1.5 12 1.5h352c26.5 0 48-21.5 48-48V80c-.1-4.1-.6-8.2-1.6-12zM416 432c0 8.8-7.2 16-16 16H224V256H32V80c0-8.8 7.2-16 16-16h176v192h192z"></path>
           </svg>
         </div>
         <div class="borderIt cursor-pointer transform-gpu ease-linear hover:scale-110 text-gray-300 hover:text-gray-500 dark:text-gray-500 dark:hover:text-yellow-500">
-          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="border-style" class="w-5 svg-inline--fa fa-border-style fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="border-style" class="h-5 svg-inline--fa fa-border-style fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
             <path fill="currentColor" d="M240 416h-32a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h32a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm-96 0h-32a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h32a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm192 0h-32a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h32a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm96-192h-32a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h32a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0 96h-32a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h32a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0 96h-32a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h32a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-288h-32a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h32a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-96H32A32 32 0 0 0 0 64v400a16 16 0 0 0 16 16h32a16 16 0 0 0 16-16V96h368a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"></path>
           </svg>
         </div>

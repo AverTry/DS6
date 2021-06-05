@@ -20,10 +20,6 @@ module.exports = {
       },
     },
   },
-  variants: {
-    borderColor: ['responsive', 'hover', 'focus', 'focus-within'],
-    extend: {},
-  },
   plugins: [
     require("tailwindcss"),
     require('@tailwindcss/forms')
