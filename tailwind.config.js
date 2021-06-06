@@ -18,6 +18,10 @@ module.exports = {
         light: 'var(--color-light)',
         dark: 'var(--color-dark)',
       },
+      transitionProperty: {
+        'height': 'height',
+        'max-height': 'max-height',
+      },
     },
   },
   plugins: [
