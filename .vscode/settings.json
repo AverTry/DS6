@@ -1,4 +1,3 @@
 {
-    "html.preview.scrollEditorWithPreview": false,
-    "html.preview.scrollPreviewWithEditor": false
+  "css.validate": false
 }

@@ -1,3 +1,5 @@
 /node_modules
-T-*.*
+T-*
 *copy.*
+bs-config.js
+package-lock.json

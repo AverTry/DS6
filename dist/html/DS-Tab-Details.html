@@ -1,114 +1,128 @@
-    <div class="flex flex-col sm:flex-row md:flex-col lg:flex-row gap-x-4 gap-y-4">
-      <!-- Section One -->
-      <fieldset class="outlineFieldSet">
-        <legend class="outlineLedgend">Client Address & Details:</legend>
-        <div class="flex flex-col md:flex-row gap-4">
-          <div class="outline Bordered flex-grow">
-            <select name="Prefix" placeholder=" ">
-              <option value="Mr">Mr</option>
-              <option value="Mrs">Mrs</option>
-              <option value="Miss">Miss</option>
-              <option value="Ms">Ms</option>
-              <option value="Sir">Sir</option>
-              <option value="Lady">Lady</option>
-              <option value="Prof">Prof</option>
-              <option value="Pastor">Pastor</option>
-            </select>
-            <label for="Prefix">Prefix</label>
-          </div>
-          <div class="outline Bordered">
-            <input type="text" name="FirstName" placeholder="Only The First" />
-            <label for="FirstName">First Name</label>
-          </div>
-          <div class="outline Bordered">
-            <input type="text" name="LastName" placeholder=" " />
-            <label for="LastName">Last Name</label>
-          </div>
-        </div>
-        <div class="flex flex-col md:flex-row gap-4">
-          <div class="outline Bordered">
-            <input type="text" name="HouseNo" placeholder="Number or Name" class="md:max-w-[192px]" />
-            <label for="HouseNo">HouseNo</label>
-          </div>
-          <div class="outline Bordered">
-            <input type="text" name="Street" placeholder=" " />
-            <label for="Street">Street</label>
-          </div>
-          <div class="outline Bordered">
-            <input type="text" name="City" placeholder="City or Village" />
-            <label for="City">City</label>
-          </div>
-        </div>
-        <div class="flex flex-col md:flex-row gap-4">
-          <div class="outline Bordered">
-            <input type="text" name="County" placeholder="County or District" />
-            <label for="County">County</label>
-          </div>
-          <div class="outline Bordered">
-            <input type="text" name="PostCode" placeholder="PostCode or Zip" class="md:max-w-[192px]" />
-            <label for="PostCode">Post Code</label>
-          </div>
-          <div class="outline Bordered">
-            <input type="text" name="Country" placeholder=" " />
-            <label for="Country">Country</label>
-          </div>
-        </div>
-        <div class="flex flex-col md:flex-row gap-4">
-          <div class="flex flex-grow">
+<fieldset class="outlineFieldSet lg:contents">
+  <legend class="outlineLedgend relative xLegend lg:hidden">Client Information:</legend>
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 lg:grid-rows-4 gap-4 grid-flow-row-dense">
+    <fieldset class="outlineFieldSet contents lg:col-start-1 lg:col-end-4 lg:row-start-1 lg:row-end-4 lg:block">
+      <legend class="outlineLedgend relative xLegend hidden lg:block">Client Address & Details:</legend>
+        <!-- Section One -->
+        <div class=" col-span-2 sm:col-span-1 md:col-span-3 lg:col-start-1 lg:col-end-4 lg:row-start-1 lg:row-end-2">
+          <div class="flex flex-col md:flex-row gap-4">
             <div class="outline Bordered flex-grow">
-              <textarea name="Comments" placeholder="Important Details To Remember"></textarea>
-              <label for="Comments">Comments</label>
-            </div>
-          </div>
-          <div class="flex flex-col gap-4">
-            <div class="outline Bordered">
-              <input type="date" name="CreatedOn" placeholder=" " />
-              <label for="CreatedOn">CreatedOn</label>
-            </div>
-            <div class="outline Bordered">
-              <input type="datetime-local" name="LastMeeting" placeholder=" " />
-              <label for="LastMeeting">Last Meeting
-            </div>
-            <div class="outline Bordered">
-              <input type="datetime-local" name="NextMeeting" placeholder=" " />
-              <label for="NextMeeting">Next Meeting</label>
-            </div>
-          </div>
-        </div>
-      </fieldset>
-      <!-- Section Two -->
-      <fieldset class="outlineFieldSet">
-        <legend class="outlineLedgend">Contact Info:</legend>
-        <div class="flex flex-col gap-4">
-          <div class="flex flex-col md:flex-row lg:flex-col gap-4">
-            <div class="outline Bordered">
-              <input type="tel" name="BusinessLine" placeholder=" " />
-              <label for="BusinessLine">Business Line</label>
+              <select name="Prefix" placeholder=" ">
+                <option value="Mr">Mr</option>
+                <option value="Mrs">Mrs</option>
+                <option value="Miss">Miss</option>
+                <option value="Ms">Ms</option>
+                <option value="Sir">Sir</option>
+                <option value="Lady">Lady</option>
+                <option value="Prof">Prof</option>
+                <option value="Pastor">Pastor</option>
+              </select>
+              <label for="Prefix">Prefix</label>
             </div>
             <div class="outline Bordered">
-              <input type="tel" name="HomePhone" placeholder=" " />
-              <label for="HomePhone">Home Phone</label>
+              <input type="text" name="FirstName" placeholder="Only The First" />
+              <label for="FirstName">First Name</label>
             </div>
             <div class="outline Bordered">
-              <input type="tel" name="MobilePhone" placeholder=" " />
-              <label for="MobilePhone">Mobile Phone</label>
-            </div>
-          </div>
-          <div class="flex flex-col md:flex-row lg:flex-col gap-4">
-            <div class="outline Bordered">
-              <input type="email" name="Email" placeholder=" " />
-              <label for="Email">Email</label>
-            </div>
-            <div class="outline Bordered">
-              <input type="url" name="WebSite" placeholder=" " />
-              <label for="WebSite">Web Site</label>
-            </div>
-            <div class="outline Bordered">
-              <input type="url" name="Facebook" placeholder=" " />
-              <label for="Facebook">Facebook</label>
+              <input type="text" name="LastName" placeholder=" " />
+              <label for="LastName">Last Name</label>
             </div>
           </div>
         </div>
-      </fieldset>
-    </div>
+        <div class=" col-span-2 sm:col-span-1 md:col-span-3 lg:col-start-1 lg:col-end-4 lg:row-start-2 lg:row-end-3">
+          <div class="flex flex-col md:flex-row gap-4">
+            <div class="outline Bordered">
+              <input type="text" name="HouseNo" placeholder="Number or Name" class="md:max-w-[192px]" />
+              <label for="HouseNo">HouseNo</label>
+            </div>
+            <div class="outline Bordered">
+              <input type="text" name="Street" placeholder=" " />
+              <label for="Street">Street</label>
+            </div>
+            <div class="outline Bordered">
+              <input type="text" name="City" placeholder="City or Village" />
+              <label for="City">City</label>
+            </div>
+          </div>
+        </div>
+        <div class=" col-span-2 sm:col-span-1 md:col-span-3 lg:col-start-1 lg:col-end-4 lg:row-start-3 lg:row-end-4">
+          <div class="flex flex-col md:flex-row gap-4">
+            <div class="outline Bordered">
+              <input type="text" name="County" placeholder="County or District" />
+              <label for="County">County</label>
+            </div>
+            <div class="outline Bordered">
+              <input type="text" name="PostCode" placeholder="PostCode or Zip" class="md:max-w-[192px]" />
+              <label for="PostCode">Post Code</label>
+            </div>
+            <div class="outline Bordered">
+              <input type="text" name="Country" placeholder=" " />
+              <label for="Country">Country</label>
+            </div>
+          </div>
+        </div>
+       <div class="contents lg:grid grid-cols-6 gap-x-4">
+          <div class=" col-span-2 sm:col-span-2 md:col-span-2 lg:col-span-4">
+            <div class="flex flex-grow">
+              <div class="outline Bordered flex-grow">
+                <textarea class="min-h-[170px]" name="Comments" placeholder="Important Details To Remember"></textarea>
+                <label for="Comments">Comments</label>
+              </div>
+            </div>
+          </div>
+          <div class=" col-span-2 sm:col-span-1 md:col-span-1 lg:col-span-2">
+            <div class="flex flex-col gap-4">
+              <div class="outline Bordered">
+                <input type="date" name="CreatedOn" placeholder=" " />
+                <label for="CreatedOn">CreatedOn</label>
+              </div>
+              <div class="outline Bordered">
+                <input type="datetime-local" name="LastMeeting" placeholder=" " />
+                <label for="LastMeeting">Last Meeting
+              </div>
+              <div class="outline Bordered">
+                <input type="datetime-local" name="NextMeeting" placeholder=" " />
+                <label for="NextMeeting">Next Meeting</label>
+              </div>
+            </div>
+          </div>
+       </div>
+    </fieldset>
+    <fieldset class="outlineFieldSet contents lg:col-start-4 lg:col-end-5 lg:row-start-1 lg:row-end-4 lg:block">
+      <legend class="outlineLedgend relative xLegend hidden lg:block">Contact Info:</legend>
+      <div class=" col-span-2 sm:col-span-1 md:col-span-3 lg:col-start-4 lg:col-end-5 lg:row-start-1 lg:row-end-4">
+        <div class="flex flex-col md:flex-row lg:flex-col gap-4">
+          <div class="outline Bordered">
+            <input type="tel" name="BusinessLine" placeholder=" " />
+            <label for="BusinessLine">Business Line</label>
+          </div>
+          <div class="outline Bordered">
+            <input type="tel" name="HomePhone" placeholder=" " />
+            <label for="HomePhone">Home Phone</label>
+          </div>
+          <div class="outline Bordered">
+            <input type="tel" name="MobilePhone" placeholder=" " />
+            <label for="MobilePhone">Mobile Phone</label>
+          </div>
+        </div>
+      </div>
+      <div class=" col-span-2 sm:col-span-1 md:col-span-3 lg:col-start-4 lg:col-end-5 lg:row-start-4 lg:row-end-6">
+        <div class="flex flex-col md:flex-row lg:flex-col gap-4">
+          <div class="outline Bordered">
+            <input type="email" name="Email" placeholder=" " />
+            <label for="Email">Email</label>
+          </div>
+          <div class="outline Bordered">
+            <input type="url" name="WebSite" placeholder=" " />
+            <label for="WebSite">Web Site</label>
+          </div>
+          <div class="outline Bordered">
+            <input type="url" name="Facebook" placeholder=" " />
+            <label for="Facebook">Facebook</label>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+</fieldset>
   <!-- </container> -->

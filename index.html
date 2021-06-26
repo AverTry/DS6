@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="./dist/css/tailwind.css" />
+		<script src="./dist/js/DS-Initialise.js" defer></script>
+		<title>DataSafe ver.6.0</title>
+		<script>
+			if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+				document.documentElement.classList.add('dark')
+			} else {
+				document.documentElement.classList.remove('dark')
+			}
+		</script>
+	</head>
+
+	<body class="min-w-[303px] antialiased text-gray-400 dark:text-yellow-500 bg-gray-200 lg:bg-gray-50 dark:bg-gray-800 lg:dark:bg-gray-900">
+		<contents>
+			<include DS-Template="./dist/html/DS-NavBarTop.html"></include>
+			<main-db>
+				<include DS-Template="./dist/html/DS-SideNav.html"></include>
+				<include DS-Template="./dist/html/DS-SideBarLeft.html"></include>
+				<include DS-Template="./dist/html/DS-Form.html"></include>
+				<include DS-Template="./dist/html/DS-SideBarRight.html"></include>
+			</main-db>
+			<include DS-Template="./dist/html/DS-NavBarEnd.html"></include>
+		</contents>
+		<!-- <include DS-Template="./dist/html/DS-TableList.html"></include> -->
+	</body>
+</html>

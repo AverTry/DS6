@@ -1,7 +1,7 @@
-// Make the console less boring...
-console.log('%c DataSafe 6 TailwindCSS ', 'padding-bottom: 10px; font-weight: bold; font-size: 38px;color: rgb(217, 119, 6); text-shadow: 3px 3px 0 rgb(17 24 39) , 6px 6px 0 rgb(4,77,145) , 9px 9px 0 rgb(42,21,113) ');
-const log = (l, m = ' Null', c1 = 'DeepSkyBlue', c2 = 'Orange') => console.log('%c'+l+'%c'+m,'color:'+c1,'color:'+c2)
-log(new Date().toISOString().split('T')[0], ' ' +  new Date().toISOString().split('T')[1].slice(0, 8))
+//? Make the console less boring...
+console.log('%c DataSafe 6 TailwindCSS ', 'padding-bottom: 10px; font-weight: bold; font-size: 38px;color: rgb(217, 119, 6); text-shadow: 3px 3px 0 rgb(17 24 39) , 6px 6px 0 rgb(4,77,145) , 9px 9px 0 rgb(42,21,113) ')
+const log = (l, m = ' Null', c1 = 'DeepSkyBlue', c2 = 'Orange') => console.log('%c' + l + '%c' + m, 'color:' + c1, 'color:' + c2)
+log(new Date().toISOString().split('T')[0], ' ' + new Date().toISOString().split('T')[1].slice(0, 8))
 
 // SORTING GROUP -------------------------------------------------------------------
 
@@ -13,7 +13,7 @@ log(new Date().toISOString().split('T')[0], ' ' +  new Date().toISOString().spli
 // sortByKey.addEventListener('change', () => runQuery())
 // sortChevron.addEventListener('click', () => glyphToggle())
 
-// // Toggle Sort Ascending or Descending Function
+//* Toggle Sort Ascending or Descending Function
 // const getSortOrder = () => {
 //   let Value = sortToggle === true ?
 //     `{ "${ sortByKey.options[sortByKey.selectedIndex].text }" : -1 }` :
@@ -21,7 +21,7 @@ log(new Date().toISOString().split('T')[0], ' ' +  new Date().toISOString().spli
 //   return Value
 // }
 
-// // Toggle the Sort Glyph up & down
+//* Toggle the Sort Glyph up & down
 // const glyphToggle = () => {
 //   sortToggle = !sortToggle
 //   sortChevron.classList.toggle("down")
@@ -48,7 +48,7 @@ log(new Date().toISOString().split('T')[0], ' ' +  new Date().toISOString().spli
 // searchBtn.addEventListener("click", () => query())
 
 // Clears Text SearchBar to return all Documents
-// let handler = () => {if (searchText.value === '') {firstQuery = ''; runQuery(); return} 
+// let handler = () => {if (searchText.value === '') {firstQuery = ''; runQuery(); return}
 // if (event.key === 'Enter') {event.preventDefault(); query();}}
 //   ['search', 'keyup'].forEach(event => searchText.addEventListener(event, handler))
 
@@ -69,7 +69,7 @@ log(new Date().toISOString().split('T')[0], ' ' +  new Date().toISOString().spli
 // })
 
 // Event Search Field Change - get field name
-// searchByKey.addEventListener('change', () => {  
+// searchByKey.addEventListener('change', () => {
 //   getSearchField = searchByKey.options[searchByKey.selectedIndex].text
 //   if (getSearchField === 'Choose...') return searchByBox.click()
 //   setFieldType()
@@ -92,59 +92,59 @@ log(new Date().toISOString().split('T')[0], ' ' +  new Date().toISOString().spli
 
 // const showTextBar = () => {
 //   dateChoice.style.display = "none"
-//   searchText.style.display = 'flex'     
-//   searchRange.style.display = 'none'     
-//   searchOptions.style.display = 'none' 
+//   searchText.style.display = 'flex'
+//   searchRange.style.display = 'none'
+//   searchOptions.style.display = 'none'
 // }
 
-// document.addEventListener('input',(e)=>{ 
+// document.addEventListener('input',(e)=>{
 // if (e.target.getAttribute('name') !== "radioDateSelect") return
 //   declareType = e.target.value
 //   switch (declareType) {
 //     case 'Range':
-//       searchText.style.display = 'none'     
-//       searchRange.style.display = 'flex'     
-//       searchOptions.style.display = 'none'     
+//       searchText.style.display = 'none'
+//       searchRange.style.display = 'flex'
+//       searchOptions.style.display = 'none'
 //       radioOptionIs = radioRange
 //       break;
 //     case 'Year':
-//       searchText.style.display = 'none'     
-//       searchRange.style.display = 'none'     
-//       searchOptions.style.display = 'flex'     
-//       searchYear.style.display = 'flex'     
-//       searchMonth.style.display = 'none'     
-//       searchWeek.style.display = 'none'     
+//       searchText.style.display = 'none'
+//       searchRange.style.display = 'none'
+//       searchOptions.style.display = 'flex'
+//       searchYear.style.display = 'flex'
+//       searchMonth.style.display = 'none'
+//       searchWeek.style.display = 'none'
 //       searchDay.style.display = 'none'
 //       radioOptionIs = radioYear
 //       break;
 //     case 'Month':
-//       searchText.style.display = 'none'     
-//       searchRange.style.display = 'none'     
-//       searchOptions.style.display = 'flex'     
-//       searchYear.style.display = 'flex'     
-//       searchMonth.style.display = 'flex'     
-//       searchWeek.style.display = 'none'     
+//       searchText.style.display = 'none'
+//       searchRange.style.display = 'none'
+//       searchOptions.style.display = 'flex'
+//       searchYear.style.display = 'flex'
+//       searchMonth.style.display = 'flex'
+//       searchWeek.style.display = 'none'
 //       searchDay.style.display = 'none'
 //       radioOptionIs = radioMonth
 //       break;
 //     case 'Week':
-//       searchText.style.display = 'none'     
-//       searchRange.style.display = 'none'     
-//       searchOptions.style.display = 'flex'     
-//       searchYear.style.display = 'flex'     
-//       searchMonth.style.display = 'none'     
-//       searchWeek.style.display = 'flex'     
+//       searchText.style.display = 'none'
+//       searchRange.style.display = 'none'
+//       searchOptions.style.display = 'flex'
+//       searchYear.style.display = 'flex'
+//       searchMonth.style.display = 'none'
+//       searchWeek.style.display = 'flex'
 //       searchDay.style.display = 'none'
 //       radioOptionIs = radioWeek
 //       break;
 //     case 'Day':
-//       searchText.style.display = 'none'     
-//       searchOptions.style.display = 'flex'     
-//       searchRange.style.display = 'none'     
-//       searchYear.style.display = 'flex'     
-//       searchMonth.style.display = 'flex'     
-//       searchWeek.style.display = 'none'     
-//       searchDay.style.display = 'flex'        
+//       searchText.style.display = 'none'
+//       searchOptions.style.display = 'flex'
+//       searchRange.style.display = 'none'
+//       searchYear.style.display = 'flex'
+//       searchMonth.style.display = 'flex'
+//       searchWeek.style.display = 'none'
+//       searchDay.style.display = 'flex'
 //       radioOptionIs = radioDay
 //       break;
 //   }
@@ -153,11 +153,11 @@ log(new Date().toISOString().split('T')[0], ' ' +  new Date().toISOString().spli
 
 // ONLOAD GROUP ---------------------------------------------------------------------
 
-// // Stop Dropdown from closing on click [Using Form prevents ALL clicks - No Good!]
+//* Stop Dropdown from closing on click [Using Form prevents ALL clicks - No Good!]
 // const myDropdown = document.getElementById('myInp')
 // myDropdown.addEventListener('hide.bs.dropdown', (e) => {if (e.clickEvent) e.preventDefault()})
 
-// // Populate the Date Search Select Inputs
+//* Populate the Date Search Select Inputs
 
 // const fromDate = document.getElementById('fromDate');
 // fromDate.addEventListener('change', () => console.log(fromDate.value))
@@ -177,7 +177,7 @@ log(new Date().toISOString().split('T')[0], ' ' +  new Date().toISOString().spli
 // let numOfDays = 0
 // const updateDays = (value = monthfield.selectedIndex) => {
 //   if ([3,5,8,10].includes(value)) numOfDays = 30
-//   else if ([0,2,4,6,7,9,11].includes(value)) numOfDays = 31 
+//   else if ([0,2,4,6,7,9,11].includes(value)) numOfDays = 31
 //   else numOfDays = 28
 // };updateDays(months[today.getMonth()])
 
@@ -191,7 +191,7 @@ log(new Date().toISOString().split('T')[0], ' ' +  new Date().toISOString().spli
 // dateBoxesPopulate = () => {
 //   toDate.valueAsDate = new Date()
 //   fromDate.valueAsDate = new Date(today.getFullYear() + "-" + today.getMonth() + "-" + today.getDate()) // Defaults to One Month Earliar
-  
+
 //   while (yearfield.options.length > 0) yearfield.remove(0)
 //   for ( let y = 2000; y <= 2050; y++ ) yearfield.appendChild(new Option(y, y))
 //   yearfield.value = today.getFullYear()
@@ -209,7 +209,7 @@ log(new Date().toISOString().split('T')[0], ' ' +  new Date().toISOString().spli
 //   dayfield.value = today.getDate()
 // };dateBoxesPopulate()
 
-// // Populate the Search and Sort Select Inputs
+//* // Populate the Search and Sort Select Inputs
 // const loadFormElements = (selBox, selClass) => {
 //   const elements = document.querySelectorAll(selClass)
 //   let all = [];
@@ -219,9 +219,9 @@ log(new Date().toISOString().split('T')[0], ' ' +  new Date().toISOString().spli
 // loadFormElements(sortByKey, '.sortKey');
 // loadFormElements(searchByKey, '.searchKey')
 
-// // PAGING GROUP -------------------------------------------------------------------
+//  PAGING GROUP -------------------------------------------------------------------
 
-// // Main ServerSide Pagination
+//? Main ServerSide Pagination
 const formElement = document.getElementById('my-form')
 const pageInfoBox = document.getElementById('pageInfoBox')
 const first = document.getElementById('first')
@@ -229,7 +229,7 @@ const prev = document.getElementById('prev')
 const next = document.getElementById('next')
 const last = document.getElementById('last')
 
-// // Search For
+//! Search For
 // let Seek = false
 // let srcFieldKey
 // const query = () => {
@@ -256,16 +256,16 @@ const last = document.getElementById('last')
 //     case "Year": result = [yearfield.value]; break
 //     case "Month": result = [yearfield.value, monthfield.selectedIndex + 1]; break
 //     case "Week": result = [yearfield.value, weekfield.value]; break
-//     case "Day": result = [yearfield.value, monthfield.selectedIndex + 1, dayfield.value]; break      
+//     case "Day": result = [yearfield.value, monthfield.selectedIndex + 1, dayfield.value]; break
 //     case "Text": result = searchText.value; break
 //     case "DocID": result = searchText.value; break
 //     default: result = searchText.value; break
-//   } 
-  
-//   // console.log('%cdeclareType: ' + '%c' + declareType, 'color: deepskyblue', 'color: palegreen')
-//   // console.log('%cresult: ' + '%c' + result, 'color: dodgerblue', 'color: DarkOrange')
-//   // log('srcFieldKey: ', srcFieldKey)
-//   // log('declareType: ', declareType, 'Coral', 'Aqua')
+//   }
+
+//*   console.log('%cdeclareType: ' + '%c' + declareType, 'color: deepskyblue', 'color: palegreen')
+//*   console.log('%cresult: ' + '%c' + result, 'color: dodgerblue', 'color: DarkOrange')
+//*   log('srcFieldKey: ', srcFieldKey)
+//*   log('declareType: ', declareType, 'Coral', 'Aqua')
 
 //   if (result === 'undefined' || result === 'null' || result === '') {query()}
 //   return JSON.stringify({
@@ -280,31 +280,32 @@ const last = document.getElementById('last')
 
 // console.log(Params())
 runQuery = (pageNo = 1) => {
-  // return log('Params',Params())
-  // sortValue = getSortOrder()  
-  // let find = `alltxt=${firstQuery}&params=${Params()}&sort=${sortValue}&page=${pageNo}`
-  // let query = `https://ds5-1.avertry.repl.co/clients?${find}`
-  let query = `https://ds5-1.avertry.repl.co/clients?page=${pageNo}`
-  // let query = `http://localhost:3000/clients?${find}`
-  fetch(query)
-  .then(response => {
-    if ( response.status === 204) {
-      pageInfoBox.value = 'No Documents'
-      throw ('No Documents Found..?')
-    }
-    return response.json()
-  })
-  .then(data => {
-    populate(formElement, data.docs[0].documents[0])
-    prevPage = data.prev.page
-    nextPage = data.next.page
-    currentPage = data.currentPage.page
-    totalPages = data.docs[0].totalDocs[0].count
-    pageInfoBox.value = `${currentPage} / ${totalPages}`
-    // pageInfoBox.value = `Page ${currentPage} of ${totalPages}`
-  })
-  .catch(err => console.warn(err))
-};runQuery()
+	// return log('Params',Params())
+	// sortValue = getSortOrder()
+	// let find = `alltxt=${firstQuery}&params=${Params()}&sort=${sortValue}&page=${pageNo}`
+	// let query = `https://ds5-1.avertry.repl.co/clients?${find}`
+	let query = `https://ds5-1.avertry.repl.co/clients?page=${pageNo}`
+	// let query = `http://localhost:3000/clients?${find}`
+	fetch(query)
+		.then(response => {
+			if (response.status === 204) {
+				pageInfoBox.value = 'No Documents'
+				throw 'No Documents Found..?'
+			}
+			return response.json()
+		})
+		.then(data => {
+			populate(formElement, data.docs[0].documents[0])
+			prevPage = data.prev.page
+			nextPage = data.next.page
+			currentPage = data.currentPage.page
+			totalPages = data.docs[0].totalDocs[0].count
+			pageInfoBox.value = `${currentPage} / ${totalPages}`
+			// pageInfoBox.value = `Page ${currentPage} of ${totalPages}`
+		})
+		.catch(err => console.warn(err))
+}
+runQuery()
 first.addEventListener('click', () => runQuery())
 next.addEventListener('click', () => runQuery(nextPage))
 prev.addEventListener('click', () => runQuery(prevPage))
@@ -312,7 +313,7 @@ last.addEventListener('click', () => runQuery(totalPages))
 
 // For List Module-------------------------------------------------------------------------------------
 
-// // List ClientSide Pagenation
+//* List ClientSide Pagenation
 // let myModalEl = document.getElementById('list')
 // myModalEl.addEventListener('show.bs.modal', (event) => {
 //   console.time('1000 Records Fetch')
@@ -320,10 +321,10 @@ last.addEventListener('click', () => runQuery(totalPages))
 //   .then(response => response.json())
 //   .then(data => {
 //     if (!data.docs[0].documents.length) return
-//         // console.log('Object.keys', Object.keys(data.docs[0].documents[0]))
-//         // console.log('Object.values', Object.values(data.docs[0].documents[0]))
+        // console.log('Object.keys', Object.keys(data.docs[0].documents[0]))
+        // console.log('Object.values', Object.values(data.docs[0].documents[0]))
 
-// // replace with Tabulator
+//* replace with Tabulator
 
 //     new simpleDatatables.DataTable(".table", {
 //       data: {
@@ -334,4 +335,4 @@ last.addEventListener('click', () => runQuery(totalPages))
 //   })
 //   .then(() => console.timeEnd('1000 Records Fetch'))
 //   .catch(err => console.error(err))
-// })  
+// })

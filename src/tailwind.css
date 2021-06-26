@@ -1,6 +1,8 @@
+@import "./forms.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* Tailwindcss Form Controls Reset */
 
 @layer base {
   /* Define Theme Dynamics by Variables */
@@ -8,8 +10,6 @@
   :root {
     --color-light: #ffffff;
     --color-dark: #111827;
-    --percentOne: 50%;
-    --percentTwo: 60%;
   }
 }
 
@@ -24,71 +24,13 @@
 
   /* Blocking the input Border behind the Outline label */
     .outlineLabelCutout-Light {
-      background: linear-gradient(transparent var(--percentOne), var(--color-light) var(--percentOne), var(--color-light) var(--percentTwo), transparent var(--percentTwo)) ;
+      background: linear-gradient(transparent 50%, var(--color-light) 50%, var(--color-light) 60%, transparent 60%) ;
     }  
   @variants dark {
     .outlineLabelCutout-Dark {
-      background: linear-gradient(transparent var(--percentOne), var(--color-dark) var(--percentOne), var(--color-dark) var(--percentTwo), transparent var(--percentTwo)) ;
+      background: linear-gradient(transparent 50%, var(--color-dark) 50%, var(--color-dark) 60%, transparent 60%) ;
     }
   } 
-
-  /* Mobile Responsive Menu's */
-  .plusX {
-    @apply  
-      transform
-      hover:scale-110 
-      rotate-0 
-      duration-1000
-    ;
-  }
-
-  .transTime {
-    @apply
-      duration-1000 
-      transition-max-height
-    ;
-  }
-
-  .navResponsive {
-    @apply
-      max-h-60
-    ;
-  }
-  .navResponsive svg.fa-plus {
-    @apply      
-      duration-700 
-      rotate-45
-    ;
-  }
-
-  .tabNavResponsive {
-    @apply
-      rounded-b-none
-      duration-700 
-      transition-max-height
-      max-h-[200px]
-    ;
-  }
-  .tabNavResponsive svg.fa-plus {
-    @apply      
-      duration-300 
-      rotate-45
-    ;
-  }
-  .tabNavResponsive .show {
-    @apply 
-      visible
-      delay-700
-    ;
-  }
-
-  /* Pseudo Classes */
-  ::selection {
-    @apply
-      bg-yellow-400
-      text-blue-700
-    ;
-  }
 
 }
 
@@ -161,53 +103,56 @@
       transition-opacity duration-500 ease-in opacity-100
     ;
   }
-  .outline input ~ label,
-  .outline select ~ label,
-  .outline textarea ~ label {
+  .outline :is(
+    input ~ label,
+    select ~ label,
+    textarea ~ label) {
     @apply 
       text-lg dark:text-gray-400 text-gray-500
       absolute top-0 
-      m-2 pl-2 
       pointer-events-none
-      origin-left
-      duration-500 
+      m-2 ml-3 px-1
+      transform-gpu transition-transform ease-linear
+      origin-left duration-300 
     ;
   }
 
-  .outline input:focus-within ~ label,
-  .outline select:focus-within ~ label,
-  .outline textarea:focus-within ~ label,
-  .outline input:not(:placeholder-shown) ~ label,
-  .outline select:not(:placeholder-shown) ~ label,
-  .outline textarea:not(:placeholder-shown) ~ label {
+  .outline :is(
+    input:focus-within ~ label,
+    select:focus-within ~ label,
+    textarea:focus-within ~ label,
+    input:not(:placeholder-shown) ~ label,
+    select:not(:placeholder-shown) ~ label,
+    textarea:not(:placeholder-shown) ~ label) {
     @apply 
-      transform-gpu ease-in-out scale-75      
-      -translate-y-3.5
-      m-0 ml-2 px-1
-      rounded-md
+      scale-75 -translate-y-5.5 -translate-x-2
     ;
   }
 
-  .outline input,
-  .outline select,
-  .outline textarea {
+  .outline :is(
+    input,
+    select,
+    textarea) {
     @apply 
-      block w-full pl-4
+      block w-full px-4 py-2
       rounded-md border-0 focus:ring-0
       text-lg
       bg-light dark:bg-dark
     ;
   }
 
-  .outline input,
-  .outline textarea {
-    @apply pr-4;
-  }
-
   .outline select {
     @apply 
       min-w-max
+      pr-10
       lg:flex-shrink-0 
+    ;
+  }
+  
+  .outline select option {
+    @apply 
+      bg-white
+      dark:bg-gray-900
     ;
   }
 
@@ -217,14 +162,6 @@
       resize-none
     ;
   }
-
-  .outline select option {
-    @apply 
-      bg-white
-      dark:bg-gray-900
-    ;
-  }
-
 
   /* Tabs */
 
@@ -265,7 +202,7 @@
 
   .srcContainer:focus-within {
     @apply
-       text-gray-600 dark:text-yellow-500
+      text-gray-600 dark:text-yellow-500
     ;
   }
 
@@ -299,18 +236,20 @@
     ;
   }
 
-/* ADD for Borderless */
-  .borderLess.outline,
-  .borderLess.outline span,
-  .borderLess.outlineFieldSet,
-  .borderLess.outline:focus-within,
-  .borderLess.outline:focus-within span {
+/* ADDED by JS for Borderless */
+.borderLess :is(
+  .outline, 
+  .outline span, 
+  .outlineFieldSet, 
+  .outline:focus-within, 
+  .outline:focus-within span) {
     @apply 
       border-transparent 
       dark:border-transparent      
     ;
   }
 
+/* Uncomment for Borderless Input Shadows */
   /* .borderLess.outline input,
   .borderLess.outline select,
   .borderLess.outline textarea {
@@ -319,30 +258,86 @@
     ;
   } */
 
-
-  .borderlessInputs:focus,
-  .borderLess.outline input:focus-within,
-  .borderLess.outline select:focus-within,
-  .borderLess.outline textarea:focus-within {
+  .borderLess.outline :is(
+    input:focus-within, 
+    select:focus-within, 
+    textarea:focus-within), 
+  :is(input).borderlessInputs:focus {
     @apply 
-      bg-blue-300 bg-opacity-20 !important
+      bg-blue-300 bg-opacity-20
     ;
   }
 
-/* REMOVE for Borderless */
-  .Bordered.outline input:focus-within ~ label,
-  .Bordered.outline select:focus-within ~ label,
-  .Bordered.outline textarea:focus-within ~ label,
-  .Bordered.outline input:not(:placeholder-shown) ~ label,
-  .Bordered.outline select:not(:placeholder-shown) ~ label,
-  .Bordered.outline textarea:not(:placeholder-shown) ~ label {
+/* REMOVED by JS for Borderless */
+  .Bordered.outline :is(
+    input:focus-within ~ label,
+    select:focus-within ~ label,
+    textarea:focus-within ~ label,
+    input:not(:placeholder-shown) ~ label,
+    select:not(:placeholder-shown) ~ label,
+    textarea:not(:placeholder-shown) ~ label) {
     @apply
-      -translate-y-4
+      -translate-y-6 -translate-x-2
       outlineLabelCutout-Light dark:outlineLabelCutout-Dark
     ;
   }
 
-/* Pseudo Classes */
+}
+
+  /* Mobile Responsive Menu's */
+  .plusX {
+    @apply  
+    hover:scale-110 
+    rotate-0 
+    duration-1000
+    ;
+  }
+  
+  .transTime {
+    @apply
+      duration-1000 
+      transition-max-height
+    ;
+  }
+
+/* Responsive Navigation for Mobile View */
+  .navResponsive {
+    @apply
+      max-h-60
+    ;
+  }
+
+  .tabNavResponsive {
+    @apply
+      rounded-b-none
+      transition-max-height
+      max-h-[200px]
+    ;
+  }
+  .navResponsive svg.fa-plus,
+  .tabNavResponsive svg.fa-plus {
+    @apply      
+      duration-700 
+      rotate-45
+    ;
+  }
+  .tabNavResponsive .showThemeChanger {
+    @apply 
+      visible
+      delay-700
+    ;
+  }
+
+  /* Pseudo Classes */
+
+  /* bText Selection Colors */
+  ::selection {
+    @apply
+      bg-yellow-400
+      text-blue-700
+    ;
+  }
+
   /* Remove scrollbars from page and inputs */
   ::-webkit-scrollbar {
     @apply w-0;
@@ -356,5 +351,29 @@
       cursor-pointer
     ;
   }
-}
 
+    /* ! Hopefully A Temporary Fix */
+    .tab-pane#Details {
+      @apply
+        lg:-mt-2
+      ;
+    }  
+    .outlineFieldSet > :not([hidden]) ~ :not([hidden]){
+      /* 
+        Null this wierd Tailwind compilled css
+        And Add it Inside The Below Breakpoint.
+      */
+      margin-top: 0;
+    }
+    @media (min-width: 1024px){
+      /* 
+        Taken from the Tailwind Compiled css line 673 Approx
+        This Problem Occurs due to Adding Fieldsets 
+        with Class "contents" to use with "grid"
+      */
+      .outlineFieldSet > :not([hidden]) ~ :not([hidden]){
+        --tw-space-y-reverse: 0;
+        margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+        margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+      }
+    }

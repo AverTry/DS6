@@ -1,11 +1,12 @@
 {
-  "name": "datasafe-6",
-  "version": "6.0.12",
+  "name": "datasafe-6-tailwind",
+  "version": "6.0.17",
   "description": "Client Database Application",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
-    "jit": "tailwind build ./src/css/tailwind.css -o ./dist/css/tailwind.css",
-    "watch": "nodemon -e html,css,js --ignore dist/css/ --exec npm run jit"
+    "browsersync": "browser-sync start --config './src/bs-config.js'",
+    "compile": "npx tailwindcss -i ./src/tailwind.css -c ./src/tailwind.config.js -o ./dist/css/tailwind.css",
+    "watch": "npx tailwindcss -i ./src/tailwind.css -c ./src/tailwind.config.js -o ./dist/css/tailwind.css -w"
   },
   "repository": {
     "type": "git",
@@ -19,11 +20,5 @@
   "bugs": {
     "url": "https://github.com/AverTry/DS6/issues"
   },
-  "homepage": "https://github.com/AverTry/DS6#readme",
-  "devDependencies": {
-    "tailwindcss": "^2.1.2"
-  },
-  "dependencies": {
-    "@tailwindcss/forms": "^0.3.2"
-  }
+  "homepage": "https://github.com/AverTry/DS6#readme"
 }

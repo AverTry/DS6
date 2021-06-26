@@ -1,8 +1,10 @@
 # DataSafe ver. 6.0 Tailwind
 
-![](image/README/1622485546996.png)
+![]()![1624705691113.png](image/README/1624705691113.png)
 
-![](image/README/1622485277170.png)
+![]()![1624705613116.png](image/README/1624705613116.png)
+
+![1624705743975.png](image/README/1624705743975.png)
 
 Light Dark Concept Design
 
@@ -12,4 +14,6 @@ Made with Tailwind CSS
 
 Outline Floating Labels with working Placeholder text
 
-[Take a look here...](https://avertry.github.io/DS6/dist/)
+[See it in action here...](https://avertry.github.io/DS6/dist/)
+
+Designed for Chrome, Brave, Edge - Chromium Engine 8+

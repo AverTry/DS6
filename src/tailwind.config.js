@@ -1,11 +1,9 @@
-const tailwindcss = require("tailwindcss");
-
 module.exports = {
   mode: 'jit',
   purge: [
-     './dist/**/*.html',
+     './**/*.html',
    ],
-  darkMode: 'class', // or 'media' or 'class'
+  darkMode: 'class', // * or 'media' or 'class'
   theme: {
     extend: {
       fontFamily: {
@@ -17,18 +15,15 @@ module.exports = {
       colors: {
         light: 'var(--color-light)',
         dark: 'var(--color-dark)',
+        brand: '#1992d4',
       },
       transitionProperty: {
         'height': 'height',
         'max-height': 'max-height',
       },
+      spacing: {
+        '5.5': '1.4rem',
+      },
     },
-  },
-  plugins: [
-    require("tailwindcss"),
-    require('@tailwindcss/forms')
-  ],
-  corePlugins: {
-    appearance: false,
   }
 }
