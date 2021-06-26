@@ -14,6 +14,6 @@ Made with Tailwind CSS
 
 Outline Floating Labels with working Placeholder text
 
-[See it in action here...](https://avertry.github.io/DS6/dist/)
+[See it in action here...](https://avertry.github.io/DS6)
 
 Designed for Chrome, Brave, Edge - Chromium Engine 8+
