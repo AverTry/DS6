@@ -1,5 +1,10 @@
 # DS6 - Update Log.
 
+### ver.018:
+
+* Fixed input border opacity in Form Area.
+* Fixed mobile tab dropdown menu transition.
+
 ### ver.017:
 
 * Introduced update.md

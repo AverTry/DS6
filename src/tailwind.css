@@ -237,26 +237,12 @@
   }
 
 /* ADDED by JS for Borderless */
-.borderLess :is(
-  .outline, 
-  .outline span, 
-  .outlineFieldSet, 
-  .outline:focus-within, 
-  .outline:focus-within span) {
+  .borderLess.outline,
+  .borderLess.outline span {
     @apply 
-      border-transparent 
-      dark:border-transparent      
+      border-transparent
     ;
   }
-
-/* Uncomment for Borderless Input Shadows */
-  /* .borderLess.outline input,
-  .borderLess.outline select,
-  .borderLess.outline textarea {
-    @apply 
-      shadow-lg
-    ;
-  } */
 
   .borderLess.outline :is(
     input:focus-within, 
@@ -284,22 +270,6 @@
 
 }
 
-  /* Mobile Responsive Menu's */
-  .plusX {
-    @apply  
-    hover:scale-110 
-    rotate-0 
-    duration-1000
-    ;
-  }
-  
-  .transTime {
-    @apply
-      duration-1000 
-      transition-max-height
-    ;
-  }
-
 /* Responsive Navigation for Mobile View */
   .navResponsive {
     @apply
@@ -325,6 +295,22 @@
     @apply 
       visible
       delay-700
+    ;
+  }
+
+  /* Mobile Responsive Menu's */
+  .plusX {
+    @apply  
+    hover:scale-110 
+    rotate-0 
+    duration-1000
+    ;
+  }
+  
+  .transTime {
+    @apply
+      duration-1000 
+      transition-max-height
     ;
   }
 
