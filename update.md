@@ -1,5 +1,10 @@
 # DS6 - Update Log.
 
+### ver.019:
+
+* selectbox min-width:max-content to min-with:auto. (Firefox Issue solved)
+* Comments responsive height adjustment.
+
 ### ver.018:
 
 * Fixed input border opacity in Form Area.

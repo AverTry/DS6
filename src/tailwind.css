@@ -143,7 +143,7 @@
 
   .outline select {
     @apply 
-      min-w-max
+      w-auto
       pr-10
       lg:flex-shrink-0 
     ;
