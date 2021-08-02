@@ -21,7 +21,7 @@ tabbs.forEach(tab => {
 	// * Import Chart.js only when needed
 	tab.firstElementChild.addEventListener('click', () => {
 		if (tab.firstElementChild.getAttribute('href') === '#Charts') {
-			import('../offline/js/chart.min.js').then(setTimeout(() => import('./DS-Charts.js'), 200))
+			import('../offline/js/chart.min.js').then(setTimeout(() => import('./DS-Charts.js'), 400))
 		}
 		tabs2.classList.remove('tabNavResponsive')
 	})
