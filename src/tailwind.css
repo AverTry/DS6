@@ -4,14 +4,14 @@
 @tailwind utilities;
 /* Tailwindcss Form Controls Reset */
 
-@layer base {
+
   /* Define Theme Dynamics by Variables */
 
   :root {
     --color-light: #ffffff;
     --color-dark: #111827;
   }
-}
+
 
     /* 
     bg-gray-300 = #f3f4f6 
@@ -20,8 +20,15 @@
     bg-gray-900 = #111827 
   */
 
-@layer utilities {
+  /* Floating Labels Red Asterisk for Required Inputs */
+  input[required]+label:after,
+  select[required]+label:after,
+  textarea[required]+label:after {
+    content: '\200a\002a';
+    color: red;
+  }
 
+@layer base {
   /* Blocking the input Border behind the Outline label */
     .outlineLabelCutout-Light {
       background: linear-gradient(transparent 50%, var(--color-light) 50%, var(--color-light) 60%, transparent 60%) ;
@@ -31,11 +38,7 @@
       background: linear-gradient(transparent 50%, var(--color-dark) 50%, var(--color-dark) 60%, transparent 60%) ;
     }
   } 
-
 }
-
-@layer components {
-
   /* OUTLINE Custom Inputs */
 
   .outlineFieldSet {
@@ -103,6 +106,16 @@
       transition-opacity duration-500 ease-in opacity-100
     ;
   }
+  .outline ::-moz-placeholder {
+    @apply 
+      text-gray-300 dark:text-gray-600 opacity-0
+    ;
+  }
+  .outline:focus-within ::-moz-placeholder {
+    @apply 
+      opacity-100
+    ;
+  }
   .outline :is(
     input ~ label,
     select ~ label,
@@ -143,10 +156,11 @@
 
   .outline select {
     @apply 
-      w-auto
+      w-fill
       pr-10
       lg:flex-shrink-0 
     ;
+    width: -moz-available
   }
   
   .outline select option {
@@ -207,32 +221,52 @@
   }
 
   /* Fine-Tune the Date Fields */
-  input[type="datetime-local"]::-webkit-calendar-picker-indicator {
-    @apply -ml-5 ;
-  }
 
-  input::-webkit-calendar-picker-indicator {
+  .outline input::-webkit-calendar-picker-indicator {
     @apply
       bg-none
       cursor-pointer
-      btn
     ;
   }
 
-  input[type="date"]:before,
-  input[type="datetime-local"]:before {
-    content: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoKCQoJCQoJCQk8cGF0aCBmaWxsPSIjOWNhM2FmIiBkPSJtMjc5IDM2NGMwIDIyLjA1NiAxNy45NDQgNDAgNDAgNDBoNDdjMjIuMDU2IDAgNDAtMTcuOTQ0IDQwLTQwdi00N2MwLTIyLjA1Ni0xNy45NDQtNDAtNDAtNDBoLTQ3Yy0yMi4wNTYgMC00MCAxNy45NDQtNDAgNDB2NDd6bTQwLTQ3aDQ3bDAuMDI1IDQ2Ljk5OXMtN2UtMyAxZS0zIC0wLjAyNSAxZS0zaC00N3YtNDd6Ii8+CgkJCTxjaXJjbGUgY3g9IjM4NiIgY3k9IjIxMCIgcj0iMjAiLz4KCQkJPGNpcmNsZSBjeD0iMjk5IiBjeT0iMjEwIiByPSIyMCIvPgoJCQk8cGF0aCBmaWxsPSIjOWNhM2FmIiBkPSJtNDkyIDM1MmMxMS4wNDYgMCAyMC04Ljk1NCAyMC0yMHYtMjEyYzAtNDQuMTEyLTM1Ljg4OC04MC04MC04MGgtMjZ2LTIwYzAtMTEuMDQ2LTguOTU0LTIwLTIwLTIwcy0yMCA4Ljk1NC0yMCAyMHYyMGgtOTF2LTIwYzAtMTEuMDQ2LTguOTU0LTIwLTIwLTIwcy0yMCA4Ljk1NC0yMCAyMHYyMGgtOTB2LTIwYzAtMTEuMDQ2LTguOTU0LTIwLTIwLTIwcy0yMCA4Ljk1NC0yMCAyMHYyMGgtMjVjLTQ0LjExMiAwLTgwIDM1Ljg4OC04MCA4MHYzMTJjMCA0NC4xMTIgMzUuODg4IDgwIDgwIDgwaDM1MmM0NC4xMTIgMCA4MC0zNS44ODggODAtODAgMC0xMS4wNDYtOC45NTQtMjAtMjAtMjBzLTIwIDguOTU0LTIwIDIwYzAgMjIuMDU2LTE3Ljk0NCA0MC00MCA0MGgtMzUyYy0yMi4wNTYgMC00MC0xNy45NDQtNDAtNDB2LTMxMmMwLTIyLjA1NiAxNy45NDQtNDAgNDAtNDBoMjV2MjBjMCAxMS4wNDYgOC45NTQgMjAgMjAgMjBzMjAtOC45NTQgMjAtMjB2LTIwaDkwdjIwYzAgMTEuMDQ2IDguOTU0IDIwIDIwIDIwczIwLTguOTU0IDIwLTIwdi0yMGg5MXYyMGMwIDExLjA0NiA4Ljk1NCAyMCAyMCAyMHMyMC04Ljk1NCAyMC0yMHYtMjBoMjZjMjIuMDU2IDAgNDAgMTcuOTQ0IDQwIDQwdjIxMmMwIDExLjA0NiA4Ljk1NCAyMCAyMCAyMHoiLz4KCQkJPGNpcmNsZSBjeD0iMTI1IiBjeT0iMzg0IiByPSIyMCIvPgoJCQk8Y2lyY2xlIGN4PSIxMjUiIGN5PSIyMTAiIHI9IjIwIi8+CgkJCTxjaXJjbGUgY3g9IjEyNSIgY3k9IjI5NyIgcj0iMjAiLz4KCQkJPGNpcmNsZSBjeD0iMjEyIiBjeT0iMjk3IiByPSIyMCIvPgoJCQk8Y2lyY2xlIGN4PSIyMTIiIGN5PSIyMTAiIHI9IjIwIi8+CgkJCTxjaXJjbGUgY3g9IjIxMiIgY3k9IjM4NCIgcj0iMjAiLz4KCQkKCQoKCgoKCgoKCgoKCgoKCgoKPC9zdmc+Cg==);
+  .outline input[type="time"],
+  .outline input[type="date"],
+  .outline input[type="datetime-local"] {
     @apply 
-      absolute top-3 right-4
-      w-5 h-5
-      pointer-events-none
+      pr-4
+      relative
+      w-auto
+      min-w-min
+      ;
+    }
+
+  .outline input::-webkit-datetime-edit {
+    @apply
+      max-w-min
     ;
   }
 
-  input[type="date"],
-  input[type="datetime-local"] {
-    @apply 
-      pr-3
+  .outline input.date {
+    @apply
+      pr-1
+    ;  
+  }  
+
+  .outline input.time {
+    @apply
+      pl-1
+    ;
+  }
+
+  .outline input::-webkit-calendar-picker-indicator {
+    @apply
+      bg-transparent
+      cursor-pointer
+      h-auto
+      w-auto
+      absolute
+      inset-0
+      m-1
     ;
   }
 
@@ -267,8 +301,6 @@
       outlineLabelCutout-Light dark:outlineLabelCutout-Dark
     ;
   }
-
-}
 
 /* Responsive Navigation for Mobile View */
   .navResponsive {
@@ -327,7 +359,9 @@
   /* Remove scrollbars from page and inputs */
   ::-webkit-scrollbar {
     @apply w-0;
-    scrollbar-width: none;
+  }
+  html {
+    scrollbar-width: none;    
   }
 
   /* Shift button left to add another button */

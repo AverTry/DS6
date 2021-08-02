@@ -24,6 +24,9 @@ module.exports = {
       spacing: {
         '5.5': '1.4rem',
       },
+      width: {
+        fill: '-webkit-fill-available'
+      }
     },
   }
 }

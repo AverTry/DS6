@@ -1,10 +1,9 @@
 {
   "name": "datasafe-6-tailwind",
-  "version": "6.0.19",
+  "version": "6.0.20",
   "description": "Client Database Application",
   "main": "index.html",
   "scripts": {
-    "browsersync": "browser-sync start --config './src/bs-config.js'",
     "compile": "npx tailwindcss -i ./src/tailwind.css -c ./src/tailwind.config.js -o ./dist/css/tailwind.css",
     "watch": "npx tailwindcss -i ./src/tailwind.css -c ./src/tailwind.config.js -o ./dist/css/tailwind.css -w"
   },

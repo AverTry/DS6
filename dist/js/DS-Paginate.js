@@ -284,7 +284,8 @@ runQuery = (pageNo = 1) => {
 	// sortValue = getSortOrder()
 	// let find = `alltxt=${firstQuery}&params=${Params()}&sort=${sortValue}&page=${pageNo}`
 	// let query = `https://ds5-1.avertry.repl.co/clients?${find}`
-	let query = `https://ds5-1.avertry.repl.co/clients?page=${pageNo}`
+	let query = `https://ds5-server.avertry.repl.co/clients?page=${pageNo}`
+	// let query = `https://ds5-1.avertry.repl.co/clients?page=${pageNo}`
 	// let query = `http://localhost:3000/clients?${find}`
 	fetch(query)
 		.then(response => {

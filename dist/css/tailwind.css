@@ -1,6 +1,6 @@
 @import "./forms.css";
 
-/*! tailwindcss v2.2.4 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v2.2.7 | MIT License | https://tailwindcss.com */
 
 /*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
@@ -577,6 +577,14 @@ video {
   height: auto;
 }
 
+/**
+ * Ensure the default browser behavior of the `hidden` attribute.
+ */
+
+[hidden] {
+  display: none;
+}
+
 *, ::before, ::after{
   --tw-translate-x: 0;
   --tw-translate-y: 0;
@@ -588,6 +596,8 @@ video {
   --tw-transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   --tw-border-opacity: 1;
   border-color: rgba(229, 231, 235, var(--tw-border-opacity));
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
   --tw-shadow: 0 0 #0000;
   --tw-ring-inset: var(--tw-empty,/*!*/ /*!*/);
   --tw-ring-offset-width: 0px;
@@ -595,34 +605,10 @@ video {
   --tw-ring-color: rgba(59, 130, 246, 0.5);
   --tw-ring-offset-shadow: 0 0 #0000;
   --tw-ring-shadow: 0 0 #0000;
-  --tw-blur: var(--tw-empty,/*!*/ /*!*/);
-  --tw-brightness: var(--tw-empty,/*!*/ /*!*/);
-  --tw-contrast: var(--tw-empty,/*!*/ /*!*/);
-  --tw-grayscale: var(--tw-empty,/*!*/ /*!*/);
-  --tw-hue-rotate: var(--tw-empty,/*!*/ /*!*/);
-  --tw-invert: var(--tw-empty,/*!*/ /*!*/);
-  --tw-saturate: var(--tw-empty,/*!*/ /*!*/);
-  --tw-sepia: var(--tw-empty,/*!*/ /*!*/);
-  --tw-drop-shadow: var(--tw-empty,/*!*/ /*!*/);
-  --tw-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-  --tw-backdrop-blur: var(--tw-empty,/*!*/ /*!*/);
-  --tw-backdrop-brightness: var(--tw-empty,/*!*/ /*!*/);
-  --tw-backdrop-contrast: var(--tw-empty,/*!*/ /*!*/);
-  --tw-backdrop-grayscale: var(--tw-empty,/*!*/ /*!*/);
-  --tw-backdrop-hue-rotate: var(--tw-empty,/*!*/ /*!*/);
-  --tw-backdrop-invert: var(--tw-empty,/*!*/ /*!*/);
-  --tw-backdrop-opacity: var(--tw-empty,/*!*/ /*!*/);
-  --tw-backdrop-saturate: var(--tw-empty,/*!*/ /*!*/);
-  --tw-backdrop-sepia: var(--tw-empty,/*!*/ /*!*/);
-  --tw-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  --tw-shadow: 0 0 #0000;
 }
 
-/* Define Theme Dynamics by Variables */
-
-:root {
-  --color-light: #ffffff;
-  --color-dark: #111827;
-}
+/* Blocking the input Border behind the Outline label */
 
 .container{
   width: 100%;
@@ -656,425 +642,6 @@ video {
   .container{
     max-width: 1536px;
   }
-}
-
-/* OUTLINE Custom Inputs */
-
-.outlineFieldSet > :not([hidden]) ~ :not([hidden]){
-  --tw-space-y-reverse: 0;
-  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
-}
-
-.outlineFieldSet{
-  border-radius: 0.5rem;
-  border-width: 1px;
-  --tw-border-opacity: 1;
-  border-color: rgba(209, 213, 219, var(--tw-border-opacity));
-  --tw-bg-opacity: 1;
-  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
-  padding: 1rem;
-  --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-
-.dark .outlineFieldSet{
-  --tw-border-opacity: 1;
-  border-color: rgba(75, 85, 99, var(--tw-border-opacity));
-  --tw-bg-opacity: 1;
-  background-color: rgba(17, 24, 39, var(--tw-bg-opacity));
-}
-
-@media (min-width: 640px){
-  .outlineFieldSet{
-    width: 100%;
-  }
-}
-
-@media (min-width: 768px){
-  .outlineFieldSet{
-    width: auto;
-  }
-}
-
-.outlineLedgend{
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  font-weight: 700;
-}
-
-.dark .outlineLedgend{
-  --tw-text-opacity: 1;
-  color: rgba(107, 114, 128, var(--tw-text-opacity));
-}
-
-.outline span{
-  position: absolute;
-  right: -0.125rem;
-  top: -0.125rem;
-  bottom: -0.125rem;
-  z-index: -1;
-  display: inline-flex;
-  align-items: center;
-  border-top-right-radius: 0.375rem;
-  border-bottom-right-radius: 0.375rem;
-  border-width: 2px;
-  --tw-border-opacity: 1;
-  border-color: rgba(229, 231, 235, var(--tw-border-opacity));
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-}
-
-.dark .outline span{
-  --tw-border-opacity: 1;
-  border-color: rgba(75, 85, 99, var(--tw-border-opacity));
-}
-
-.outline span svg{
-  height: 1.25rem;
-  width: 1.25rem;
-  --tw-text-opacity: 1;
-  color: rgba(156, 163, 175, var(--tw-text-opacity));
-}
-
-.outline span ~ input{
-  padding-right: 4rem;
-}
-
-.outline{
-  position: relative;
-  flex-grow: 1;
-  border-radius: 0.5rem;
-  border-width: 2px;
-  --tw-border-opacity: 1;
-  border-color: rgba(229, 231, 235, var(--tw-border-opacity));
-}
-
-.dark .outline{
-  --tw-border-opacity: 1;
-  border-color: rgba(75, 85, 99, var(--tw-border-opacity));
-}
-
-.outline:focus-within, .outline:focus-within span{
-  --tw-border-opacity: 1;
-  border-color: rgba(147, 197, 253, var(--tw-border-opacity));
-}
-
-.outline ::-webkit-input-placeholder{
-  --tw-text-opacity: 1;
-  color: rgba(209, 213, 219, var(--tw-text-opacity));
-  opacity: 0;
-}
-
-.dark .outline ::-webkit-input-placeholder{
-  --tw-text-opacity: 1;
-  color: rgba(75, 85, 99, var(--tw-text-opacity));
-}
-
-.outline:focus-within ::-webkit-input-placeholder{
-  opacity: 1;
-  -webkit-transition-property: opacity;
-  transition-property: opacity;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-  transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-}
-
-.outline :is(
-    input ~ label, select ~ label, textarea ~ label){
-  pointer-events: none;
-  position: absolute;
-  top: 0px;
-  margin: 0.5rem;
-  margin-left: 0.75rem;
-  transform-origin: left;
-  --tw-transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  --tw-text-opacity: 1;
-  color: rgba(107, 114, 128, var(--tw-text-opacity));
-  transition-property: transform;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-  transition-duration: 300ms;
-  transition-timing-function: linear;
-}
-
-.dark .outline :is(
-    input ~ label, .dark select ~ label, .dark textarea ~ label){
-  --tw-text-opacity: 1;
-  color: rgba(156, 163, 175, var(--tw-text-opacity));
-}
-
-.outline :is(
-    input:focus-within ~ label, select:focus-within ~ label, textarea:focus-within ~ label, input:not(:-moz-placeholder-shown) ~ label, select:not(:-moz-placeholder-shown) ~ label, textarea:not(:-moz-placeholder-shown) ~ label){
-  --tw-translate-y: -1.4rem;
-  transform: var(--tw-transform);
-  --tw-translate-x: -0.5rem;
-  transform: var(--tw-transform);
-  --tw-scale-x: .75;
-  --tw-scale-y: .75;
-  transform: var(--tw-transform);
-}
-
-.outline :is(
-    input:focus-within ~ label, select:focus-within ~ label, textarea:focus-within ~ label, input:not(:-ms-input-placeholder) ~ label, select:not(:-ms-input-placeholder) ~ label, textarea:not(:-ms-input-placeholder) ~ label){
-  --tw-translate-y: -1.4rem;
-  transform: var(--tw-transform);
-  --tw-translate-x: -0.5rem;
-  transform: var(--tw-transform);
-  --tw-scale-x: .75;
-  --tw-scale-y: .75;
-  transform: var(--tw-transform);
-}
-
-.outline :is(
-    input:focus-within ~ label, select:focus-within ~ label, textarea:focus-within ~ label, input:not(:placeholder-shown) ~ label, select:not(:placeholder-shown) ~ label, textarea:not(:placeholder-shown) ~ label){
-  --tw-translate-y: -1.4rem;
-  transform: var(--tw-transform);
-  --tw-translate-x: -0.5rem;
-  transform: var(--tw-transform);
-  --tw-scale-x: .75;
-  --tw-scale-y: .75;
-  transform: var(--tw-transform);
-}
-
-.outline :is(
-    input, select, textarea){
-  display: block;
-  width: 100%;
-  border-radius: 0.375rem;
-  border-width: 0px;
-  background-color: var(--color-light);
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
-.outline :is(
-    input:focus, select:focus, textarea):focus{
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-}
-
-.dark .outline :is(
-    input, .dark select, .dark textarea){
-  background-color: var(--color-dark);
-}
-
-.outline select{
-  width: auto;
-  padding-right: 2.5rem;
-}
-
-@media (min-width: 1024px){
-  .outline select{
-    flex-shrink: 0;
-  }
-}
-
-.outline select option{
-  --tw-bg-opacity: 1;
-  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
-}
-
-.dark .outline select option{
-  --tw-bg-opacity: 1;
-  background-color: rgba(17, 24, 39, var(--tw-bg-opacity));
-}
-
-.outline textarea{
-  height: 100%;
-  resize: none;
-}
-
-/* Tabs */
-
-.tab-pane.active{
-  display: block;
-}
-
-li a{
-  border-bottom-width: 4px;
-  border-color: transparent;
-  padding-bottom: 0.25rem;
-  --tw-text-opacity: 1;
-  color: rgba(209, 213, 219, var(--tw-text-opacity));
-}
-
-.dark li a{
-  --tw-text-opacity: 1;
-  color: rgba(107, 114, 128, var(--tw-text-opacity));
-}
-
-li:hover a, li.active a{
-  --tw-text-opacity: 1;
-  color: rgba(156, 163, 175, var(--tw-text-opacity));
-}
-
-.dark li:hover a, .dark li.active a{
-  --tw-text-opacity: 1;
-  color: rgba(245, 158, 11, var(--tw-text-opacity));
-}
-
-.btn:focus-within, .btn:hover{
-  cursor: pointer;
-  border-radius: 0.125rem;
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgba(209, 213, 219, var(--tw-ring-opacity));
-  --tw-ring-opacity: 0.8;
-  --tw-ring-offset-width: 4px;
-  --tw-ring-offset-color: #e5e7eb;
-}
-
-.dark .btn:focus-within, .dark .btn:hover{
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgba(55, 65, 81, var(--tw-ring-opacity));
-  --tw-ring-opacity: 0.8;
-  --tw-ring-offset-color: #1f2937;
-}
-
-.srcContainer:focus-within{
-  --tw-text-opacity: 1;
-  color: rgba(75, 85, 99, var(--tw-text-opacity));
-}
-
-.dark .srcContainer:focus-within{
-  --tw-text-opacity: 1;
-  color: rgba(245, 158, 11, var(--tw-text-opacity));
-}
-
-/* Fine-Tune the Date Fields */
-
-input[type="datetime-local"]::-webkit-calendar-picker-indicator{
-  margin-left: -1.25rem;
-}
-
-input::-webkit-calendar-picker-indicator:focus-within, input::-webkit-calendar-picker-indicator:hover{
-  cursor: pointer;
-  border-radius: 0.125rem;
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgba(209, 213, 219, var(--tw-ring-opacity));
-  --tw-ring-opacity: 0.8;
-  --tw-ring-offset-width: 4px;
-  --tw-ring-offset-color: #e5e7eb;
-}
-
-.dark input::-webkit-calendar-picker-indicator:focus-within, .dark input::-webkit-calendar-picker-indicator:hover{
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgba(55, 65, 81, var(--tw-ring-opacity));
-  --tw-ring-opacity: 0.8;
-  --tw-ring-offset-color: #1f2937;
-}
-
-input::-webkit-calendar-picker-indicator:focus-within, input::-webkit-calendar-picker-indicator:hover{
-  cursor: pointer;
-  border-radius: 0.125rem;
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgba(209, 213, 219, var(--tw-ring-opacity));
-  --tw-ring-opacity: 0.8;
-  --tw-ring-offset-width: 4px;
-  --tw-ring-offset-color: #e5e7eb;
-}
-
-.dark input::-webkit-calendar-picker-indicator:focus-within, .dark input::-webkit-calendar-picker-indicator:hover{
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgba(55, 65, 81, var(--tw-ring-opacity));
-  --tw-ring-opacity: 0.8;
-  --tw-ring-offset-color: #1f2937;
-}
-
-input::-webkit-calendar-picker-indicator{
-  cursor: pointer;
-  background-image: none;
-}
-
-input[type="date"]:before,
-  input[type="datetime-local"]:before {
-  content: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoKCQoJCQoJCQk8cGF0aCBmaWxsPSIjOWNhM2FmIiBkPSJtMjc5IDM2NGMwIDIyLjA1NiAxNy45NDQgNDAgNDAgNDBoNDdjMjIuMDU2IDAgNDAtMTcuOTQ0IDQwLTQwdi00N2MwLTIyLjA1Ni0xNy45NDQtNDAtNDAtNDBoLTQ3Yy0yMi4wNTYgMC00MCAxNy45NDQtNDAgNDB2NDd6bTQwLTQ3aDQ3bDAuMDI1IDQ2Ljk5OXMtN2UtMyAxZS0zIC0wLjAyNSAxZS0zaC00N3YtNDd6Ii8+CgkJCTxjaXJjbGUgY3g9IjM4NiIgY3k9IjIxMCIgcj0iMjAiLz4KCQkJPGNpcmNsZSBjeD0iMjk5IiBjeT0iMjEwIiByPSIyMCIvPgoJCQk8cGF0aCBmaWxsPSIjOWNhM2FmIiBkPSJtNDkyIDM1MmMxMS4wNDYgMCAyMC04Ljk1NCAyMC0yMHYtMjEyYzAtNDQuMTEyLTM1Ljg4OC04MC04MC04MGgtMjZ2LTIwYzAtMTEuMDQ2LTguOTU0LTIwLTIwLTIwcy0yMCA4Ljk1NC0yMCAyMHYyMGgtOTF2LTIwYzAtMTEuMDQ2LTguOTU0LTIwLTIwLTIwcy0yMCA4Ljk1NC0yMCAyMHYyMGgtOTB2LTIwYzAtMTEuMDQ2LTguOTU0LTIwLTIwLTIwcy0yMCA4Ljk1NC0yMCAyMHYyMGgtMjVjLTQ0LjExMiAwLTgwIDM1Ljg4OC04MCA4MHYzMTJjMCA0NC4xMTIgMzUuODg4IDgwIDgwIDgwaDM1MmM0NC4xMTIgMCA4MC0zNS44ODggODAtODAgMC0xMS4wNDYtOC45NTQtMjAtMjAtMjBzLTIwIDguOTU0LTIwIDIwYzAgMjIuMDU2LTE3Ljk0NCA0MC00MCA0MGgtMzUyYy0yMi4wNTYgMC00MC0xNy45NDQtNDAtNDB2LTMxMmMwLTIyLjA1NiAxNy45NDQtNDAgNDAtNDBoMjV2MjBjMCAxMS4wNDYgOC45NTQgMjAgMjAgMjBzMjAtOC45NTQgMjAtMjB2LTIwaDkwdjIwYzAgMTEuMDQ2IDguOTU0IDIwIDIwIDIwczIwLTguOTU0IDIwLTIwdi0yMGg5MXYyMGMwIDExLjA0NiA4Ljk1NCAyMCAyMCAyMHMyMC04Ljk1NCAyMC0yMHYtMjBoMjZjMjIuMDU2IDAgNDAgMTcuOTQ0IDQwIDQwdjIxMmMwIDExLjA0NiA4Ljk1NCAyMCAyMCAyMHoiLz4KCQkJPGNpcmNsZSBjeD0iMTI1IiBjeT0iMzg0IiByPSIyMCIvPgoJCQk8Y2lyY2xlIGN4PSIxMjUiIGN5PSIyMTAiIHI9IjIwIi8+CgkJCTxjaXJjbGUgY3g9IjEyNSIgY3k9IjI5NyIgcj0iMjAiLz4KCQkJPGNpcmNsZSBjeD0iMjEyIiBjeT0iMjk3IiByPSIyMCIvPgoJCQk8Y2lyY2xlIGN4PSIyMTIiIGN5PSIyMTAiIHI9IjIwIi8+CgkJCTxjaXJjbGUgY3g9IjIxMiIgY3k9IjM4NCIgcj0iMjAiLz4KCQkKCQoKCgoKCgoKCgoKCgoKCgoKPC9zdmc+Cg==);
-  pointer-events: none;
-  position: absolute;
-  top: 0.75rem;
-  right: 1rem;
-  height: 1.25rem;
-  width: 1.25rem;
-}
-
-input[type="date"], input[type="datetime-local"]{
-  padding-right: 0.75rem;
-}
-
-/* ADDED by JS for Borderless */
-
-.borderLess.outline, .borderLess.outline span{
-  border-color: transparent;
-}
-
-.borderLess.outline :is(
-    input:focus-within, select:focus-within, textarea:focus-within), :is(input).borderlessInputs:focus{
-  --tw-bg-opacity: 1;
-  background-color: rgba(147, 197, 253, var(--tw-bg-opacity));
-  --tw-bg-opacity: 0.2;
-}
-
-/* REMOVED by JS for Borderless */
-
-.Bordered.outline :is(
-    input:focus-within ~ label, select:focus-within ~ label, textarea:focus-within ~ label, input:not(:-moz-placeholder-shown) ~ label, select:not(:-moz-placeholder-shown) ~ label, textarea:not(:-moz-placeholder-shown) ~ label){
-  --tw-translate-y: -1.5rem;
-  transform: var(--tw-transform);
-  --tw-translate-x: -0.5rem;
-  transform: var(--tw-transform);
-  background: linear-gradient(transparent 50%, var(--color-light) 50%, var(--color-light) 60%, transparent 60%) ;
-}
-
-.Bordered.outline :is(
-    input:focus-within ~ label, select:focus-within ~ label, textarea:focus-within ~ label, input:not(:-ms-input-placeholder) ~ label, select:not(:-ms-input-placeholder) ~ label, textarea:not(:-ms-input-placeholder) ~ label){
-  --tw-translate-y: -1.5rem;
-  transform: var(--tw-transform);
-  --tw-translate-x: -0.5rem;
-  transform: var(--tw-transform);
-  background: linear-gradient(transparent 50%, var(--color-light) 50%, var(--color-light) 60%, transparent 60%) ;
-}
-
-.Bordered.outline :is(
-    input:focus-within ~ label, select:focus-within ~ label, textarea:focus-within ~ label, input:not(:placeholder-shown) ~ label, select:not(:placeholder-shown) ~ label, textarea:not(:placeholder-shown) ~ label){
-  --tw-translate-y: -1.5rem;
-  transform: var(--tw-transform);
-  --tw-translate-x: -0.5rem;
-  transform: var(--tw-transform);
-  background: linear-gradient(transparent 50%, var(--color-light) 50%, var(--color-light) 60%, transparent 60%) ;
-}
-
-.dark .Bordered.outline :is(
-    input:focus-within ~ label, .dark select:focus-within ~ label, .dark textarea:focus-within ~ label, .dark input:not(:-moz-placeholder-shown) ~ label, .dark select:not(:-moz-placeholder-shown) ~ label, .dark textarea:not(:-moz-placeholder-shown) ~ label) {
-  background: linear-gradient(transparent 50%, var(--color-dark) 50%, var(--color-dark) 60%, transparent 60%) ;
-}
-
-.dark .Bordered.outline :is(
-    input:focus-within ~ label, .dark select:focus-within ~ label, .dark textarea:focus-within ~ label, .dark input:not(:-ms-input-placeholder) ~ label, .dark select:not(:-ms-input-placeholder) ~ label, .dark textarea:not(:-ms-input-placeholder) ~ label) {
-  background: linear-gradient(transparent 50%, var(--color-dark) 50%, var(--color-dark) 60%, transparent 60%) ;
-}
-
-.dark .Bordered.outline :is(
-    input:focus-within ~ label, .dark select:focus-within ~ label, .dark textarea:focus-within ~ label, .dark input:not(:placeholder-shown) ~ label, .dark select:not(:placeholder-shown) ~ label, .dark textarea:not(:placeholder-shown) ~ label) {
-  background: linear-gradient(transparent 50%, var(--color-dark) 50%, var(--color-dark) 60%, transparent 60%) ;
 }
 
 .pointer-events-none{
@@ -1375,8 +942,8 @@ input[type="date"], input[type="datetime-local"]{
   width: 104px;
 }
 
-.min-w-\[303px\]{
-  min-width: 303px;
+.min-w-\[264px\]{
+  min-width: 264px;
 }
 
 .min-w-full{
@@ -1730,17 +1297,13 @@ input[type="date"], input[type="datetime-local"]{
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Blocking the input Border behind the Outline label */
-
 /* Tailwindcss Form Controls Reset */
 
-@layer base {
-  /* Define Theme Dynamics by Variables */
+/* Define Theme Dynamics by Variables */
 
-  :root {
-    --color-light: #ffffff;
-    --color-dark: #111827;
-  }
+:root {
+  --color-light: #ffffff;
+  --color-dark: #111827;
 }
 
 /* 
@@ -1750,756 +1313,427 @@ input[type="date"], input[type="datetime-local"]{
     bg-gray-900 = #111827 
   */
 
-@layer utilities {
-  /* Blocking the input Border behind the Outline label */
+/* Floating Labels Red Asterisk for Required Inputs */
 
-  .outlineLabelCutout-Light {
-    background: linear-gradient(transparent 50%, var(--color-light) 50%, var(--color-light) 60%, transparent 60%) ;
-  }
+input[required]+label:after,
+  select[required]+label:after,
+  textarea[required]+label:after {
+  content: '\200a\002a';
+  color: red;
+}
 
-  @variants dark {
-    .outlineLabelCutout-Dark {
-      background: linear-gradient(transparent 50%, var(--color-dark) 50%, var(--color-dark) 60%, transparent 60%) ;
-    }
+/* OUTLINE Custom Inputs */
+
+.outlineFieldSet > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
+}
+
+.outlineFieldSet{
+  border-radius: 0.5rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(209, 213, 219, var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  padding: 1rem;
+  --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.dark .outlineFieldSet{
+  --tw-border-opacity: 1;
+  border-color: rgba(75, 85, 99, var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgba(17, 24, 39, var(--tw-bg-opacity));
+}
+
+@media (min-width: 640px){
+  .outlineFieldSet{
+    width: 100%;
   }
 }
 
-@layer components {
-  /* OUTLINE Custom Inputs */
-
-  .outlineFieldSet > :not([hidden]) ~ :not([hidden]){
-    --tw-space-y-reverse: 0;
-    margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
-    margin-bottom: calc(1rem * var(--tw-space-y-reverse));
-  }
-
+@media (min-width: 768px){
   .outlineFieldSet{
-    border-radius: 0.5rem;
-  }
-
-  .outlineFieldSet{
-    border-width: 1px;
-  }
-
-  .outlineFieldSet{
-    --tw-border-opacity: 1;
-    border-color: rgba(209, 213, 219, var(--tw-border-opacity));
-  }
-
-  .outlineFieldSet{
-    --tw-bg-opacity: 1;
-    background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
-  }
-
-  .outlineFieldSet{
-    padding: 1rem;
-  }
-
-  .outlineFieldSet{
-    --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-  }
-
-  .dark .outlineFieldSet{
-    --tw-border-opacity: 1;
-    border-color: rgba(75, 85, 99, var(--tw-border-opacity));
-  }
-
-  .dark .outlineFieldSet{
-    --tw-bg-opacity: 1;
-    background-color: rgba(17, 24, 39, var(--tw-bg-opacity));
-  }
-
-  @media (min-width: 640px){
-    .outlineFieldSet{
-      width: 100%;
-    }
-  }
-
-  @media (min-width: 768px){
-    .outlineFieldSet{
-      width: auto;
-    }
-  }
-
-  .outlineLedgend{
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-  }
-
-  .outlineLedgend{
-    font-weight: 700;
-  }
-
-  .dark .outlineLedgend{
-    --tw-text-opacity: 1;
-    color: rgba(107, 114, 128, var(--tw-text-opacity));
-  }
-
-  .outline span{
-    position: absolute;
-  }
-
-  .outline span{
-    right: -0.125rem;
-  }
-
-  .outline span{
-    top: -0.125rem;
-  }
-
-  .outline span{
-    bottom: -0.125rem;
-  }
-
-  .outline span{
-    z-index: -1;
-  }
-
-  .outline span{
-    display: inline-flex;
-  }
-
-  .outline span{
-    align-items: center;
-  }
-
-  .outline span{
-    border-top-right-radius: 0.375rem;
-    border-bottom-right-radius: 0.375rem;
-  }
-
-  .outline span{
-    border-width: 2px;
-  }
-
-  .outline span{
-    --tw-border-opacity: 1;
-    border-color: rgba(229, 231, 235, var(--tw-border-opacity));
-  }
-
-  .outline span{
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-  }
-
-  .dark .outline span{
-    --tw-border-opacity: 1;
-    border-color: rgba(75, 85, 99, var(--tw-border-opacity));
-  }
-
-  .outline span svg{
-    height: 1.25rem;
-  }
-
-  .outline span svg{
-    width: 1.25rem;
-  }
-
-  .outline span svg{
-    --tw-text-opacity: 1;
-    color: rgba(156, 163, 175, var(--tw-text-opacity));
-  }
-
-  .outline span ~ input{
-    padding-right: 4rem;
-  }
-
-  .outline{
-    position: relative;
-  }
-
-  .outline{
-    flex-grow: 1;
-  }
-
-  .outline{
-    border-radius: 0.5rem;
-  }
-
-  .outline{
-    border-width: 2px;
-  }
-
-  .outline{
-    --tw-border-opacity: 1;
-    border-color: rgba(229, 231, 235, var(--tw-border-opacity));
-  }
-
-  .dark .outline{
-    --tw-border-opacity: 1;
-    border-color: rgba(75, 85, 99, var(--tw-border-opacity));
-  }
-
-  .outline:focus-within, .outline:focus-within span{
-    --tw-border-opacity: 1;
-    border-color: rgba(147, 197, 253, var(--tw-border-opacity));
-  }
-
-  .outline ::-webkit-input-placeholder{
-    --tw-text-opacity: 1;
-    color: rgba(209, 213, 219, var(--tw-text-opacity));
-  }
-
-  .outline ::-webkit-input-placeholder{
-    opacity: 0;
-  }
-
-  .dark .outline ::-webkit-input-placeholder{
-    --tw-text-opacity: 1;
-    color: rgba(75, 85, 99, var(--tw-text-opacity));
-  }
-
-  .outline:focus-within ::-webkit-input-placeholder{
-    opacity: 1;
-  }
-
-  .outline:focus-within ::-webkit-input-placeholder{
-    -webkit-transition-property: opacity;
-    transition-property: opacity;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .outline:focus-within ::-webkit-input-placeholder{
-    transition-duration: 500ms;
-  }
-
-  .outline:focus-within ::-webkit-input-placeholder{
-    transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-  }
-
-  .outline :is(
-    input ~ label, select ~ label, textarea ~ label){
-    pointer-events: none;
-  }
-
-  .outline :is(
-    input ~ label, select ~ label, textarea ~ label){
-    position: absolute;
-  }
-
-  .outline :is(
-    input ~ label, select ~ label, textarea ~ label){
-    top: 0px;
-  }
-
-  .outline :is(
-    input ~ label, select ~ label, textarea ~ label){
-    margin: 0.5rem;
-  }
-
-  .outline :is(
-    input ~ label, select ~ label, textarea ~ label){
-    margin-left: 0.75rem;
-  }
-
-  .outline :is(
-    input ~ label, select ~ label, textarea ~ label){
-    transform-origin: left;
-  }
-
-  .outline :is(
-    input ~ label, select ~ label, textarea ~ label){
-    --tw-transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
-
-  .outline :is(
-    input ~ label, select ~ label, textarea ~ label){
-    padding-left: 0.25rem;
-    padding-right: 0.25rem;
-  }
-
-  .outline :is(
-    input ~ label, select ~ label, textarea ~ label){
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-  }
-
-  .outline :is(
-    input ~ label, select ~ label, textarea ~ label){
-    --tw-text-opacity: 1;
-    color: rgba(107, 114, 128, var(--tw-text-opacity));
-  }
-
-  .outline :is(
-    input ~ label, select ~ label, textarea ~ label){
-    transition-property: transform;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-  }
-
-  .outline :is(
-    input ~ label, select ~ label, textarea ~ label){
-    transition-duration: 300ms;
-  }
-
-  .outline :is(
-    input ~ label, select ~ label, textarea ~ label){
-    transition-timing-function: linear;
-  }
-
-  .dark .outline :is(
-    input ~ label, .dark select ~ label, .dark textarea ~ label){
-    --tw-text-opacity: 1;
-    color: rgba(156, 163, 175, var(--tw-text-opacity));
-  }
-
-  .outline :is(
-    input:focus-within ~ label, select:focus-within ~ label, textarea:focus-within ~ label, input:not(:-moz-placeholder-shown) ~ label, select:not(:-moz-placeholder-shown) ~ label, textarea:not(:-moz-placeholder-shown) ~ label){
-    --tw-translate-y: -1.4rem;
-    transform: var(--tw-transform);
-  }
-
-  .outline :is(
-    input:focus-within ~ label, select:focus-within ~ label, textarea:focus-within ~ label, input:not(:-ms-input-placeholder) ~ label, select:not(:-ms-input-placeholder) ~ label, textarea:not(:-ms-input-placeholder) ~ label){
-    --tw-translate-y: -1.4rem;
-    transform: var(--tw-transform);
-  }
-
-  .outline :is(
-    input:focus-within ~ label, select:focus-within ~ label, textarea:focus-within ~ label, input:not(:placeholder-shown) ~ label, select:not(:placeholder-shown) ~ label, textarea:not(:placeholder-shown) ~ label){
-    --tw-translate-y: -1.4rem;
-    transform: var(--tw-transform);
-  }
-
-  .outline :is(
-    input:focus-within ~ label, select:focus-within ~ label, textarea:focus-within ~ label, input:not(:-moz-placeholder-shown) ~ label, select:not(:-moz-placeholder-shown) ~ label, textarea:not(:-moz-placeholder-shown) ~ label){
-    --tw-translate-x: -0.5rem;
-    transform: var(--tw-transform);
-  }
-
-  .outline :is(
-    input:focus-within ~ label, select:focus-within ~ label, textarea:focus-within ~ label, input:not(:-ms-input-placeholder) ~ label, select:not(:-ms-input-placeholder) ~ label, textarea:not(:-ms-input-placeholder) ~ label){
-    --tw-translate-x: -0.5rem;
-    transform: var(--tw-transform);
-  }
-
-  .outline :is(
-    input:focus-within ~ label, select:focus-within ~ label, textarea:focus-within ~ label, input:not(:placeholder-shown) ~ label, select:not(:placeholder-shown) ~ label, textarea:not(:placeholder-shown) ~ label){
-    --tw-translate-x: -0.5rem;
-    transform: var(--tw-transform);
-  }
-
-  .outline :is(
-    input:focus-within ~ label, select:focus-within ~ label, textarea:focus-within ~ label, input:not(:-moz-placeholder-shown) ~ label, select:not(:-moz-placeholder-shown) ~ label, textarea:not(:-moz-placeholder-shown) ~ label){
-    --tw-scale-x: .75;
-    --tw-scale-y: .75;
-    transform: var(--tw-transform);
-  }
-
-  .outline :is(
-    input:focus-within ~ label, select:focus-within ~ label, textarea:focus-within ~ label, input:not(:-ms-input-placeholder) ~ label, select:not(:-ms-input-placeholder) ~ label, textarea:not(:-ms-input-placeholder) ~ label){
-    --tw-scale-x: .75;
-    --tw-scale-y: .75;
-    transform: var(--tw-transform);
-  }
-
-  .outline :is(
-    input:focus-within ~ label, select:focus-within ~ label, textarea:focus-within ~ label, input:not(:placeholder-shown) ~ label, select:not(:placeholder-shown) ~ label, textarea:not(:placeholder-shown) ~ label){
-    --tw-scale-x: .75;
-    --tw-scale-y: .75;
-    transform: var(--tw-transform);
-  }
-
-  .outline :is(
-    input, select, textarea){
-    display: block;
-  }
-
-  .outline :is(
-    input, select, textarea){
-    width: 100%;
-  }
-
-  .outline :is(
-    input, select, textarea){
-    border-radius: 0.375rem;
-  }
-
-  .outline :is(
-    input, select, textarea){
-    border-width: 0px;
-  }
-
-  .outline :is(
-    input, select, textarea){
-    background-color: var(--color-light);
-  }
-
-  .outline :is(
-    input, select, textarea){
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  .outline :is(
-    input, select, textarea){
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-  }
-
-  .outline :is(
-    input, select, textarea){
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-  }
-
-  .outline :is(
-    input:focus, select:focus, textarea):focus{
-    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-  }
-
-  .dark .outline :is(
-    input, .dark select, .dark textarea){
-    background-color: var(--color-dark);
-  }
-
-  .outline select{
     width: auto;
   }
+}
 
+.outlineLedgend{
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+}
+
+.dark .outlineLedgend{
+  --tw-text-opacity: 1;
+  color: rgba(107, 114, 128, var(--tw-text-opacity));
+}
+
+.outline span{
+  position: absolute;
+  right: -0.125rem;
+  top: -0.125rem;
+  bottom: -0.125rem;
+  z-index: -1;
+  display: inline-flex;
+  align-items: center;
+  border-top-right-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgba(229, 231, 235, var(--tw-border-opacity));
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.dark .outline span{
+  --tw-border-opacity: 1;
+  border-color: rgba(75, 85, 99, var(--tw-border-opacity));
+}
+
+.outline span svg{
+  height: 1.25rem;
+  width: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgba(156, 163, 175, var(--tw-text-opacity));
+}
+
+.outline span ~ input{
+  padding-right: 4rem;
+}
+
+.outline{
+  position: relative;
+  flex-grow: 1;
+  border-radius: 0.5rem;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgba(229, 231, 235, var(--tw-border-opacity));
+}
+
+.dark .outline{
+  --tw-border-opacity: 1;
+  border-color: rgba(75, 85, 99, var(--tw-border-opacity));
+}
+
+.outline:focus-within, .outline:focus-within span{
+  --tw-border-opacity: 1;
+  border-color: rgba(147, 197, 253, var(--tw-border-opacity));
+}
+
+.outline ::-webkit-input-placeholder{
+  --tw-text-opacity: 1;
+  color: rgba(209, 213, 219, var(--tw-text-opacity));
+  opacity: 0;
+}
+
+.dark .outline ::-webkit-input-placeholder{
+  --tw-text-opacity: 1;
+  color: rgba(75, 85, 99, var(--tw-text-opacity));
+}
+
+.outline:focus-within ::-webkit-input-placeholder{
+  opacity: 1;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
+.outline ::-moz-placeholder{
+  --tw-text-opacity: 1;
+  color: rgba(209, 213, 219, var(--tw-text-opacity));
+  opacity: 0;
+}
+
+.dark .outline ::-moz-placeholder{
+  --tw-text-opacity: 1;
+  color: rgba(75, 85, 99, var(--tw-text-opacity));
+}
+
+.outline:focus-within ::-moz-placeholder{
+  opacity: 1;
+}
+
+.outline :is(
+    input ~ label, select ~ label, textarea ~ label){
+  pointer-events: none;
+  position: absolute;
+  top: 0px;
+  margin: 0.5rem;
+  margin-left: 0.75rem;
+  transform-origin: left;
+  --tw-transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgba(107, 114, 128, var(--tw-text-opacity));
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-duration: 300ms;
+  transition-timing-function: linear;
+}
+
+.dark .outline :is(
+    input ~ label, .dark select ~ label, .dark textarea ~ label){
+  --tw-text-opacity: 1;
+  color: rgba(156, 163, 175, var(--tw-text-opacity));
+}
+
+.outline :is(
+    input:focus-within ~ label, select:focus-within ~ label, textarea:focus-within ~ label, input:not(:-moz-placeholder-shown) ~ label, select:not(:-moz-placeholder-shown) ~ label, textarea:not(:-moz-placeholder-shown) ~ label){
+  --tw-translate-y: -1.4rem;
+  transform: var(--tw-transform);
+  --tw-translate-x: -0.5rem;
+  transform: var(--tw-transform);
+  --tw-scale-x: .75;
+  --tw-scale-y: .75;
+  transform: var(--tw-transform);
+}
+
+.outline :is(
+    input:focus-within ~ label, select:focus-within ~ label, textarea:focus-within ~ label, input:not(:-ms-input-placeholder) ~ label, select:not(:-ms-input-placeholder) ~ label, textarea:not(:-ms-input-placeholder) ~ label){
+  --tw-translate-y: -1.4rem;
+  transform: var(--tw-transform);
+  --tw-translate-x: -0.5rem;
+  transform: var(--tw-transform);
+  --tw-scale-x: .75;
+  --tw-scale-y: .75;
+  transform: var(--tw-transform);
+}
+
+.outline :is(
+    input:focus-within ~ label, select:focus-within ~ label, textarea:focus-within ~ label, input:not(:placeholder-shown) ~ label, select:not(:placeholder-shown) ~ label, textarea:not(:placeholder-shown) ~ label){
+  --tw-translate-y: -1.4rem;
+  transform: var(--tw-transform);
+  --tw-translate-x: -0.5rem;
+  transform: var(--tw-transform);
+  --tw-scale-x: .75;
+  --tw-scale-y: .75;
+  transform: var(--tw-transform);
+}
+
+.outline :is(
+    input, select, textarea){
+  display: block;
+  width: 100%;
+  border-radius: 0.375rem;
+  border-width: 0px;
+  background-color: var(--color-light);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.outline :is(
+    input:focus, select:focus, textarea):focus{
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+
+.dark .outline :is(
+    input, .dark select, .dark textarea){
+  background-color: var(--color-dark);
+}
+
+.outline select{
+  width: -webkit-fill-available;
+  padding-right: 2.5rem;
+}
+
+@media (min-width: 1024px){
   .outline select{
-    padding-right: 2.5rem;
+    flex-shrink: 0;
   }
+}
 
-  @media (min-width: 1024px){
-    .outline select{
-      flex-shrink: 0;
-    }
-  }
+.outline select {
+  width: -moz-available
+}
 
-  .outline select option{
-    --tw-bg-opacity: 1;
-    background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
-  }
+.outline select option{
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+}
 
-  .dark .outline select option{
-    --tw-bg-opacity: 1;
-    background-color: rgba(17, 24, 39, var(--tw-bg-opacity));
-  }
+.dark .outline select option{
+  --tw-bg-opacity: 1;
+  background-color: rgba(17, 24, 39, var(--tw-bg-opacity));
+}
 
-  .outline textarea{
-    height: 100%;
-  }
+.outline textarea{
+  height: 100%;
+  resize: none;
+}
 
-  .outline textarea{
-    resize: none;
-  }
+/* Tabs */
 
-  /* Tabs */
+.tab-pane.active{
+  display: block;
+}
 
-  .tab-pane.active{
-    display: block;
-  }
+li a{
+  border-bottom-width: 4px;
+  border-color: transparent;
+  padding-bottom: 0.25rem;
+  --tw-text-opacity: 1;
+  color: rgba(209, 213, 219, var(--tw-text-opacity));
+}
 
-  li a{
-    border-bottom-width: 4px;
-  }
+.dark li a{
+  --tw-text-opacity: 1;
+  color: rgba(107, 114, 128, var(--tw-text-opacity));
+}
 
-  li a{
-    border-color: transparent;
-  }
+li:hover a, li.active a{
+  --tw-text-opacity: 1;
+  color: rgba(156, 163, 175, var(--tw-text-opacity));
+}
 
-  li a{
-    padding-bottom: 0.25rem;
-  }
+.dark li:hover a, .dark li.active a{
+  --tw-text-opacity: 1;
+  color: rgba(245, 158, 11, var(--tw-text-opacity));
+}
 
-  li a{
-    --tw-text-opacity: 1;
-    color: rgba(209, 213, 219, var(--tw-text-opacity));
-  }
+.btn:focus-within, .btn:hover{
+  cursor: pointer;
+  border-radius: 0.125rem;
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgba(209, 213, 219, var(--tw-ring-opacity));
+  --tw-ring-opacity: 0.8;
+  --tw-ring-offset-width: 4px;
+  --tw-ring-offset-color: #e5e7eb;
+}
 
-  .dark li a{
-    --tw-text-opacity: 1;
-    color: rgba(107, 114, 128, var(--tw-text-opacity));
-  }
+.dark .btn:focus-within, .dark .btn:hover{
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgba(55, 65, 81, var(--tw-ring-opacity));
+  --tw-ring-opacity: 0.8;
+  --tw-ring-offset-color: #1f2937;
+}
 
-  li:hover a, li.active a{
-    --tw-text-opacity: 1;
-    color: rgba(156, 163, 175, var(--tw-text-opacity));
-  }
+.srcContainer:focus-within{
+  --tw-text-opacity: 1;
+  color: rgba(75, 85, 99, var(--tw-text-opacity));
+}
 
-  .dark li:hover a, .dark li.active a{
-    --tw-text-opacity: 1;
-    color: rgba(245, 158, 11, var(--tw-text-opacity));
-  }
+.dark .srcContainer:focus-within{
+  --tw-text-opacity: 1;
+  color: rgba(245, 158, 11, var(--tw-text-opacity));
+}
 
-  .btn:focus-within, .btn:hover{
-    cursor: pointer;
-  }
+/* Fine-Tune the Date Fields */
 
-  .btn:focus-within, .btn:hover{
-    border-radius: 0.125rem;
-  }
+.outline input::-webkit-calendar-picker-indicator{
+  cursor: pointer;
+  background-image: none;
+}
 
-  .btn:focus-within, .btn:hover{
-    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-  }
+.outline input[type="time"], .outline input[type="date"], .outline input[type="datetime-local"]{
+  position: relative;
+  width: auto;
+  min-width: -webkit-min-content;
+  min-width: -moz-min-content;
+  min-width: min-content;
+  padding-right: 1rem;
+}
 
-  .btn:focus-within, .btn:hover{
-    --tw-ring-opacity: 1;
-    --tw-ring-color: rgba(209, 213, 219, var(--tw-ring-opacity));
-  }
+.outline input::-webkit-datetime-edit{
+  max-width: -webkit-min-content;
+  max-width: min-content;
+}
 
-  .btn:focus-within, .btn:hover{
-    --tw-ring-opacity: 0.8;
-  }
+.outline input.date{
+  padding-right: 0.25rem;
+}
 
-  .btn:focus-within, .btn:hover{
-    --tw-ring-offset-width: 4px;
-  }
+.outline input.time{
+  padding-left: 0.25rem;
+}
 
-  .btn:focus-within, .btn:hover{
-    --tw-ring-offset-color: #e5e7eb;
-  }
+.outline input::-webkit-calendar-picker-indicator{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  margin: 0.25rem;
+  height: auto;
+  width: auto;
+  cursor: pointer;
+  background-color: transparent;
+}
 
-  .dark .btn:focus-within, .dark .btn:hover{
-    --tw-ring-opacity: 1;
-    --tw-ring-color: rgba(55, 65, 81, var(--tw-ring-opacity));
-  }
+/* ADDED by JS for Borderless */
 
-  .dark .btn:focus-within, .dark .btn:hover{
-    --tw-ring-opacity: 0.8;
-  }
+.borderLess.outline, .borderLess.outline span{
+  border-color: transparent;
+}
 
-  .dark .btn:focus-within, .dark .btn:hover{
-    --tw-ring-offset-color: #1f2937;
-  }
-
-  .srcContainer:focus-within{
-    --tw-text-opacity: 1;
-    color: rgba(75, 85, 99, var(--tw-text-opacity));
-  }
-
-  .dark .srcContainer:focus-within{
-    --tw-text-opacity: 1;
-    color: rgba(245, 158, 11, var(--tw-text-opacity));
-  }
-
-  /* Fine-Tune the Date Fields */
-
-  input[type="datetime-local"]::-webkit-calendar-picker-indicator{
-    margin-left: -1.25rem;
-  }
-
-  input::-webkit-calendar-picker-indicator:focus-within, input::-webkit-calendar-picker-indicator:hover{
-    cursor: pointer;
-  }
-
-  input::-webkit-calendar-picker-indicator:focus-within, input::-webkit-calendar-picker-indicator:hover{
-    border-radius: 0.125rem;
-  }
-
-  input::-webkit-calendar-picker-indicator:focus-within, input::-webkit-calendar-picker-indicator:hover{
-    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-  }
-
-  input::-webkit-calendar-picker-indicator:focus-within, input::-webkit-calendar-picker-indicator:hover{
-    --tw-ring-opacity: 1;
-    --tw-ring-color: rgba(209, 213, 219, var(--tw-ring-opacity));
-  }
-
-  input::-webkit-calendar-picker-indicator:focus-within, input::-webkit-calendar-picker-indicator:hover{
-    --tw-ring-opacity: 0.8;
-  }
-
-  input::-webkit-calendar-picker-indicator:focus-within, input::-webkit-calendar-picker-indicator:hover{
-    --tw-ring-offset-width: 4px;
-  }
-
-  input::-webkit-calendar-picker-indicator:focus-within, input::-webkit-calendar-picker-indicator:hover{
-    --tw-ring-offset-color: #e5e7eb;
-  }
-
-  .dark input::-webkit-calendar-picker-indicator:focus-within, .dark input::-webkit-calendar-picker-indicator:hover{
-    --tw-ring-opacity: 1;
-    --tw-ring-color: rgba(55, 65, 81, var(--tw-ring-opacity));
-  }
-
-  .dark input::-webkit-calendar-picker-indicator:focus-within, .dark input::-webkit-calendar-picker-indicator:hover{
-    --tw-ring-opacity: 0.8;
-  }
-
-  .dark input::-webkit-calendar-picker-indicator:focus-within, .dark input::-webkit-calendar-picker-indicator:hover{
-    --tw-ring-offset-color: #1f2937;
-  }
-
-  input::-webkit-calendar-picker-indicator:focus-within, input::-webkit-calendar-picker-indicator:hover{
-    cursor: pointer;
-  }
-
-  input::-webkit-calendar-picker-indicator:focus-within, input::-webkit-calendar-picker-indicator:hover{
-    border-radius: 0.125rem;
-  }
-
-  input::-webkit-calendar-picker-indicator:focus-within, input::-webkit-calendar-picker-indicator:hover{
-    --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-    --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-  }
-
-  input::-webkit-calendar-picker-indicator:focus-within, input::-webkit-calendar-picker-indicator:hover{
-    --tw-ring-opacity: 1;
-    --tw-ring-color: rgba(209, 213, 219, var(--tw-ring-opacity));
-  }
-
-  input::-webkit-calendar-picker-indicator:focus-within, input::-webkit-calendar-picker-indicator:hover{
-    --tw-ring-opacity: 0.8;
-  }
-
-  input::-webkit-calendar-picker-indicator:focus-within, input::-webkit-calendar-picker-indicator:hover{
-    --tw-ring-offset-width: 4px;
-  }
-
-  input::-webkit-calendar-picker-indicator:focus-within, input::-webkit-calendar-picker-indicator:hover{
-    --tw-ring-offset-color: #e5e7eb;
-  }
-
-  .dark input::-webkit-calendar-picker-indicator:focus-within, .dark input::-webkit-calendar-picker-indicator:hover{
-    --tw-ring-opacity: 1;
-    --tw-ring-color: rgba(55, 65, 81, var(--tw-ring-opacity));
-  }
-
-  .dark input::-webkit-calendar-picker-indicator:focus-within, .dark input::-webkit-calendar-picker-indicator:hover{
-    --tw-ring-opacity: 0.8;
-  }
-
-  .dark input::-webkit-calendar-picker-indicator:focus-within, .dark input::-webkit-calendar-picker-indicator:hover{
-    --tw-ring-offset-color: #1f2937;
-  }
-
-  input::-webkit-calendar-picker-indicator{
-    cursor: pointer;
-  }
-
-  input::-webkit-calendar-picker-indicator{
-    background-image: none;
-  }
-
-  input[type="date"]:before,
-  input[type="datetime-local"]:before {
-    content: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgoKCQoJCQoJCQk8cGF0aCBmaWxsPSIjOWNhM2FmIiBkPSJtMjc5IDM2NGMwIDIyLjA1NiAxNy45NDQgNDAgNDAgNDBoNDdjMjIuMDU2IDAgNDAtMTcuOTQ0IDQwLTQwdi00N2MwLTIyLjA1Ni0xNy45NDQtNDAtNDAtNDBoLTQ3Yy0yMi4wNTYgMC00MCAxNy45NDQtNDAgNDB2NDd6bTQwLTQ3aDQ3bDAuMDI1IDQ2Ljk5OXMtN2UtMyAxZS0zIC0wLjAyNSAxZS0zaC00N3YtNDd6Ii8+CgkJCTxjaXJjbGUgY3g9IjM4NiIgY3k9IjIxMCIgcj0iMjAiLz4KCQkJPGNpcmNsZSBjeD0iMjk5IiBjeT0iMjEwIiByPSIyMCIvPgoJCQk8cGF0aCBmaWxsPSIjOWNhM2FmIiBkPSJtNDkyIDM1MmMxMS4wNDYgMCAyMC04Ljk1NCAyMC0yMHYtMjEyYzAtNDQuMTEyLTM1Ljg4OC04MC04MC04MGgtMjZ2LTIwYzAtMTEuMDQ2LTguOTU0LTIwLTIwLTIwcy0yMCA4Ljk1NC0yMCAyMHYyMGgtOTF2LTIwYzAtMTEuMDQ2LTguOTU0LTIwLTIwLTIwcy0yMCA4Ljk1NC0yMCAyMHYyMGgtOTB2LTIwYzAtMTEuMDQ2LTguOTU0LTIwLTIwLTIwcy0yMCA4Ljk1NC0yMCAyMHYyMGgtMjVjLTQ0LjExMiAwLTgwIDM1Ljg4OC04MCA4MHYzMTJjMCA0NC4xMTIgMzUuODg4IDgwIDgwIDgwaDM1MmM0NC4xMTIgMCA4MC0zNS44ODggODAtODAgMC0xMS4wNDYtOC45NTQtMjAtMjAtMjBzLTIwIDguOTU0LTIwIDIwYzAgMjIuMDU2LTE3Ljk0NCA0MC00MCA0MGgtMzUyYy0yMi4wNTYgMC00MC0xNy45NDQtNDAtNDB2LTMxMmMwLTIyLjA1NiAxNy45NDQtNDAgNDAtNDBoMjV2MjBjMCAxMS4wNDYgOC45NTQgMjAgMjAgMjBzMjAtOC45NTQgMjAtMjB2LTIwaDkwdjIwYzAgMTEuMDQ2IDguOTU0IDIwIDIwIDIwczIwLTguOTU0IDIwLTIwdi0yMGg5MXYyMGMwIDExLjA0NiA4Ljk1NCAyMCAyMCAyMHMyMC04Ljk1NCAyMC0yMHYtMjBoMjZjMjIuMDU2IDAgNDAgMTcuOTQ0IDQwIDQwdjIxMmMwIDExLjA0NiA4Ljk1NCAyMCAyMCAyMHoiLz4KCQkJPGNpcmNsZSBjeD0iMTI1IiBjeT0iMzg0IiByPSIyMCIvPgoJCQk8Y2lyY2xlIGN4PSIxMjUiIGN5PSIyMTAiIHI9IjIwIi8+CgkJCTxjaXJjbGUgY3g9IjEyNSIgY3k9IjI5NyIgcj0iMjAiLz4KCQkJPGNpcmNsZSBjeD0iMjEyIiBjeT0iMjk3IiByPSIyMCIvPgoJCQk8Y2lyY2xlIGN4PSIyMTIiIGN5PSIyMTAiIHI9IjIwIi8+CgkJCTxjaXJjbGUgY3g9IjIxMiIgY3k9IjM4NCIgcj0iMjAiLz4KCQkKCQoKCgoKCgoKCgoKCgoKCgoKPC9zdmc+Cg==);
-  }
-
-  input[type="date"]:before, input[type="datetime-local"]:before{
-    pointer-events: none;
-  }
-
-  input[type="date"]:before, input[type="datetime-local"]:before{
-    position: absolute;
-  }
-
-  input[type="date"]:before, input[type="datetime-local"]:before{
-    top: 0.75rem;
-  }
-
-  input[type="date"]:before, input[type="datetime-local"]:before{
-    right: 1rem;
-  }
-
-  input[type="date"]:before, input[type="datetime-local"]:before{
-    height: 1.25rem;
-  }
-
-  input[type="date"]:before, input[type="datetime-local"]:before{
-    width: 1.25rem;
-  }
-
-  input[type="date"], input[type="datetime-local"]{
-    padding-right: 0.75rem;
-  }
-
-  /* ADDED by JS for Borderless */
-
-  .borderLess.outline, .borderLess.outline span{
-    border-color: transparent;
-  }
-
-  .borderLess.outline :is(
+.borderLess.outline :is(
     input:focus-within, select:focus-within, textarea:focus-within), :is(input).borderlessInputs:focus{
-    --tw-bg-opacity: 1;
-    background-color: rgba(147, 197, 253, var(--tw-bg-opacity));
-  }
+  --tw-bg-opacity: 1;
+  background-color: rgba(147, 197, 253, var(--tw-bg-opacity));
+  --tw-bg-opacity: 0.2;
+}
 
-  .borderLess.outline :is(
-    input:focus-within, select:focus-within, textarea:focus-within), :is(input).borderlessInputs:focus{
-    --tw-bg-opacity: 0.2;
-  }
+/* REMOVED by JS for Borderless */
 
-  /* REMOVED by JS for Borderless */
-
-  .Bordered.outline :is(
+.Bordered.outline :is(
     input:focus-within ~ label, select:focus-within ~ label, textarea:focus-within ~ label, input:not(:-moz-placeholder-shown) ~ label, select:not(:-moz-placeholder-shown) ~ label, textarea:not(:-moz-placeholder-shown) ~ label){
-    --tw-translate-y: -1.5rem;
-    transform: var(--tw-transform);
-  }
+  --tw-translate-y: -1.5rem;
+  transform: var(--tw-transform);
+  --tw-translate-x: -0.5rem;
+  transform: var(--tw-transform);
+  background: linear-gradient(transparent 50%, var(--color-light) 50%, var(--color-light) 60%, transparent 60%) ;
+}
 
-  .Bordered.outline :is(
+.Bordered.outline :is(
     input:focus-within ~ label, select:focus-within ~ label, textarea:focus-within ~ label, input:not(:-ms-input-placeholder) ~ label, select:not(:-ms-input-placeholder) ~ label, textarea:not(:-ms-input-placeholder) ~ label){
-    --tw-translate-y: -1.5rem;
-    transform: var(--tw-transform);
-  }
+  --tw-translate-y: -1.5rem;
+  transform: var(--tw-transform);
+  --tw-translate-x: -0.5rem;
+  transform: var(--tw-transform);
+  background: linear-gradient(transparent 50%, var(--color-light) 50%, var(--color-light) 60%, transparent 60%) ;
+}
 
-  .Bordered.outline :is(
+.Bordered.outline :is(
     input:focus-within ~ label, select:focus-within ~ label, textarea:focus-within ~ label, input:not(:placeholder-shown) ~ label, select:not(:placeholder-shown) ~ label, textarea:not(:placeholder-shown) ~ label){
-    --tw-translate-y: -1.5rem;
-    transform: var(--tw-transform);
-  }
+  --tw-translate-y: -1.5rem;
+  transform: var(--tw-transform);
+  --tw-translate-x: -0.5rem;
+  transform: var(--tw-transform);
+  background: linear-gradient(transparent 50%, var(--color-light) 50%, var(--color-light) 60%, transparent 60%) ;
+}
 
-  .Bordered.outline :is(
-    input:focus-within ~ label, select:focus-within ~ label, textarea:focus-within ~ label, input:not(:-moz-placeholder-shown) ~ label, select:not(:-moz-placeholder-shown) ~ label, textarea:not(:-moz-placeholder-shown) ~ label){
-    --tw-translate-x: -0.5rem;
-    transform: var(--tw-transform);
-  }
-
-  .Bordered.outline :is(
-    input:focus-within ~ label, select:focus-within ~ label, textarea:focus-within ~ label, input:not(:-ms-input-placeholder) ~ label, select:not(:-ms-input-placeholder) ~ label, textarea:not(:-ms-input-placeholder) ~ label){
-    --tw-translate-x: -0.5rem;
-    transform: var(--tw-transform);
-  }
-
-  .Bordered.outline :is(
-    input:focus-within ~ label, select:focus-within ~ label, textarea:focus-within ~ label, input:not(:placeholder-shown) ~ label, select:not(:placeholder-shown) ~ label, textarea:not(:placeholder-shown) ~ label){
-    --tw-translate-x: -0.5rem;
-    transform: var(--tw-transform);
-  }
-
-  .Bordered.outline :is(
-    input:focus-within ~ label, select:focus-within ~ label, textarea:focus-within ~ label, input:not(:-moz-placeholder-shown) ~ label, select:not(:-moz-placeholder-shown) ~ label, textarea:not(:-moz-placeholder-shown) ~ label) {
-    background: linear-gradient(transparent 50%, var(--color-light) 50%, var(--color-light) 60%, transparent 60%) ;
-  }
-
-  .Bordered.outline :is(
-    input:focus-within ~ label, select:focus-within ~ label, textarea:focus-within ~ label, input:not(:-ms-input-placeholder) ~ label, select:not(:-ms-input-placeholder) ~ label, textarea:not(:-ms-input-placeholder) ~ label) {
-    background: linear-gradient(transparent 50%, var(--color-light) 50%, var(--color-light) 60%, transparent 60%) ;
-  }
-
-  .Bordered.outline :is(
-    input:focus-within ~ label, select:focus-within ~ label, textarea:focus-within ~ label, input:not(:placeholder-shown) ~ label, select:not(:placeholder-shown) ~ label, textarea:not(:placeholder-shown) ~ label) {
-    background: linear-gradient(transparent 50%, var(--color-light) 50%, var(--color-light) 60%, transparent 60%) ;
-  }
-
-  .dark .Bordered.outline :is(
+.dark .Bordered.outline :is(
     input:focus-within ~ label, .dark select:focus-within ~ label, .dark textarea:focus-within ~ label, .dark input:not(:-moz-placeholder-shown) ~ label, .dark select:not(:-moz-placeholder-shown) ~ label, .dark textarea:not(:-moz-placeholder-shown) ~ label) {
-    background: linear-gradient(transparent 50%, var(--color-dark) 50%, var(--color-dark) 60%, transparent 60%) ;
-  }
+  background: linear-gradient(transparent 50%, var(--color-dark) 50%, var(--color-dark) 60%, transparent 60%) ;
+}
 
-  .dark .Bordered.outline :is(
+.dark .Bordered.outline :is(
     input:focus-within ~ label, .dark select:focus-within ~ label, .dark textarea:focus-within ~ label, .dark input:not(:-ms-input-placeholder) ~ label, .dark select:not(:-ms-input-placeholder) ~ label, .dark textarea:not(:-ms-input-placeholder) ~ label) {
-    background: linear-gradient(transparent 50%, var(--color-dark) 50%, var(--color-dark) 60%, transparent 60%) ;
-  }
+  background: linear-gradient(transparent 50%, var(--color-dark) 50%, var(--color-dark) 60%, transparent 60%) ;
+}
 
-  .dark .Bordered.outline :is(
+.dark .Bordered.outline :is(
     input:focus-within ~ label, .dark select:focus-within ~ label, .dark textarea:focus-within ~ label, .dark input:not(:placeholder-shown) ~ label, .dark select:not(:placeholder-shown) ~ label, .dark textarea:not(:placeholder-shown) ~ label) {
-    background: linear-gradient(transparent 50%, var(--color-dark) 50%, var(--color-dark) 60%, transparent 60%) ;
-  }
+  background: linear-gradient(transparent 50%, var(--color-dark) 50%, var(--color-dark) 60%, transparent 60%) ;
 }
 
 /* Responsive Navigation for Mobile View */
@@ -2571,6 +1805,9 @@ input[type="date"], input[type="datetime-local"]{
 
 ::-webkit-scrollbar{
   width: 0px;
+}
+
+html {
   scrollbar-width: none;
 }
 

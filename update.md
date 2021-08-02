@@ -1,5 +1,10 @@
 # DS6 - Update Log.
 
+### ver.020:
+
+* Date Inputs redesign (No Buttons - click anywhere on date time)
+* Chart Import Timing.
+
 ### ver.019:
 
 * selectbox min-width:max-content to min-with:auto. (Firefox Issue solved)
